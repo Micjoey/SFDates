@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Redirect, withRouter } from 'react-router-dom'
-import ShowBookContainer from './show_book_container';
+import ShowBookContainer from './show_date_container';
 import { IndivRating } from '../stars/star';
 class IndexBook extends React.Component {
     constructor(props) {

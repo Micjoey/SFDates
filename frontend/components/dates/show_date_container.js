@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { retrieveBook, updateBook } from '../../actions/book_actions'
-import ShowBook from './show_book'
+import ShowBook from './show_date'
 import { withRouter } from 'react-router';
 import { retrieveAllUsers } from '../../actions/users_actions';
 
