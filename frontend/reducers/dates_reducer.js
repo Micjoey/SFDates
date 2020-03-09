@@ -1,12 +1,11 @@
-import { RECEIVE_ALL_BOOKS, RECEIVE_BOOK } from "../actions/date_actions";
-import { RECEIVE_ON_SHELF_BOOK } from "../actions/on_shelf_book_actions";
+import { RECEIVE_ALL_DATES, RECEIVE_DATE } from "../actions/date_actions";
 
 const booksReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
-        case RECEIVE_BOOK:
+        case RECEIVE_DATE:
             return Object.assign({}, {[action.book.id]: action.book})
-        case RECEIVE_ALL_BOOKS:
+        case RECEIVE_ALL_DATES:
             return Object.assign({}, action.books)
         default:
             return state;

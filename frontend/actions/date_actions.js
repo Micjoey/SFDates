@@ -1,36 +1,35 @@
-import * as BookAPIUtil from '../util/date_api_util';
-import * as ReviewAPIUtil from '../util/review_api_util'
-export const RECEIVE_ALL_BOOKS = 'RECEIVE_ALL_BOOKS';
-export const RECEIVE_BOOK = 'RECEIVE_BOOK';
+import * as DateAPIUtil from '../util/date_api_util';
+export const RECEIVE_ALL_DATES = 'RECEIVE_ALL_DATES';
+export const RECEIVE_DATE = 'RECEIVE_DATE';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 
-const receiveAllBooks = books => ({
-  type: RECEIVE_ALL_BOOKS,
+const receiveAllDates = dates => ({
+  type: RECEIVE_ALL_DATES,
   books
 });
 
-const receiveBook = book => ({
-  type: RECEIVE_BOOK,
-  book
+const receiveDate = date => ({
+  type: RECEIVE_DATE,
+  date
 });
 
 
 
 
 
-export const retrieveBooks = () => dispatch => (
-  BookAPIUtil.retrieveBooks()
-    .then(books => dispatch(receiveAllBooks(books))
+export const retrieveDates = () => dispatch => (
+  DateAPIUtil.retrieveDates()
+    .then(dates => dispatch(receiveAllDates(dates))
 ));
 
-export const retrieveBook = bookId => dispatch => (
-  BookAPIUtil.retrieveBook(bookId)
-    .then(book => dispatch(receiveBook(book)))
+export const retrieveDate = bookId => dispatch => (
+  DateAPIUtil.retrieveDate(bookId)
+    .then(book => dispatch(receiveDate(book)))
 );
 
-export const updateBook = (book) => dispatch => (
-  BookAPIUtil.updateBook(book)
-    .then(book => dispatch(retrieveBooks(book)))
+export const updateDate = (book) => dispatch => (
+  DateAPIUtil.updateDate(book)
+    .then(book => dispatch(retrieveDates(book)))
 )
 
 

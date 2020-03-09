@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link, Redirect, withRouter } from 'react-router-dom'
-import ShowBookContainer from './show_date_container';
 import { IndivRating } from '../stars/star';
-class IndexBook extends React.Component {
+class IndexDate extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -10,20 +9,20 @@ class IndexBook extends React.Component {
             books: [],
             loaded: false,
         }
-        this.showBook = this.showBook.bind(this);
-        this.filterBooks = this.filterBooks.bind(this)
+        this.showDate = this.showDate.bind(this);
+        this.filterDates = this.filterDates.bind(this)
         this.updateState = this.updateState.bind(this)
     }
 
 
     componentDidMount() {
-        const books = this.props.retrieveBooks()
+        const books = this.props.retrieveDates()
         Promise.all([books]).then(() => this.setState({ loaded: true }))
     }
 
    
 
-    showBook(id) {
+    showDate(id) {
         return (
         <Redirect to={`/book/${id}`}/>   
         )    
@@ -31,32 +30,32 @@ class IndexBook extends React.Component {
 
     
     updateState() {
-        let allBooks = this.props.books.filter(indivBook =>
-            indivBook.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
-            indivBook.author.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
-            indivBook.genre.toLowerCase().includes(this.state.bookSearch.toLowerCase())
-        ).map(indivBook => indivBook);
+        let allDates = this.props.books.filter(indivDate =>
+            indivDate.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
+            indivDate.author.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
+            indivDate.genre.toLowerCase().includes(this.state.bookSearch.toLowerCase())
+        ).map(indivDate => indivDate);
 
         let notfound = images.notFound;
       
-        if (allBooks.length === 0) {
+        if (allDates.length === 0) {
             this.setState({ books: [{ title: 'Not Found', photo: notfound }] , bookSearch: '' })
         } else {
-            this.setState({ books: allBooks })
+            this.setState({ books: allDates })
         }
     }
 
-    filterBooks(text) {
+    filterDates(text) {
         this.setState({bookSearch: text}, () => this.updateState())
     }
    
     render() {
         if (!this.props.books) return null;
-        let allBooks
-        (this.state.books.length < 1) ? allBooks = this.props.books : allBooks = this.state.books
+        let allDates
+        (this.state.books.length < 1) ? allDates = this.props.books : allDates = this.state.books
         const books = (
                 <div className="index-books">
-                    {allBooks.map((book, i) => (
+                    {allDates.map((book, i) => (
                     // {this.props.books.map((book, i) => (
                         <div key={`book-${i}`} className="index-books-book-info">
                             <div className='dropdown-book'>
@@ -82,7 +81,7 @@ class IndexBook extends React.Component {
                                                                <div>Date Read: Hasn't Read</div>}
                                 </div>
                                 <div className='index-book-information-description'>
-                                    <div> Book Description: </div>
+                                    <div> Date Description: </div>
                                     <div> {book.description} </div>
                                 </div>
                             </Link>
@@ -94,12 +93,12 @@ class IndexBook extends React.Component {
             return (
                 <div className='background-color'>
                     <div className='search-bar'>
-                        <form className="index-book-search-bar" onSubmit={this.filterBooks}>
+                        <form className="index-book-search-bar" onSubmit={this.filterDates}>
                             <input type="text"
                                 className="index-book-search-bar-text"
-                                placeholder="Filter Books"
+                                placeholder="Filter Dates"
                                 // value={this.state.currentHp}
-                                onChange={text => this.filterBooks(
+                                onChange={text => this.filterDates(
                                     text.target.value
                                 )}
                             />
@@ -128,7 +127,7 @@ class IndexBook extends React.Component {
 }
 
 
-export default IndexBook
+export default IndexDate
 
 
 

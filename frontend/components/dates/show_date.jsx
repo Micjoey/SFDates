@@ -7,7 +7,7 @@ import { IndivRating } from '../stars/star';
 
 
 
-class showBook extends React.Component {
+class showDate extends React.Component {
     constructor(props){
         super(props)
         this.state = {
@@ -17,7 +17,7 @@ class showBook extends React.Component {
     }
 
     componentDidMount() {
-        const bookMount = this.props.retrieveBook(this.props.match.params.bookId)
+        const bookMount = this.props.retrieveDate(this.props.match.params.bookId)
         const usersMount = this.props.retrieveAllUsers()
         Promise.all([bookMount, usersMount]).then( () => this.setState({loaded:true}))
     }
@@ -25,15 +25,15 @@ class showBook extends React.Component {
 
     handleDelete(reviewID) {
         deleteReview(reviewID)
-        this.props.retrieveBook(this.props.book.id)
+        this.props.retrieveDate(this.props.book.id)
     }
 
     hasRead() {
         let book = this.props.book
         book.date_read = !book.date_read
-        this.props.updateBook(book)
+        this.props.updateDate(book)
             .then(() => this.setState({hasRead: book.date_read}))
-            .then(() => this.props.retrieveBook(this.props.match.params.bookId))
+            .then(() => this.props.retrieveDate(this.props.match.params.bookId))
         
     }
 
@@ -60,7 +60,7 @@ class showBook extends React.Component {
                         <div className='show-book-information-genre'>Genre: {book.genre}</div>
                         <div className='show-book-information-description'>Description: {book.description} </div>
                 </div>
-            ) : (<p>Sorry! No Books!</p>)
+            ) : (<p>Sorry! No Dates!</p>)
             return (
             <div className='background-color'>
                 <div className="show-book">
@@ -103,8 +103,8 @@ class showBook extends React.Component {
                                 </div>
                                 <div className="show-book-myactivity">
                                     {(book.date_read) ?
-                                    <div>Book: Read</div> :
-                                    <div>Book: Hasn't Read Yet</div>}
+                                    <div>Date: Read</div> :
+                                    <div>Date: Hasn't Read Yet</div>}
                                 </div>
                                 <button className="show-book-myactivity" onClick={() => this.hasRead()}>
                                     {(!book.date_read) ?
@@ -161,4 +161,4 @@ class showBook extends React.Component {
     }
 }
 
-export default showBook
+export default showDate
