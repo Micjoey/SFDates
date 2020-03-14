@@ -9,9 +9,9 @@ import {
 } from 'react-router-dom';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import Modal from './modal/modal'
+// import Modal from './modal/modal'
+import Splash from './splash/splash';
 // import NavBarContainer from './navbar/navbar_container';
-// import Splash from './splash/splash';
 // import IndexDateContainer from './book/index_books_container'
 // import ShowDateContainer from './book/show_book_container';
 // import IndexShelvesContainer from './shelf/index_shelves_container';
@@ -19,13 +19,13 @@ import Modal from './modal/modal'
 
 const App = () => (
   <div className="app">
-      <Modal />
+      {/* <Modal /> */}
     <header className="header">
-      <NavBarContainer />
+      {/* <NavBarContainer /> */}
     </header>
     <div className="content">
       <Switch>
-        {/* <AuthRoute exact path="/" component={Splash} />  */}
+        <AuthRoute path="/" component={Splash} /> 
         {/* <ProtectedRoute exact path="/home" component={IndexDateContainer} /> */}
         {/* <ProtectedRoute exact path="/book/:bookId" component={ShowDateContainer}/> */}
         {/* <ProtectedRoute exact path="/shelf" component={IndexShelvesContainer} /> */}
