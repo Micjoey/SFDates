@@ -5,13 +5,12 @@ class IndexDate extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            bookSearch: '',
-            books: [],
+
             loaded: false,
         }
         this.showDate = this.showDate.bind(this);
         this.filterDates = this.filterDates.bind(this)
-        this.updateState = this.updateState.bind(this)
+        // this.updateState = this.updateState.bind(this)
     }
 
 
@@ -29,21 +28,21 @@ class IndexDate extends React.Component {
     }
 
     
-    updateState() {
-        let allDates = this.props.books.filter(indivDate =>
-            indivDate.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
-            indivDate.author.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
-            indivDate.genre.toLowerCase().includes(this.state.bookSearch.toLowerCase())
-        ).map(indivDate => indivDate);
+    // updateState() {
+    //     let allDates = this.props.books.filter(indivDate =>
+    //         indivDate.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
+    //         indivDate.author.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
+    //         indivDate.genre.toLowerCase().includes(this.state.bookSearch.toLowerCase())
+    //     ).map(indivDate => indivDate);
 
-        let notfound = images.notFound;
+    //     let notfound = images.notFound;
       
-        if (allDates.length === 0) {
-            this.setState({ books: [{ title: 'Not Found', photo: notfound }] , bookSearch: '' })
-        } else {
-            this.setState({ books: allDates })
-        }
-    }
+    //     if (allDates.length === 0) {
+    //         this.setState({ books: [{ title: 'Not Found', photo: notfound }] , bookSearch: '' })
+    //     } else {
+    //         this.setState({ books: allDates })
+    //     }
+    // }
 
     filterDates(text) {
         this.setState({bookSearch: text}, () => this.updateState())
