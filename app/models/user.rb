@@ -8,7 +8,7 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
 
 
-    has_many :books,
+    has_many :dates,
     through: :shelfs,
     source: :book_ids
 

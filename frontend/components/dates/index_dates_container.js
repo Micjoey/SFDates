@@ -1,11 +1,11 @@
 import { connect } from 'react-redux'
 import { retrieveDates, retrieveDate } from '../../actions/book_actions'
-import IndexDate from './index_books'
+import IndexDate from './index_dates'
 import { withRouter } from 'react-router'
 
 const mapStateToProps = (state) => {
     return {
-        books: Object.values(state.entities.books)
+        dates: Object.values(state.entities.dates)
     }
 }
 

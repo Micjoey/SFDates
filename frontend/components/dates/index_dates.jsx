@@ -15,8 +15,8 @@ class IndexDate extends React.Component {
 
 
     componentDidMount() {
-        const books = this.props.retrieveDates()
-        Promise.all([books]).then(() => this.setState({ loaded: true }))
+        const dates = this.props.retrieveDates()
+        Promise.all([dates]).then(() => this.setState({ loaded: true }))
     }
 
    
@@ -51,7 +51,7 @@ class IndexDate extends React.Component {
     render() {
         if (!this.props.books) return null;
         let allDates
-        (this.state.books.length < 1) ? allDates = this.props.books : allDates = this.state.books
+        (this.state.dates.length < 1) ? allDates = this.props.books : allDates = this.state.books
         const books = (
                 <div className="index-books">
                     {allDates.map((book, i) => (
@@ -60,7 +60,7 @@ class IndexDate extends React.Component {
                             <div className='dropdown-book'>
                             <Link to={`/book/${book.id}`}>
                                 <div className="index-book-covers">
-                                    <img src={book.photo} className="index-book-cover"/>
+                                    {/* <img src={book.photo} className="index-book-cover"/> */}
                                 </div>
                             </Link>
                             </div>

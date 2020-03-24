@@ -5,7 +5,7 @@ export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 
 const receiveAllDates = dates => ({
   type: RECEIVE_ALL_DATES,
-  books
+  dates
 });
 
 const receiveDate = date => ({
@@ -22,9 +22,9 @@ export const retrieveDates = () => dispatch => (
     .then(dates => dispatch(receiveAllDates(dates))
 ));
 
-export const retrieveDate = bookId => dispatch => (
-  DateAPIUtil.retrieveDate(bookId)
-    .then(book => dispatch(receiveDate(book)))
+export const retrieveDate = dateId => dispatch => (
+  DateAPIUtil.retrieveDate(dateId)
+    .then(date => dispatch(receiveDate(date)))
 );
 
 // export const updateDate = (book) => dispatch => (
