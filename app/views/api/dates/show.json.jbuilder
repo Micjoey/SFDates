@@ -1,2 +1,2 @@
-json.partial! "date", date: @date
+json.partial! "date", date: @dateSuggestion
 

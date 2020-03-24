@@ -5,7 +5,7 @@ import { withRouter } from 'react-router'
 
 const mapStateToProps = (state) => {
     return {
-        dates: Object.values(state.entities.dates)
+        dates: Object.values(state.entities.dateSuggestions)
     }
 }
 

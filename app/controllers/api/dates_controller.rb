@@ -24,7 +24,7 @@ class Api::DateSuggestionSuggestionController < ApplicationController
     private
 
     def date_params
-        params.require(:dateSuggestion).permit(:title, :location, :type, :cost, :description)
+        params.require(:dateSuggestion).permit(:title, :location, :date_type, :cost, :description)
     end
 
  

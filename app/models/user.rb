@@ -8,9 +8,9 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
 
 
-    has_many :dates,
+    has_many :dateSuggestions,
     through: :shelfs,
-    source: :book_ids
+    source: :date_ids
 
     has_many :reviews,
     foreign_key: :user_id,
