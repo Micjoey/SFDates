@@ -10,22 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_24_201517) do
+ActiveRecord::Schema.define(version: 2020_03_24_211334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "dates", force: :cascade do |t|
+  create_table "date_suggestions", force: :cascade do |t|
     t.string "title", null: false
     t.string "location", null: false
-    t.string "type", null: false
+    t.string "date_type", null: false
     t.integer "cost"
-    t.string "date_number", null: false
+    t.integer "date_number", null: false
     t.text "description", null: false
-    t.index ["date_number"], name: "index_dates_on_date_number"
-    t.index ["location"], name: "index_dates_on_location"
-    t.index ["title"], name: "index_dates_on_title"
-    t.index ["type"], name: "index_dates_on_type"
+    t.index ["date_number"], name: "index_date_suggestions_on_date_number"
+    t.index ["date_type"], name: "index_date_suggestions_on_date_type"
+    t.index ["location"], name: "index_date_suggestions_on_location"
+    t.index ["title"], name: "index_date_suggestions_on_title"
   end
 
   create_table "users", force: :cascade do |t|
