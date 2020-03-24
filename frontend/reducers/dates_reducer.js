@@ -6,7 +6,7 @@ const booksReducer = (state = {}, action) => {
         case RECEIVE_DATE:
             return Object.assign({}, {[action.book.id]: action.book})
         case RECEIVE_ALL_DATES:
-            return Object.assign({}, action.books)
+            return Object.assign({}, action.dates)
         default:
             return state;
     }

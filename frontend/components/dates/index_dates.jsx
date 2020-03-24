@@ -29,7 +29,7 @@ class IndexDate extends React.Component {
 
     
     // updateState() {
-    //     let allDates = this.props.books.filter(indivDate =>
+    //     let allDates = this.props.dates.filter(indivDate =>
     //         indivDate.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
     //         indivDate.author.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
     //         indivDate.genre.toLowerCase().includes(this.state.bookSearch.toLowerCase())
@@ -38,9 +38,9 @@ class IndexDate extends React.Component {
     //     let notfound = images.notFound;
       
     //     if (allDates.length === 0) {
-    //         this.setState({ books: [{ title: 'Not Found', photo: notfound }] , bookSearch: '' })
+    //         this.setState({ dates: [{ title: 'Not Found', photo: notfound }] , bookSearch: '' })
     //     } else {
-    //         this.setState({ books: allDates })
+    //         this.setState({ dates: allDates })
     //     }
     // }
 
@@ -49,14 +49,14 @@ class IndexDate extends React.Component {
     }
    
     render() {
-        if (!this.props.books) return null;
+        if (!this.props.dates) return null;
         let allDates
-        (this.state.dates.length < 1) ? allDates = this.props.books : allDates = this.state.books
-        const books = (
-                <div className="index-books">
+        (this.state.dates.length < 1) ? allDates = this.props.dates : allDates = this.state.dates
+        const dates = (
+                <div className="index-dates">
                     {allDates.map((book, i) => (
-                    // {this.props.books.map((book, i) => (
-                        <div key={`book-${i}`} className="index-books-book-info">
+                    // {this.props.dates.map((book, i) => (
+                        <div key={`book-${i}`} className="index-dates-book-info">
                             <div className='dropdown-book'>
                             <Link to={`/book/${book.id}`}>
                                 <div className="index-book-covers">
@@ -104,7 +104,7 @@ class IndexDate extends React.Component {
                         </form>   
                     </div>
                     <div className="index-book-information"> 
-                        {books}
+                        {dates}
                     </div>
                 </div>
             )

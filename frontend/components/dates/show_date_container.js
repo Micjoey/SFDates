@@ -4,7 +4,7 @@ import ShowDate from './show_date'
 import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
-    const book = state.entities.books[ownProps.match.params.bookId];
+    const book = state.entities.dates[ownProps.match.params.bookId];
     // const user = state.entities.users[state.session];
     const userId = state.session.id
     const allUsers = state.entities.users
