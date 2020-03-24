@@ -1,0 +1,89 @@
+
+ .dropdown {
+  position: relative;
+  display: inline-block;
+  /* padding-right: 10px; */
+  /* padding-top: 4px; */
+  top: inherit;
+  padding: 4px 30px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  right: 10px;
+  opacity: .95;
+  /* display: grid; */
+}
+
+
+
+
+.dropdown:hover {
+  /* background-color: rgba(165, 140, 42, 0.632); */
+}
+
+.dropdown:hover .dropdown-content {
+  display: grid;
+  cursor: pointer;
+}
+
+
+.dropdown-image-icon {
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.index-books-book-info {
+  position: relative;
+  display: inline-block;
+  /* padding-right: 10px; */
+  /* padding-top: 4px; */
+  top: inherit;
+  padding: 4px 10px;
+  margin: 0px 40px
+}
+
+.dropdown-book-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9e0;
+  /* background-color: red; */
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  /* right: 10px; */
+  /* opacity: .88; */
+  left: 20%;
+  top: 30%;
+  max-width: 200px;
+  border: 4px ridge rgba(152, 126, 22, 0.632) ;
+  overflow: scroll;
+  max-height: 300px;
+  text-align: left;
+  text-decoration: none;
+  color: black;
+}
+
+
+
+.index-books-book-info:hover {
+  /* background-color: rgba(165, 140, 42, 0.632); */
+  /* zoom: 105%; */
+}
+
+.index-books-book-info:hover .dropdown-book-content {
+  display: block;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+

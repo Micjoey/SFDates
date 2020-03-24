@@ -1,0 +1,66 @@
+.rating {
+  line-height: 1;
+  display: inline-block;
+  &-item {
+    display: inline;
+    font-size: 0;
+    &::before {
+      font-size: 18px;
+      content: "★";
+      color: lightgray;
+      background-color: rgb(155, 153, 153);
+      border-radius: 100%;
+      margin: 0px 1px;
+      padding: 0px 1.5px
+    }
+  }
+  &-input {
+    position: absolute;
+    visibility: hidden;
+  }
+}
+.rating:hover .rating-item::before {
+  color: gold;
+}
+.rating-item:hover ~ .rating-item::before {
+  color: lightgray;
+}
+.rating-item-selected::before {
+  color: gold;
+}
+
+// ---------------------- Show Book All Ratings --------------
+.rating-indiv {
+  line-height: 1;
+  display: inline-block;
+  &-item {
+    display: inline;
+    font-size: 0;
+    
+    &::before {
+      font-size: 18px;
+      content: "★";
+      color: lightgray;
+    }
+  }
+  &-input {
+    position: absolute;
+    visibility: hidden;
+  }
+}
+
+.rating-y  {
+  color: gold;
+}
+
+
+
+
+.rating-item-selected-t::before {
+  color: gold;
+}
+
+.review {
+  display: flex;
+  vertical-align: middle;
+}

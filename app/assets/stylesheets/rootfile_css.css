@@ -1,0 +1,140 @@
+
+
+body {
+    margin: 0px;
+}
+
+
+ .header {
+     display: block;
+ }
+
+.navbar-view-to-login {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f4f2e9;
+    height: 100px;
+    vertical-align: text-bottom;
+    align-items: center;
+    flex-wrap: nowrap;
+    border-bottom: black solid thin;
+    
+}
+
+.navbar-view-to-login-or-signup {
+    width: 100%;
+    /* padding: 0px; */
+    position: fixed;
+
+}
+
+.FunReads-title {
+    text-decoration: none;
+    font-size: 40px;
+    color: black;
+    vertical-align: middle;
+    padding-left: 100px;
+    padding-right: 50px;
+    height: 50px;
+    
+}
+
+.FunReads-title,
+.FunReads-title-logged-in {
+    color: lightcoral
+}
+
+ .filler-background-box {
+        object-fit: cover;
+        z-index: -2;
+        /* height: 2000px; */
+        background-color: gray;
+    }
+
+
+
+
+.header-currentuser-name {
+    display: flex;
+    position: relative;
+    /* padding: 5px; */
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    /* padding-right: 50px; */
+    text-transform: capitalize;
+    margin: 5px 0px;
+    cursor: default;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+
+.header-group {
+    display: flex;
+    justify-content: space-between;
+    position: flex;
+    width: 100%;
+    padding: 0px;
+    padding-bottom: 7px;
+    height: 60px;
+    border-bottom: 1px solid black;
+    align-content: center;
+}
+
+/* .header-link {
+
+    align-items: left;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px;
+    background-color: #f4f2e9;
+    text-decoration: none;
+    align-items: center;
+    vertical-align: middle; 
+
+} */
+
+.session-submit:hover {
+    background-color: darkgray;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.session-submit {
+    padding: 8px;
+    border: 0px;
+    border-radius: 4px;
+    background-color: #eebe44;
+    font-size: 18px;
+    line-height: 22px;
+    width: 85px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+#header-link {
+
+    /* height: 0%; */
+    display: flex;
+}
+
+
+.header-bar {
+    background-color: #f4f2e9;
+    display: flex;
+    justify-content: space-between;
+    vertical-align: text-bottom;
+    height: 20%;
+}
+
+
+
+
+
+
+

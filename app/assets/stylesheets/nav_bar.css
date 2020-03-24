@@ -1,0 +1,78 @@
+
+
+
+.header-group-logged-in {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px;
+    padding-bottom: 7px;
+    padding-top: 5px;
+    height: 60px;
+    border-bottom: 1px solid black;
+    align-items: center;
+    position: relative;
+    top: 0px;
+    background-color: #f4f2e9;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    min-width: 806px;
+}
+
+    .FunReads-title-logged-in {
+    text-decoration: none;
+    font-size: 40px;
+    color: black;
+    vertical-align: middle;
+    padding-left: 30px;
+    padding-right: 50px;
+    height: 50px;
+    vertical-align: center;
+    padding-top: 5px;
+    }
+
+    .nav-bar-home-button {
+        text-decoration: none;
+        color: black;
+        min-width: 90px;
+        flex-flow: nowrap;
+        font-size: 20px;
+    }
+    .nav-bar-mybooks-button {
+        text-decoration: none;
+        color: black;
+        flex-flow: nowrap;
+        margin: 5px 0px;
+        font-size: 20px;
+        min-width: 90px;
+    }
+    .nav-bar-dropdown-mybooks-button {
+        text-decoration: none;
+        color: black;
+        flex-flow: nowrap;
+        margin: 5px 0px;
+        font-size: 14px;
+    }
+    .nav-bar-dropdown-mybooks-button:hover {
+        text-decoration: underline;
+        
+    }
+
+    .nav-bar-home-button:hover,
+    .nav-bar-mybooks-button:hover {
+        zoom: 110%;
+        text-decoration: underline;
+    }
+
+    .header-button {
+        opacity: 200%;
+        width: 50%;
+        cursor: pointer;
+    }
+    .nav-bar-search-bar-text {
+        width: 200px;
+        height: 25px;
+        background-color: #f2f2f2;
+        text-align: center;
+        font-size: 15px;
+    }

@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import DateReducer from './dates_reducer';
-
+import DatesReducer from './dates_reducer';
+import UsersReducer from './users_reducer'
 
 export default combineReducers({
-  dates: DateReducer,
-  
+  dates: DatesReducer,
+  users: UsersReducer
 });
