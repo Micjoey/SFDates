@@ -25,14 +25,14 @@ class showDate extends React.Component {
 
     handleDelete(reviewID) {
         deleteReview(reviewID)
-        this.props.retrieveDate(this.props.book.id)
+        this.props.retrieveDate(this.props.date.id)
     }
 
     hasRead() {
-        let book = this.props.book
-        book.date_read = !book.date_read
-        this.props.updateDate(book)
-            .then(() => this.setState({hasRead: book.date_read}))
+        let date = this.props.date
+        date.date_read = !date.date_read
+        this.props.updateDate(date)
+            .then(() => this.setState({hasRead: date.date_read}))
             .then(() => this.props.retrieveDate(this.props.match.params.bookId))
         
     }
@@ -41,102 +41,102 @@ class showDate extends React.Component {
     
     render() {
         if (this.state.loaded) {
-            const book = this.props.book
+            const date = this.props.date
             const cover = (
-                <img className="show-book-cover" src={book.photo} />
+                <img className="show-date-cover" src={date.photo} />
             )
             const allUsers = this.props.allUsers
-            const shelf = (book.unique_shelves.length > 1) ? <p>On Shelves:</p> : <p>On Shelf:</p>
-            const book_information = (typeof this.props.book !== 'undefined') ? (
-                <div className="show-book-information">
-                        <div className='show-book-information-title'>{book.title}</div>
-                        <div className='show-book-information-author'>by: {book.author}</div>
-                    <div className='show-book-information-rating '>Avg. Rating: {book.average_rating} 
+            const shelf = (date.unique_shelves.length > 1) ? <p>On Shelves:</p> : <p>On Shelf:</p>
+            const book_information = (typeof this.props.date !== 'undefined') ? (
+                <div className="show-date-information">
+                        <div className='show-date-information-title'>{date.title}</div>
+                        <div className='show-date-information-author'>by: {date.author}</div>
+                    <div className='show-date-information-rating '>Avg. Rating: {date.average_rating} 
                             <IndivRating min={1} max={5}
-                                value={book.average_rating}
+                                value={date.average_rating}
                             />
                             
                         </div>
-                        <div className='show-book-information-genre'>Genre: {book.genre}</div>
-                        <div className='show-book-information-description'>Description: {book.description} </div>
+                        <div className='show-date-information-genre'>Genre: {date.genre}</div>
+                        <div className='show-date-information-description'>Description: {date.description} </div>
                 </div>
             ) : (<p>Sorry! No Dates!</p>)
             return (
             <div className='background-color'>
-                <div className="show-book">
-                    <div className='show-book-background'>
-                        <div className='show-book-all-information-and-reviews'>
-                            <div className='show-book-all-information'>
-                                <div className="show-book-information-cover-image">
+                <div className="show-date">
+                    <div className='show-date-background'>
+                        <div className='show-date-all-information-and-reviews'>
+                            <div className='show-date-all-information'>
+                                <div className="show-date-information-cover-image">
                                     {cover}
                                 </div>
-                                <div className="show-book-information-detail">
+                                <div className="show-date-information-detail">
                                     {book_information}
                                 </div>
                             </div>
-                            <div className="show-book-review">
+                            <div className="show-date-review">
                                 <div className="leave-a-review"> Leave a review! </div>
-                                <CreateReviewContainer book_id={book.id} user_id={this.props.userId} />
+                                <CreateReviewContainer book_id={date.id} user_id={this.props.userId} />
                             </div>
                         </div>
-                        <div className="show-book-my-activity"> 
-                            <div className="show-book-add-to-shelf"> 
+                        <div className="show-date-my-activity"> 
+                            <div className="show-date-add-to-shelf"> 
                                 <AddShelfContainer />
                             </div>
                             
                             <div className="empty-space">
                                 {/* empty space */}
                             </div>
-                            <div className="show-book-activity-rating">
-                                <params className="show-book-my-activity-text">MY BOOK ACTIVITY</params>
+                            <div className="show-date-activity-rating">
+                                <params className="show-date-my-activity-text">MY date ACTIVITY</params>
                             </div>
-                            <div className="show-book-activity-shelf">
-                                <div className="show-book-unique-shelves">
+                            <div className="show-date-activity-shelf">
+                                <div className="show-date-unique-shelves">
                                     {shelf}
                                     <div className="dropdown-content2">
-                                        <ul className="show-book-all-shelves">
-                                            {book.unique_shelves.map((shelf, i)=>(
+                                        <ul className="show-date-all-shelves">
+                                            {date.unique_shelves.map((shelf, i)=>(
                                                 (shelf.user_id === this.props.userId) ? <ul key={`shelf-${i}`}>{shelf.bookshelf_title}</ul> : <div key={`shelf-${i}`}> None </div>
                                             ))}
                                         </ul>
                                     </div>
                                 </div>
-                                <div className="show-book-myactivity">
-                                    {(book.date_read) ?
+                                <div className="show-date-myactivity">
+                                    {(date.date_read) ?
                                     <div>Date: Read</div> :
                                     <div>Date: Hasn't Read Yet</div>}
                                 </div>
-                                <button className="show-book-myactivity" onClick={() => this.hasRead()}>
-                                    {(!book.date_read) ?
+                                <button className="show-date-myactivity" onClick={() => this.hasRead()}>
+                                    {(!date.date_read) ?
                                     <div>Mark As: Read</div> :
                                     <div>Mark As: Hasn't Read Yet</div>}
                                 </button>
                             </div>
-                                <div className="show-book-activity-status">
+                                <div className="show-date-activity-status">
 
                                 </div>
-                                <div className="show-book-activity-review">
+                                <div className="show-date-activity-review">
 
                                 </div>
                         </div>
-                        <div className="show-book-reviews">
-                            <div className="show-book-all-reviews">
-                                <div className="show-book-all-reviews-text">ALL REVIEWS</div>
-                                    {book.reviews.sort(function(b,a) {
+                        <div className="show-date-reviews">
+                            <div className="show-date-all-reviews">
+                                <div className="show-date-all-reviews-text">ALL REVIEWS</div>
+                                    {date.reviews.sort(function(b,a) {
                                         return (new Date(a.created_at)) - (new Date(b.created_at))
                                         }
                                     ).map((review,i) => (
-                                        <div key={`review-${i}`} className="show-book-individual-review">
-                                            <div className="show-book-individual-review-title">Review Title: {review.title}</div>
-                                            <div className="show-book-individual-review-date">Date Reviewed: {formatDateWithDay(review.created_at)}</div>
-                                            <div className="show-book-individual-review-id">User: {allUsers[review.user_id].username}</div>
-                                            {/* <div className="show-book-individual-review-rating">User Rating: {review.rating}</div> */}
-                                            <div className="show-book-individual-review-rating">User Rating: 
+                                        <div key={`review-${i}`} className="show-date-individual-review">
+                                            <div className="show-date-individual-review-title">Review Title: {review.title}</div>
+                                            <div className="show-date-individual-review-date">Date Reviewed: {formatDateWithDay(review.created_at)}</div>
+                                            <div className="show-date-individual-review-id">User: {allUsers[review.user_id].username}</div>
+                                            {/* <div className="show-date-individual-review-rating">User Rating: {review.rating}</div> */}
+                                            <div className="show-date-individual-review-rating">User Rating: 
                                                 <IndivRating min={1} max={5}
                                                     value={review.rating}
                                                 />
                                             </div>
-                                            <div className="show-book-individual-review-body">Review: {review.body}</div>
+                                            <div className="show-date-individual-review-body">Review: {review.body}</div>
                                             <div>{(review.user_id === this.props.userId) ? <button 
                                                 onClick={() => this.handleDelete(review.id)}>
                                                     Delete Review</button> : null }

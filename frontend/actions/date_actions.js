@@ -27,9 +27,9 @@ export const retrieveDate = dateId => dispatch => (
     .then(date => dispatch(receiveDate(date)))
 );
 
-// export const updateDate = (book) => dispatch => (
-//   DateAPIUtil.updateDate(book)
-//     .then(book => dispatch(retrieveDates(book)))
+// export const updateDate = (date) => dispatch => (
+//   DateAPIUtil.updateDate(date)
+//     .then(date => dispatch(retrieveDates(date)))
 // )
 
 

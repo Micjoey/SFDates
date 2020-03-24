@@ -23,7 +23,7 @@ class IndexDate extends React.Component {
 
     showDate(id) {
         return (
-        <Redirect to={`/book/${id}`}/>   
+        <Redirect to={`/date/${id}`}/>   
         )    
     }
 
@@ -54,34 +54,34 @@ class IndexDate extends React.Component {
         (this.state.dates.length < 1) ? allDates = this.props.dates : allDates = this.state.dates
         const dates = (
                 <div className="index-dates">
-                    {allDates.map((book, i) => (
-                    // {this.props.dates.map((book, i) => (
-                        <div key={`book-${i}`} className="index-dates-book-info">
-                            <div className='dropdown-book'>
-                            <Link to={`/book/${book.id}`}>
-                                <div className="index-book-covers">
-                                    {/* <img src={book.photo} className="index-book-cover"/> */}
+                    {allDates.map((date, i) => (
+                    // {this.props.dates.map((date, i) => (
+                        <div key={`date-${i}`} className="index-dates-date-info">
+                            <div className='dropdown-date'>
+                            <Link to={`/date/${date.id}`}>
+                                <div className="index-date-covers">
+                                    {/* <img src={date.photo} className="index-date-cover"/> */}
                                 </div>
                             </Link>
                             </div>
-                            <Link to={`/book/${book.id}`} className="dropdown-book-content">
-                                <div className='index-book-information-title'>{book.title}</div>
-                                <div className='index-book-information-author'>by: {book.author}</div>
-                                <div className='index-book-information-rating'>Rating: {book.average_rating}</div>
-                                <div className='index-book-information-rating'>
+                            <Link to={`/date/${date.id}`} className="dropdown-date-content">
+                                <div className='index-date-information-title'>{date.title}</div>
+                                <div className='index-date-information-author'>by: {date.author}</div>
+                                <div className='index-date-information-rating'>Rating: {date.average_rating}</div>
+                                <div className='index-date-information-rating'>
                                         <IndivRating min={1} max={5}
-                                        value={book.average_rating}
+                                        value={date.average_rating}
                                     />
                                 </div>
-                                <div className='index-book-information-genre'>Genre: {book.genre}</div>
-                                {/* <div className='index-book-information-date-read'>Date Read: {book.date_read}</div> */}
-                                <div className='index-book-information-date-read'>{(book.date_read) ? 
+                                <div className='index-date-information-genre'>Genre: {date.genre}</div>
+                                {/* <div className='index-date-information-date-read'>Date Read: {date.date_read}</div> */}
+                                <div className='index-date-information-date-read'>{(date.date_read) ? 
                                                                 <div>Date Read: Has Read</div> :
                                                                <div>Date Read: Hasn't Read</div>}
                                 </div>
-                                <div className='index-book-information-description'>
+                                <div className='index-date-information-description'>
                                     <div> Date Description: </div>
-                                    <div> {book.description} </div>
+                                    <div> {date.description} </div>
                                 </div>
                             </Link>
                         </div>
@@ -92,9 +92,9 @@ class IndexDate extends React.Component {
             return (
                 <div className='background-color'>
                     <div className='search-bar'>
-                        <form className="index-book-search-bar" onSubmit={this.filterDates}>
+                        <form className="index-date-search-bar" onSubmit={this.filterDates}>
                             <input type="text"
-                                className="index-book-search-bar-text"
+                                className="index-date-search-bar-text"
                                 placeholder="Filter Dates"
                                 // value={this.state.currentHp}
                                 onChange={text => this.filterDates(
@@ -103,7 +103,7 @@ class IndexDate extends React.Component {
                             />
                         </form>   
                     </div>
-                    <div className="index-book-information"> 
+                    <div className="index-date-information"> 
                         {dates}
                     </div>
                 </div>

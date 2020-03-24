@@ -12,10 +12,10 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 // import Modal from './modal/modal'
 import Splash from './splash/splash';
 // import NavBarContainer from './navbar/navbar_container';
-// import IndexDateContainer from './book/index_books_container'
-// import ShowDateContainer from './book/show_book_container';
+// import IndexDateContainer from './date/index_books_container'
+// import ShowDateContainer from './date/show_book_container';
 // import IndexShelvesContainer from './shelf/index_shelves_container';
-// import Footer from './footer/footer';
+import Footer from './footer/footer';
 
 const App = () => (
   <div className="app">
@@ -27,13 +27,13 @@ const App = () => (
       <Switch>
         <AuthRoute path="/" component={Splash} /> 
         {/* <ProtectedRoute exact path="/home" component={IndexDateContainer} /> */}
-        {/* <ProtectedRoute exact path="/book/:bookId" component={ShowDateContainer}/> */}
+        {/* <ProtectedRoute exact path="/date/:bookId" component={ShowDateContainer}/> */}
         {/* <ProtectedRoute exact path="/shelf" component={IndexShelvesContainer} /> */}
         <Redirect to="/home" />
       </Switch>
-      {/* <footer className="footer"> */}
+      <footer className="footer">
         <Route path='/' component={Footer}/>
-      {/* </footer> */}
+      </footer>
     </div>
   </div>
 );
