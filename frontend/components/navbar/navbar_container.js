@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import Root from './navbar'
 import { openModal } from '../../actions/model_actions';
-import { retrieveBooks, retrieveBook } from '../../actions/book_actions'
+import { retrieveDates } from '../../actions/date_actions';
+
 
 
 const mapStateToProps = ({ session, entities: { users} }) => {
@@ -14,7 +15,7 @@ const mapStateToProps = ({ session, entities: { users} }) => {
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout()),
     openModal: modal => dispatch(openModal(modal)),
-    retrieveBooks: () => dispatch(retrieveBooks())
+    retrieveDates: () => dispatch(retrieveDates())
     // idSwitch: target => dispatch(dropDownIdSwitch(target))
 });
 

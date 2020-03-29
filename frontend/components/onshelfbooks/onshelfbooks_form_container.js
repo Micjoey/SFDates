@@ -1,5 +1,5 @@
 // import { connect } from 'react-redux'
-// import { retrieveBook } from '../../actions/book_actions'
+// import { retrieveDate } from '../../actions/book_actions'
 // import { withRouter } from 'react-router';
 // import { retrieveAllUsers } from '../../actions/users_actions';
 // import OnShelfBooks from './onshelfbooks_form'
@@ -17,7 +17,7 @@
 // }
 
 // const mapDispatchToProps = dispatch => ({
-//     retrieveBook: bookId => dispatch(retrieveBook(bookId)),
+//     retrieveDate: bookId => dispatch(retrieveDate(bookId)),
 //     retrieveAllUsers: () => dispatch(retrieveAllUsers()),
     
 // })

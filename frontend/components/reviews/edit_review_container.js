@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { retrieveBook } from '../../actions/book_actions';
+import { retrieveDate } from '../../actions/book_actions';
 import { editReview } from '../../actions/review_actions';
 import EditReview from './edit_review'
 
@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    retrieveBook: bookId => dispatch(retrieveBook(bookId)),
+    retrieveDate: bookId => dispatch(retrieveDate(bookId)),
     editReview: review => dispatch(editReview(review)),
     deleteReview: (id) => dispatch(deleteReview(id)),
 })

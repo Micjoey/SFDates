@@ -12,7 +12,7 @@ class SearchBar extends React.Component {
             bookSearch: '',
             books: [],
             loaded: false,
-            allBooks: this.props.allBooks,
+            allDates: this.props.allDates,
         }
         this.dropDownToggle = this.dropDownToggle.bind(this)
         this.clearState = this.clearState.bind(this)
@@ -22,7 +22,7 @@ class SearchBar extends React.Component {
     // If the search is longer than 0, then toggle dropdown and map over the books showing what is available
 
     dropDownToggle() {
-        if (allBooks.length > 0) {
+        if (allDates.length > 0) {
             document.getElementsByClassName("nav-bar-search-book-dropdown")[0].style.display = 'block'
         } else {
             document.getElementsByClassName("nav-bar-search-book-dropdown")[0].style.display = 'none'
@@ -34,7 +34,7 @@ class SearchBar extends React.Component {
 
 
     componentDidMount() {
-       this.props.retrieveBooks()
+       this.props.retrieveDates()
     }
 
 

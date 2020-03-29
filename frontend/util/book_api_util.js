@@ -1,4 +1,4 @@
-export const retrieveBooks = (key, id) => (
+export const retrieveDates = (key, id) => (
     $.ajax({
         method: 'GET',
         url: `/api/books`
@@ -6,7 +6,7 @@ export const retrieveBooks = (key, id) => (
 )
 
 
-export const retrieveBook = bookId => (
+export const retrieveDate = bookId => (
     $.ajax({
         method: 'GET',
         url: `/api/books/${bookId}`

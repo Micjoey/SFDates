@@ -19,7 +19,7 @@ class AddShelf extends React.Component {
 
     componentDidMount() {
         const shelvesMount = this.props.retrieveShelves()
-        const bookMount = this.props.retrieveBook(this.props.match.params.bookId)
+        const bookMount = this.props.retrieveDate(this.props.match.params.bookId)
         Promise.all([shelvesMount, bookMount]).then(() => this.setState({ loaded: true }))
     }
 
@@ -31,7 +31,7 @@ class AddShelf extends React.Component {
         const book = this.props.book
         this.props.addToShelf(
             { shelf_id: shelf.id, book_id: book.id }
-        ).then(() => this.props.retrieveBook(book.id))
+        ).then(() => this.props.retrieveDate(book.id))
         let styling = document.getElementById(`${shelf.bookshelf_title}`)
         styling.classList.add('filtered')
         styling.setAttribute('name', 'checked')

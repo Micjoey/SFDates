@@ -17,7 +17,7 @@ class IndexShelves extends React.Component {
 
     componentDidMount() {
         this.props.retrieveShelves()
-        this.props.retrieveBooks()
+        this.props.retrieveDates()
     }
 
     handleSubmit(e) {
@@ -35,8 +35,8 @@ class IndexShelves extends React.Component {
             let newShelf = this.props.shelves.filter(indivShelf => shelfName === indivShelf.bookshelf_title)
             styling.classList.add('filtered')
         this.setState({shelf: newShelf}) } else {
-            this.setState({shelf: this.props.retrieveBooks()})
-            // this.setState({shelf: this.props.retrieveBooks()})
+            this.setState({shelf: this.props.retrieveDates()})
+            // this.setState({shelf: this.props.retrieveDates()})
         }
 
     }

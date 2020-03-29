@@ -10,19 +10,8 @@ class Splash extends React.Component {
 
     render() {
         return (
-            <div className="background-and-signup-box">
-                <div className="sign-up-form-box">
-                    <p className="sign-up-form-title">New Here? Sign Up Below!</p>
-                    {/* <SignUpFormContainer /> */}
-                </div>
-                <div className="background-box">
-                    {/* <img src={images.dates} className="background-img" title="Credit: https://www.aier.org/article/another-stack-of-dates-you-should-read/" /> */}
-                </div>
-                <div className="flavor-text-box">
-                    <div className="flavor-text">
-                            Find your future reads here! Live the future, past and present through the words on the page. 
-                    </div>
-                </div>
+            <div className='splash-page'>
+                
             </div>
         )
     }

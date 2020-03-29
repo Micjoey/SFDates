@@ -17,7 +17,7 @@ class IndexBook extends React.Component {
 
 
     componentDidMount() {
-        const books = this.props.retrieveBooks()
+        const books = this.props.retrieveDates()
         Promise.all([books]).then(() => this.setState({ loaded: true }))
     }
 
@@ -31,7 +31,7 @@ class IndexBook extends React.Component {
 
     
     updateState() {
-        let allBooks = this.props.books.filter(indivBook =>
+        let allDates = this.props.books.filter(indivBook =>
             indivBook.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
             indivBook.author.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
             indivBook.genre.toLowerCase().includes(this.state.bookSearch.toLowerCase())
@@ -39,10 +39,10 @@ class IndexBook extends React.Component {
 
         let notfound = images.notFound;
       
-        if (allBooks.length === 0) {
+        if (allDates.length === 0) {
             this.setState({ books: [{ title: 'Not Found', photo: notfound }] , bookSearch: '' })
         } else {
-            this.setState({ books: allBooks })
+            this.setState({ books: allDates })
         }
     }
 
@@ -52,11 +52,11 @@ class IndexBook extends React.Component {
    
     render() {
         if (!this.props.books) return null;
-        let allBooks
-        (this.state.books.length < 1) ? allBooks = this.props.books : allBooks = this.state.books
+        let allDates
+        (this.state.books.length < 1) ? allDates = this.props.books : allDates = this.state.books
         const books = (
                 <div className="index-books">
-                    {allBooks.map((book, i) => (
+                    {allDates.map((book, i) => (
                     // {this.props.books.map((book, i) => (
                         <div key={`book-${i}`} className="index-books-book-info">
                             <div className='dropdown-book'>

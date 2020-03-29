@@ -51,7 +51,7 @@ class IndexDate extends React.Component {
     render() {
         if (!this.props.dates) return null;
         let allDates
-        (this.state.dates.length < 1) ? allDates = this.props.dates : allDates = this.state.dates
+        (this.state.dateSuggestion.length < 1) ? allDates = this.props.dates : allDates = this.state.dateSuggestion
         const dates = (
                 <div className="index-dates">
                     {allDates.map((date, i) => (

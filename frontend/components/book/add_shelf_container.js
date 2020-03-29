@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { retrieveShelves, createShelf } from '../../actions/shelf_actions'
-import { retrieveBook } from '../../actions/book_actions'
+import { retrieveDate } from '../../actions/book_actions'
 import AddShelf from './add_shelf'
 import { withRouter } from 'react-router';
 import { retrieveOnShelfBook, removeOnShelfBook } from '../../actions/on_shelf_book_actions';
@@ -17,7 +17,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    retrieveBook: bookId => dispatch(retrieveBook(bookId)),
+    retrieveDate: bookId => dispatch(retrieveDate(bookId)),
     retrieveShelves: () => dispatch(retrieveShelves()),
     createShelf: shelf => dispatch(createShelf(shelf)),
     addToShelf: onShelfBook => dispatch(retrieveOnShelfBook(onShelfBook)),

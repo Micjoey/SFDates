@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { retrieveBook, updateBook } from '../../actions/book_actions'
+import { retrieveDate, updateBook } from '../../actions/book_actions'
 import ShowBook from './show_book'
 import { withRouter } from 'react-router';
 import { retrieveAllUsers } from '../../actions/users_actions';
@@ -18,7 +18,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    retrieveBook: bookId => dispatch(retrieveBook(bookId)),
+    retrieveDate: bookId => dispatch(retrieveDate(bookId)),
     retrieveAllUsers: () => dispatch(retrieveAllUsers()),
     updateBook: book => dispatch(updateBook(book))
 })

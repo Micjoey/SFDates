@@ -29,7 +29,7 @@ class EditReview extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const review = Object.assign({}, this.state);
-        this.props.deleteReview(review).then(() => this.props.retrieveBook(this.state.book_id));
+        this.props.deleteReview(review).then(() => this.props.retrieveDate(this.state.book_id));
     }
     
 

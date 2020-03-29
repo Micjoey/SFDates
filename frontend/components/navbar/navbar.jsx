@@ -26,12 +26,13 @@ class RootFile extends React.Component {
         return(
         <div className="header-group">
             <div className="header-group-logged-in">
-                <Link to="/home" className="FunReads-title-logged-in" >FunReads</Link>
+                <Link to="/home" className="FunReads-title-logged-in" >SFDates</Link>
                 <Link to="/home" className="nav-bar-home-button" >Home</Link>
-                <Link to='/Shelf' className="nav-bar-mybooks-button">My Books</Link>
-                <SearchBarContainer allBooks={this.props.retrieveBooks()}/>
+                {/* <Link to='/Shelf' className="nav-bar-mybooks-button">Date Number</Link> */}
+                <button>Date Number Placeholder</button>
+                <SearchBarContainer allDates={this.props.retrieveDates()}/>
                 <div className="dropdown">
-                    <img src={images.account_image} className="dropdown-image-icon" alt="" />
+                    {/* <img src={images.account_image} className="dropdown-image-icon" alt="" /> */}
                     <div className="dropdown-content">
                         <disabled className="header-currentuser-name">Hi, {this.props.currentUser.username}!</disabled>
                         <Link to="/home" className="nav-bar-dropdown-mybooks-button" >Home</Link>
