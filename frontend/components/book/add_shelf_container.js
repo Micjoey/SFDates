@@ -7,7 +7,7 @@ import { retrieveOnShelfBook, removeOnShelfBook } from '../../actions/on_shelf_b
 
 
 const mapStateToProps = (state, ownProps) => {
-    const book = state.entities.books[ownProps.match.params.dateId];
+    const book = state.entities.dates[ownProps.match.params.dateId];
     const user = state.entities.users[state.session.id];
     return ({
         book: book,

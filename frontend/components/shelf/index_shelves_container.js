@@ -9,7 +9,7 @@ import { removeOnShelfBook} from '../../actions/on_shelf_book_actions'
 const mapStateToProps = (state) => {
     return {
         shelves: Object.values(state.entities.shelf),
-        allDates: Object.values(state.entities.books),
+        allDates: Object.values(state.entities.dates),
         reviews: Object.values(state.entities.reviews)
     }
 }

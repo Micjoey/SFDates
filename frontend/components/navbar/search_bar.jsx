@@ -10,7 +10,7 @@ class SearchBar extends React.Component {
         super(props);
         this.state = {
             dateSearch: '',
-            books: [],
+            dates: [],
             loaded: false,
             allDates: this.props.allDates,
         }
@@ -19,7 +19,7 @@ class SearchBar extends React.Component {
         // this.resetAllBooks = this.resetAllBooks.bind(this)
     }
 
-    // If the search is longer than 0, then toggle dropdown and map over the books showing what is available
+    // If the search is longer than 0, then toggle dropdown and map over the dates showing what is available
 
     dropDownToggle() {
         if (allDates.length > 0) {
@@ -42,18 +42,18 @@ class SearchBar extends React.Component {
 
 
 
-    filterBooks() {
+    filterDates() {
         let dateSearch = this.state.dateSearch.toLowerCase()
-        const booksCopy = this.props.books.map(indivBook => indivBook)
+        const booksCopy = this.props.dates.map(indivBook => indivBook)
         let newBooks = booksCopy.map(indivBook => indivBook).filter(indivBook =>
             indivBook.title.toLowerCase().includes(dateSearch) ||
             indivBook.author.toLowerCase().includes(dateSearch) ||
             indivBook.genre.toLowerCase().includes(dateSearch)
         )
         if (newBooks.length === 0 || dateSearch.length === 0) {
-            this.setState({ books: [] })
+            this.setState({ dates: [] })
         } else {
-            this.setState({books: newBooks})
+            this.setState({dates: newBooks})
         }
         
         if (this.state.dateSearch.length > 0) {
@@ -65,7 +65,7 @@ class SearchBar extends React.Component {
     }
 
     updateState(text) {
-        this.setState({ dateSearch: text, books: this.props.books }, () => this.filterBooks())
+        this.setState({ dateSearch: text, dates: this.props.dates }, () => this.filterDates())
     }
 
     clearState() {
@@ -90,8 +90,8 @@ class SearchBar extends React.Component {
                     </form>
                 </div>
                 <div className='nav-bar-search-book-dropdown'>
-                    {this.state.books.map((book, i) => (
-                        // {this.props.books.map((book, i) => (
+                    {this.state.dates.map((book, i) => (
+                        // {this.props.dates.map((book, i) => (
                         <div key={`book-${i}`} className="search-bar-book-info">
                             <div className='dropdown-book'>
                                 <Link to={`/book/${book.id}`} onClick={() => this.clearState()}>

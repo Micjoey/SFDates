@@ -42,7 +42,7 @@
 }
 
 
-.index-books-book-info {
+.index-dates-book-info {
   position: relative;
   display: inline-block;
   /* padding-right: 10px; */
@@ -76,12 +76,12 @@
 
 
 
-.index-books-book-info:hover {
+.index-dates-book-info:hover {
   /* background-color: rgba(165, 140, 42, 0.632); */
   /* zoom: 105%; */
 }
 
-.index-books-book-info:hover .dropdown-book-content {
+.index-dates-book-info:hover .dropdown-book-content {
   display: block;
   overflow: scroll;
   scroll-behavior: smooth;

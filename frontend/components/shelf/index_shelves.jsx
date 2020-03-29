@@ -89,7 +89,7 @@ class IndexShelves extends React.Component {
                                 <div className="index-shelves-date-read"> Has Read </div>
                                 <div className="index-shelves-date-read"> Delete </div>
                             </div>
-                            <div className="index-shelves-books"> 
+                            <div className="index-shelves-dates"> 
                                     {/* {this.props.shelves.map((shelf, idx)=>( */}
                                     {newShelf.map((shelf, idx)=>(
                                         <div key={`${shelf}-${idx}`} className="index-shelves-bookshelf">
@@ -99,7 +99,7 @@ class IndexShelves extends React.Component {
                                                 onClick={() => this.handleDeleteShelf(shelf)} >Delete Shelf</button>
                                                </div>
                                                <div className="index-shelf-book-information"> 
-                                                   {shelf.books.map((book, i)=> (
+                                                   {shelf.dates.map((book, i)=> (
                                                        <div key={`${shelf}-${book}-${i}`} className="index-shelf-book-indiv-info"> 
                                                             <div className="index-shelf-book-cover">
                                                                 <Link to={`/book/${book.id}`}>

@@ -5,7 +5,7 @@ import { withRouter } from 'react-router';
 import { retrieveAllUsers } from '../../actions/users_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    const book = state.entities.books[ownProps.match.params.dateId];
+    const book = state.entities.dates[ownProps.match.params.dateId];
     // const user = state.entities.users[state.session];
     const userId = state.session.id
     const allUsers = state.entities.users

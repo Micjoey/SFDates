@@ -1,4 +1,4 @@
-.index-books {
+.index-dates {
     display: grid;
     grid-template-columns: auto auto auto;
     /* grid-template-columns: auto auto auto auto; */
@@ -38,11 +38,11 @@
         /* text-align: left; */
     }
 
-        .index-books-book-info {
+        .index-dates-book-info {
             border: none;
             box-shadow: none;
         }
-        .index-books-book-info2 {
+        .index-dates-book-info2 {
             border: none;
             box-shadow: none;
             padding: none;

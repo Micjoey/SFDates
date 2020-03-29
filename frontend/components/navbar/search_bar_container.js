@@ -5,9 +5,9 @@ import { retrieveDates, retrieveDate } from '../../actions/book_actions'
 import { withRouter } from 'react-router';
 
 
-const mapStateToProps = ({ entities: { books },  }) => {
+const mapStateToProps = ({ entities: { dates },  }) => {
     return {
-        books: Object.values(books),
+        dates: Object.values(dates),
     };
 };
 
