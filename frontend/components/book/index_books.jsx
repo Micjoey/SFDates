@@ -6,7 +6,7 @@ class IndexBook extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            bookSearch: '',
+            dateSearch: '',
             books: [],
             loaded: false,
         }
@@ -32,22 +32,22 @@ class IndexBook extends React.Component {
     
     updateState() {
         let allDates = this.props.books.filter(indivBook =>
-            indivBook.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
-            indivBook.author.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
-            indivBook.genre.toLowerCase().includes(this.state.bookSearch.toLowerCase())
+            indivBook.title.toLowerCase().includes(this.state.dateSearch.toLowerCase()) ||
+            indivBook.author.toLowerCase().includes(this.state.dateSearch.toLowerCase()) ||
+            indivBook.genre.toLowerCase().includes(this.state.dateSearch.toLowerCase())
         ).map(indivBook => indivBook);
 
         let notfound = images.notFound;
       
         if (allDates.length === 0) {
-            this.setState({ books: [{ title: 'Not Found', photo: notfound }] , bookSearch: '' })
+            this.setState({ books: [{ title: 'Not Found', photo: notfound }] , dateSearch: '' })
         } else {
             this.setState({ books: allDates })
         }
     }
 
     filterBooks(text) {
-        this.setState({bookSearch: text}, () => this.updateState())
+        this.setState({dateSearch: text}, () => this.updateState())
     }
    
     render() {

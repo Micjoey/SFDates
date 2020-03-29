@@ -9,7 +9,7 @@ class SearchBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            bookSearch: '',
+            dateSearch: '',
             books: [],
             loaded: false,
             allDates: this.props.allDates,
@@ -43,20 +43,20 @@ class SearchBar extends React.Component {
 
 
     filterBooks() {
-        let bookSearch = this.state.bookSearch.toLowerCase()
+        let dateSearch = this.state.dateSearch.toLowerCase()
         const booksCopy = this.props.books.map(indivBook => indivBook)
         let newBooks = booksCopy.map(indivBook => indivBook).filter(indivBook =>
-            indivBook.title.toLowerCase().includes(bookSearch) ||
-            indivBook.author.toLowerCase().includes(bookSearch) ||
-            indivBook.genre.toLowerCase().includes(bookSearch)
+            indivBook.title.toLowerCase().includes(dateSearch) ||
+            indivBook.author.toLowerCase().includes(dateSearch) ||
+            indivBook.genre.toLowerCase().includes(dateSearch)
         )
-        if (newBooks.length === 0 || bookSearch.length === 0) {
+        if (newBooks.length === 0 || dateSearch.length === 0) {
             this.setState({ books: [] })
         } else {
             this.setState({books: newBooks})
         }
         
-        if (this.state.bookSearch.length > 0) {
+        if (this.state.dateSearch.length > 0) {
             document.getElementsByClassName("nav-bar-search-book-dropdown")[0].style.display = 'block'
         } else {
             document.getElementsByClassName("nav-bar-search-book-dropdown")[0].style.display = 'none'
@@ -65,11 +65,11 @@ class SearchBar extends React.Component {
     }
 
     updateState(text) {
-        this.setState({ bookSearch: text, books: this.props.books }, () => this.filterBooks())
+        this.setState({ dateSearch: text, books: this.props.books }, () => this.filterBooks())
     }
 
     clearState() {
-        this.setState({ bookSearch: ''}, () => document.getElementsByClassName("nav-bar-search-book-dropdown")[0].style.display = 'none')
+        this.setState({ dateSearch: ''}, () => document.getElementsByClassName("nav-bar-search-book-dropdown")[0].style.display = 'none')
     }
 
     
@@ -85,7 +85,7 @@ class SearchBar extends React.Component {
                             onChange={text => this.updateState(
                                 text.target.value
                             )}
-                            value={this.state.bookSearch}
+                            value={this.state.dateSearch}
                         />
                     </form>
                 </div>

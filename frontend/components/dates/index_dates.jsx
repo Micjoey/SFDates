@@ -30,22 +30,22 @@ class IndexDate extends React.Component {
     
     // updateState() {
     //     let allDates = this.props.dates.filter(indivDate =>
-    //         indivDate.title.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
-    //         indivDate.author.toLowerCase().includes(this.state.bookSearch.toLowerCase()) ||
-    //         indivDate.genre.toLowerCase().includes(this.state.bookSearch.toLowerCase())
+    //         indivDate.title.toLowerCase().includes(this.state.dateSearch.toLowerCase()) ||
+    //         indivDate.author.toLowerCase().includes(this.state.dateSearch.toLowerCase()) ||
+    //         indivDate.genre.toLowerCase().includes(this.state.dateSearch.toLowerCase())
     //     ).map(indivDate => indivDate);
 
     //     let notfound = images.notFound;
       
     //     if (allDates.length === 0) {
-    //         this.setState({ dates: [{ title: 'Not Found', photo: notfound }] , bookSearch: '' })
+    //         this.setState({ dates: [{ title: 'Not Found', photo: notfound }] , dateSearch: '' })
     //     } else {
     //         this.setState({ dates: allDates })
     //     }
     // }
 
     filterDates(text) {
-        this.setState({bookSearch: text}, () => this.updateState())
+        this.setState({dateSearch: text}, () => this.updateState())
     }
    
     render() {
