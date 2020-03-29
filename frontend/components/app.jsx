@@ -11,7 +11,7 @@ import {
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 // import Modal from './modal/modal'
 import Splash from './splash/splash';
-// import NavBarContainer from './navbar/navbar_container';
+import NavBarContainer from './navbar/navbar_container';
 // import IndexDateContainer from './date/index_books_container'
 // import ShowDateContainer from './date/show_book_container';
 // import IndexShelvesContainer from './shelf/index_shelves_container';
@@ -21,7 +21,7 @@ const App = () => (
   <div className="app">
       {/* <Modal /> */}
     <header className="header">
-      {/* <NavBarContainer /> */}
+      <NavBarContainer />
     </header>
     <div className="content">
       <Switch>
