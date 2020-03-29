@@ -5,7 +5,7 @@ import EditReview from './edit_review'
 
 
 const mapStateToProps = (state, ownProps) => {
-    const book = state.entities.books[ownProps.match.params.bookId];
+    const book = state.entities.books[ownProps.match.params.dateId];
     const user = state.entities.users[state.session];
     return ({
         book: book,
@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    retrieveDate: bookId => dispatch(retrieveDate(bookId)),
+    retrieveDate: dateId => dispatch(retrieveDate(dateId)),
     editReview: review => dispatch(editReview(review)),
     deleteReview: (id) => dispatch(deleteReview(id)),
 })

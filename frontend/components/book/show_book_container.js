@@ -5,7 +5,7 @@ import { withRouter } from 'react-router';
 import { retrieveAllUsers } from '../../actions/users_actions';
 
 const mapStateToProps = (state, ownProps) => {
-    const book = state.entities.books[ownProps.match.params.bookId];
+    const book = state.entities.books[ownProps.match.params.dateId];
     // const user = state.entities.users[state.session];
     const userId = state.session.id
     const allUsers = state.entities.users
@@ -18,7 +18,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    retrieveDate: bookId => dispatch(retrieveDate(bookId)),
+    retrieveDate: dateId => dispatch(retrieveDate(dateId)),
     retrieveAllUsers: () => dispatch(retrieveAllUsers()),
     updateBook: book => dispatch(updateBook(book))
 })

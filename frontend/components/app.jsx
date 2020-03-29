@@ -27,7 +27,7 @@ const App = () => (
       <Switch>
         <AuthRoute path="/" component={Splash} /> 
         {/* <ProtectedRoute exact path="/home" component={IndexDateContainer} /> */}
-        {/* <ProtectedRoute exact path="/date/:bookId" component={ShowDateContainer}/> */}
+        {/* <ProtectedRoute exact path="/date/:dateId" component={ShowDateContainer}/> */}
         {/* <ProtectedRoute exact path="/shelf" component={IndexShelvesContainer} /> */}
         <Redirect to="/home" />
       </Switch>

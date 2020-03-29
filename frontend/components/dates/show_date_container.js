@@ -4,7 +4,7 @@ import ShowDate from './show_date'
 import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
-    const date = state.entities.dates[ownProps.match.params.bookId];
+    const date = state.entities.dates[ownProps.match.params.dateId];
     // const user = state.entities.users[state.session];
     const userId = state.session.id
     const allUsers = state.entities.users
@@ -17,7 +17,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    retrieveDate: bookId => dispatch(retrieveDate(bookId)),
+    retrieveDate: dateId => dispatch(retrieveDate(dateId)),
     retrieveAllUsers: () => dispatch(retrieveAllUsers()),
     // updateDate: date => dispatch(updateDate(date))
 })

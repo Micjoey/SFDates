@@ -9,7 +9,7 @@ export const retrieveDates = (key, id) => (
 export const retrieveDate = dateId => (
     $.ajax({
         method: 'GET',
-        url: `/api/dates/${bookId}`
+        url: `/api/dates/${dateId}`
     })
 )
 

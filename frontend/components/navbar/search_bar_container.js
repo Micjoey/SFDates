@@ -14,7 +14,7 @@ const mapStateToProps = ({ entities: { books },  }) => {
 const mapDispatchToProps = dispatch => ({
     openModal: modal => dispatch(openModal(modal)),
     retrieveDates: () => dispatch(retrieveDates()),
-    retrieveDate: bookId => dispatch(retrieveDate(bookId))
+    retrieveDate: dateId => dispatch(retrieveDate(dateId))
 });
 
 export default withRouter(connect(

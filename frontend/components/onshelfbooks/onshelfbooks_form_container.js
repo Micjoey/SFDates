@@ -5,7 +5,7 @@
 // import OnShelfBooks from './onshelfbooks_form'
 
 // const mapStateToProps = (state, ownProps) => {
-//     const book = state.entities.books[ownProps.match.params.bookId];
+//     const book = state.entities.books[ownProps.match.params.dateId];
 //     const user = state.entities.users[state.session];
 //     const allUsers = state.entities.users
 //     return ({
@@ -17,7 +17,7 @@
 // }
 
 // const mapDispatchToProps = dispatch => ({
-//     retrieveDate: bookId => dispatch(retrieveDate(bookId)),
+//     retrieveDate: dateId => dispatch(retrieveDate(dateId)),
 //     retrieveAllUsers: () => dispatch(retrieveAllUsers()),
     
 // })

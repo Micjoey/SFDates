@@ -17,7 +17,7 @@ class showDate extends React.Component {
     }
 
     componentDidMount() {
-        const bookMount = this.props.retrieveDate(this.props.match.params.bookId)
+        const bookMount = this.props.retrieveDate(this.props.match.params.dateId)
         const usersMount = this.props.retrieveAllUsers()
         Promise.all([bookMount, usersMount]).then( () => this.setState({loaded:true}))
     }
@@ -33,7 +33,7 @@ class showDate extends React.Component {
         date.date_read = !date.date_read
         this.props.updateDate(date)
             .then(() => this.setState({hasRead: date.date_read}))
-            .then(() => this.props.retrieveDate(this.props.match.params.bookId))
+            .then(() => this.props.retrieveDate(this.props.match.params.dateId))
         
     }
 
