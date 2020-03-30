@@ -2,7 +2,7 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session/login_form_container';
-import SignUpFormContainer from '../session/signup_form_container2';
+import SignUpFormContainer from '../session/sign_up_form_container2';
 import { closeModal } from '../../actions/modal_actions';
 import '../../stylesheet/modal.css'
 

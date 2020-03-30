@@ -12,6 +12,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 // import Modal from './modal/modal'
 import Splash from './splash/splash';
 import NavBarContainer from './navbar/navbar_container';
+import SignUpContainer from './session_form/sign_up_form_container2'
 // import IndexDateContainer from './date/index_books_container'
 // import ShowDateContainer from './date/show_book_container';
 // import IndexShelvesContainer from './shelf/index_shelves_container';

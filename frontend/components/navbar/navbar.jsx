@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link} from 'react-router-dom';
-import GreetingContainer from '../greeting/greeting_container';
 import SearchBarContainer from './search_bar_container';
 import LoginFormContainer from '../session_form/login_form_container'
 
 
 
 
-class RootFile extends React.Component {
+class Navbar extends React.Component {
     constructor(props) {
         super(props); 
         this.dropDownIdSwitch = this.dropDownIdSwitch.bind(this)
@@ -52,6 +51,8 @@ class RootFile extends React.Component {
                 <div className="navbar-view-to-login-or-signup">
                     <div className="navbar-view-to-login">
                         <Link to="/" className="FunReads-title-logged-in">SFDates</Link>
+                        {/* <button className="login-signup-button" onClick={() => this.props.openModal('signup')}>Signup</button>
+                        <button className="login-signup-button" onClick={() => this.props.openModal('login')}>Login</button> */}
                         <div className='nav-bar-login-form-cont'>
                             <LoginFormContainer />
                         </div>
@@ -71,4 +72,4 @@ class RootFile extends React.Component {
     }
     
     
-    export default RootFile;
+    export default Navbar;
