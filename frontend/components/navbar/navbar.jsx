@@ -56,6 +56,10 @@ class Navbar extends React.Component {
                         <div className='nav-bar-login-form-cont'>
                             <LoginFormContainer />
                         </div>
+                        {/* <button className="login-signup-button" onClick={() => this.props.openModal('signup')}>Sign up</button> */}
+                    </div>
+                    <div className="test">
+                        Trial
                     </div>
                 </div>
             </div>

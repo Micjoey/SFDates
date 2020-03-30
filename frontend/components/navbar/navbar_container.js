@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import Navbar from './navbar'
 import { openModal, closeModal } from '../../actions/model_actions';
+
+
 import { retrieveDates } from '../../actions/date_actions';
 
 
