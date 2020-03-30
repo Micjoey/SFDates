@@ -2,6 +2,7 @@ import React from 'react';
 import { Link} from 'react-router-dom';
 import GreetingContainer from '../greeting/greeting_container';
 import SearchBarContainer from './search_bar_container';
+import LoginFormContainer from '../session_form/login_form_container'
 
 
 
@@ -47,7 +48,16 @@ class RootFile extends React.Component {
     
     sessionLinks() {
         return (
-            <GreetingContainer/>
+            <div className="main-page-container">
+                <div className="navbar-view-to-login-or-signup">
+                    <div className="navbar-view-to-login">
+                        <Link to="/" className="FunReads-title-logged-in">SFDates</Link>
+                        <div className='nav-bar-login-form-cont'>
+                            <LoginFormContainer />
+                        </div>
+                    </div>
+                </div>
+            </div>
             )
         }
         
