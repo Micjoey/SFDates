@@ -1,8 +1,12 @@
 import React from 'react';
-import { closeModal} from '../../actions/model_actions';
+
 import { connect } from 'react-redux';
-// import LoggedinFormContainer from '../greeting/logged_in_container';
-// import SearchBarContainer from '../navbar/search_bar_container';
+import LoginFormContainer from '../session/login_form_container';
+import SignUpFormContainer from '../session/signup_form_container';
+import { closeModal } from '../../actions/modal_actions';
+import '../../stylesheet/modal.css'
+
+
 
 function Modal({modal, closeModal}) {
     if (!modal) {
@@ -10,11 +14,12 @@ function Modal({modal, closeModal}) {
     }
     let component;
     switch(modal) {
-        case 'logout':
-            // component = <LoggedinFormContainer />;
+        case 'login':
+            component = <LoginFormContainer />;
             break;
-        case 'search':
-            // component = <SearchBarContainer/>;
+        case 'signup':
+            component = <SignUpFormContainer/>;
+            break;
         default:
             return null;
     }
