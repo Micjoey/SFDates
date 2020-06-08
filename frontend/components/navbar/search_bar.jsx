@@ -81,7 +81,7 @@ class SearchBar extends React.Component {
                     <form className="nav-bar-search-bar">
                         <input type="text"
                             className="nav-bar-search-bar-text"
-                            placeholder="Search For Book"
+                            placeholder="Search For Date"
                             onChange={text => this.updateState(
                                 text.target.value
                             )}

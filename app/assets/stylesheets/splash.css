@@ -110,6 +110,7 @@
     }
 
 
-
-
-
+.splash-page {
+    display: flex;
+    background-color: red;
+}

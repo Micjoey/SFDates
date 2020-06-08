@@ -11,7 +11,7 @@ class Splash extends React.Component {
     render() {
         return (
             <div className='splash-page'>
-                
+                <h1>Hi This is a long text</h1>
             </div>
         )
     }

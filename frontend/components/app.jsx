@@ -21,9 +21,9 @@ import Footer from './footer/footer';
 const App = () => (
   <div className="app">
       {/* <Modal /> */}
-    <header className="header">
+    <headers className="header">
       <NavBarContainer />
-    </header>
+    </headers>
     <div className="content">
       <Switch>
         <AuthRoute path="/" component={Splash} /> 

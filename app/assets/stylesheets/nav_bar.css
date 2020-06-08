@@ -13,13 +13,13 @@
     align-items: center;
     position: relative;
     top: 0px;
-    background-color: #f4f2e9;
+    background-color: rgb(99, 4, 23);
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
     min-width: 806px;
 }
 
-    .FunReads-title-logged-in {
+    .SfDates-title-logged-in {
     text-decoration: none;
     font-size: 40px;
     color: black;
@@ -33,7 +33,7 @@
 
     .nav-bar-home-button {
         text-decoration: none;
-        color: black;
+        color: white;
         min-width: 90px;
         flex-flow: nowrap;
         font-size: 20px;

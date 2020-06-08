@@ -15,7 +15,7 @@
  */
 
  .app {
-    /* background-color: #1A000; */
+    display: block;
  }
 
  button {
