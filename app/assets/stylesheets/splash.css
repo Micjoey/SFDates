@@ -63,23 +63,30 @@
         }
     
     .background-img {
-        background-image: url("color-sf-bridge.jpg");
+        background-image: url(sf_pano.jpg);
         background-color: #cccccc;
-        height: 200px;
+        height: 300px;
         width: 100%;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        position: relative;
+        background-position: 50% 23%;
+    }
+
+    @media only screen and (max-width: 1520em) {
+        .background-img {
+            background-position: 50% 30%;
+        }
     }
 
     .filter-bar {
         display: flex;
         justify-content: space-evenly;
+        background-color: rgba(28, 115, 191, 0.742);
+        height: 2em;
+        align-items: center;
         color: ivory;
-        background-color: ;
     }
-
     .flavor-text {
         float: left;
         /* min-width: 100px; */
