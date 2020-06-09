@@ -12,13 +12,13 @@ class Splash extends React.Component {
         return (
             <div className='splash-page'>
                 <div className='background-img'>
-                    <div>
-                        {/* <img src={image_url('color-sf-bridge.jpg')} alt=""/> */}
-                    </div>
-                    <div className='filter-date-bar'>
-
-                    </div>
-                    <div className='random-date-button'>
+                    <div className='filter-bar'>
+                        <div className='filter-date-bar'>
+                            <h1>Filler Text</h1>
+                        </div>
+                        <div className='random-date-button'>
+                            <h1>Filler Text</h1>
+                        </div>
 
                     </div>
                 </div>

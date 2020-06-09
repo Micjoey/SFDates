@@ -8,7 +8,8 @@ body {
  .header {
      display: block;
      margin-bottom: 5px;
-     position: fixed;
+     position: relative;
+     width: 100%;
  }
 
 .navbar-view-to-login {
