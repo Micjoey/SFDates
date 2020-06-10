@@ -40,7 +40,10 @@ class Splash extends React.Component {
                             <p>Date Number - #1</p>
                         </ul>
                         <ul>
-                            
+                            <div>
+                                Description:
+                                <p>Some Description goes here</p>
+                            </div>
                         </ul>
                         <p></p>
                     </div>
