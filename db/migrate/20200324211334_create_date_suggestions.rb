@@ -4,8 +4,8 @@ class CreateDateSuggestions < ActiveRecord::Migration[5.2]
       t.string "title", null: false
       t.string "location", null: false
       t.string "date_type", null: false
-      t.integer "cost"
-      t.integer "date_number", null: false
+      t.string "cost"
+      t.string "date_number", null: false
       t.text "description", null: false
     end
       add_index :date_suggestions, :title

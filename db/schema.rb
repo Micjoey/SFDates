@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_24_211334) do
+ActiveRecord::Schema.define(version: 2020_06_10_221538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,9 +19,10 @@ ActiveRecord::Schema.define(version: 2020_03_24_211334) do
     t.string "title", null: false
     t.string "location", null: false
     t.string "date_type", null: false
-    t.integer "cost"
-    t.integer "date_number", null: false
+    t.string "cost"
+    t.string "date_number", null: false
     t.text "description", null: false
+    t.string "approximate_date_length"
     t.index ["date_number"], name: "index_date_suggestions_on_date_number"
     t.index ["date_type"], name: "index_date_suggestions_on_date_type"
     t.index ["location"], name: "index_date_suggestions_on_location"
