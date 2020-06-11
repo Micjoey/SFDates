@@ -1,7 +1,7 @@
 export const retrieveDates = (key, id) => (
     $.ajax({
         method: 'GET',
-        url: `/api/dates`
+        url: `/api/datesuggestions`
     })
 )
 
@@ -9,7 +9,7 @@ export const retrieveDates = (key, id) => (
 export const retrieveDate = dateId => (
     $.ajax({
         method: 'GET',
-        url: `/api/dates/${dateId}`
+        url: `/api/datesuggestions/${dateId}`
     })
 )
 

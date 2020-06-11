@@ -9,6 +9,10 @@ const mapStateToProps = ({ session, entities: { users } }) => {
     };
 };
 
+const mapDispatchToProps = () => ({
+    retrieveDates: () => dispatch(() => retrieveDates())
+})
+
 export default connect(
     mapStateToProps,
     mapDispatchToProps
