@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 // import { logout } from '../../actions/session_actions';
+import {retrieveDates, retrieveDate} from '../../actions/date_actions'
 import Splash from './splash'
 
 
@@ -9,8 +10,9 @@ const mapStateToProps = ({ session, entities: { users } }) => {
     };
 };
 
-const mapDispatchToProps = () => ({
-    retrieveDates: () => dispatch(() => retrieveDates())
+const mapDispatchToProps = dispatch => ({
+    retrieveDates: () => dispatch(retrieveDates()),
+    retrieveDate: dateId => dispatch(retrieveDate(dateId)),
 })
 
 export default connect(

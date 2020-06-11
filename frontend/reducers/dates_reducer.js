@@ -1,6 +1,6 @@
 import { RECEIVE_ALL_DATES, RECEIVE_DATE } from "../actions/date_actions";
 
-const booksReducer = (state = {}, action) => {
+const datesReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_DATE:
@@ -12,4 +12,4 @@ const booksReducer = (state = {}, action) => {
     }
 }
 
-export default booksReducer;
+export default datesReducer;
