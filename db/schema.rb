@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_10_221538) do
+ActiveRecord::Schema.define(version: 2020_06_11_165543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2020_06_10_221538) do
     t.text "description", null: false
     t.integer "user_id"
     t.string "approximate_date_length"
+    t.string "creator"
+    t.string "creator_contact"
     t.index ["date_number"], name: "index_date_suggestions_on_date_number"
     t.index ["date_type"], name: "index_date_suggestions_on_date_type"
     t.index ["location"], name: "index_date_suggestions_on_location"
