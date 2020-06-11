@@ -10,12 +10,15 @@ const mapStateToProps = ({ session, entities: { users } }) => {
     };
 };
 
-const mapDispatchToProps = dispatch => ({
-    retrieveDates: () => dispatch(retrieveDates()),
-    retrieveDate: dateId => dispatch(retrieveDate(dateId)),
-})
+const mapDispatchToProps = dispatch => {
+    return {
+        allDates: () => dispatch(retrieveDates()),
+        retrieveDate: dateId => dispatch(retrieveDate(dateId)),
+    }
+}
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(Splash);
+

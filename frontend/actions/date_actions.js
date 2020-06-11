@@ -14,9 +14,8 @@ const receiveDate = date => ({
 
 
 
-
-
 export const retrieveDates = () => dispatch => {
+  debugger
   return (
     DateAPIUtil.retrieveDates()
       .then(dates => dispatch(receiveAllDates(dates))

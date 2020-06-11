@@ -10,7 +10,7 @@ import {
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 // import Modal from './modal/modal'
-import Splash from './splash/splash';
+import SplashContainer from './splash/splash_container';
 import NavBarContainer from './navbar/navbar_container';
 import SignUpContainer from './session_form/sign_up_form_container'
 // import IndexDateContainer from './date/index_books_container'
@@ -26,7 +26,7 @@ const App = () => (
     </headers>
     <div className="content">
       <Switch>
-        <AuthRoute path="/" component={Splash} /> 
+        <AuthRoute path="/" component={SplashContainer} /> 
         {/* <ProtectedRoute exact path="/home" component={IndexDateContainer} /> */}
         {/* <ProtectedRoute exact path="/date/:dateId" component={ShowDateContainer}/> */}
         {/* <ProtectedRoute exact path="/shelf" component={IndexShelvesContainer} /> */}

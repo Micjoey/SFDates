@@ -1,4 +1,5 @@
-export const retrieveDates = (key, id) => {
+export const retrieveDates = () => {
+    debugger
     return (
         $.ajax({
             method: 'GET',

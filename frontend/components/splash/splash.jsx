@@ -1,16 +1,13 @@
 import React from 'react';
-// import SignUpFormContainer from '../session_form/signup_form_container'
-
-
-
 class Splash extends React.Component {
     constructor(props) {
         super(props)
-
+        this.state = {
+        }
     }
-
+    
     componentDidMount() {
-        this.props.retrieveDates();
+        
     }
 
     render() {
