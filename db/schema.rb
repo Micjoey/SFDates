@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_06_10_221538) do
     t.string "cost"
     t.string "date_number", null: false
     t.text "description", null: false
+    t.integer "user_id"
     t.string "approximate_date_length"
     t.index ["date_number"], name: "index_date_suggestions_on_date_number"
     t.index ["date_type"], name: "index_date_suggestions_on_date_type"
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 2020_06_10_221538) do
     t.string "session_token", null: false
     t.string "password_digest", null: false
     t.string "email", null: false
+    t.integer "date_id"
     t.index ["session_token"], name: "index_users_on_session_token"
     t.index ["username"], name: "index_users_on_username"
   end

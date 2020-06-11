@@ -7,6 +7,7 @@ class CreateDateSuggestions < ActiveRecord::Migration[5.2]
       t.string "cost"
       t.string "date_number", null: false
       t.text "description", null: false
+      t.integer "user_id"
     end
       add_index :date_suggestions, :title
       add_index :date_suggestions, :date_type
@@ -18,6 +19,7 @@ class CreateDateSuggestions < ActiveRecord::Migration[5.2]
       t.string "session_token", null: false
       t.string "password_digest", null: false
       t.string "email", null: false
+      t.integer "date_id"
     end
       add_index :users, :username
       add_index :users, :session_token

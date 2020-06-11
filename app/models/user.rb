@@ -8,17 +8,9 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
 
 
-    has_many :dateSuggestions,
-    through: :shelfs,
-    source: :date_ids
-
-    has_many :reviews,
+    has_many :Dates,
     foreign_key: :user_id,
-    class_name: :Review
-
-    has_many :shelves,
-    foreign_key: :user_id,
-    class_name: :Shelf
+    class_name: :Datesuggestion
 
 
   def self.find_by_credentials(username, password)

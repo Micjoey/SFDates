@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
 
   namespace :api, defaults: {format: :json} do
-    resources :datesuggestions
+    resources :datesuggestions, only: [:show, :index]
     resources :users, only: [:create, :index]
     resource :session, only: [:create, :destroy, :show]
   end
