@@ -1,8 +1,10 @@
 class DateSuggestion < ApplicationRecord
-     validates :title, :location, :date_type, :date_number, :description, presence: true, uniqueness: true
+     validates :title, :location, :date_type, :date_number, :description, presence: true
+     validates :title, :description, uniqueness: true
 
-     has_many :users,
+     belongs_to :users,
      foreign_key: :user_id,
-     class_name: :User
+     class_name: :User,
+     optional: true
      
 end

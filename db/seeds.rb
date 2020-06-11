@@ -9,8 +9,17 @@
 
 ActiveRecord::Base.transaction do
     require 'csv'
-    User.destroy_all
-    DateSuggestion.destroy_all
+    # User.destroy_all
+    if (User.all.count > 0) 
+        firstId = User.first.id
+        User.delete([
+            firstId, 
+            firstId+1,
+            firstId+2,
+            firstId+3,
+            ])
+    end
+    # DateSuggestion.destroy_all
     
     require 'faker'
     include Faker
@@ -18,12 +27,22 @@ ActiveRecord::Base.transaction do
 
 # 1
 # date1example = DateSuggestion.create(
-#     title: "Example 1",
+#     title: "Zuni Cafe",
 #     location: "Lauren Wilkinson",
 #     date_type: 'run',
 #     cost: "low",
 #     date_number: "date 1",
 #     description: "American Spy is her story, written in 1992 in the first person as a diary for her young twin sons to read when they're older. The action spans the thirty preceding years—from the Cuban Missile Crisis to the `New World Order` following the end of the Cold War. Marie is the younger of two sisters.",
+#     approximate_date_length: "2-3 Hr's",
+# )
+
+# date1example = DateSuggestion.create(
+#     title: "Example",
+#     location: "Lauren Wilkinson",
+#     date_type: 'run',
+#     cost: "low",
+#     date_number: "date 1",
+#     description: "isters.",
 #     approximate_date_length: "2-3 Hr's",
 # )
 
@@ -41,19 +60,18 @@ csv.each do |row|
     t.approximate_date_length = row['Approximate Time Length of Date'] # string
     t.creator = row["Your Name (If you want to share)"]
     t.creator_contact = row["Email (If you want to share)"]
-   
     t.save
 end
 
 
 
 #users
-i = 0
-while i <= 3 do
-    if i ==0
-        test = User.create(username: "Lord Fitzgerald", email: "LordFitzgerald@gmail.com", password: "password")
+i = 1
+while i <= 4 do
+    if i ==1
+        test = User.create(id: i, username: "Lord Fitzgerald", email: "LordFitzgerald@gmail.com", password: "password")
     else
-        test = User.create(username: Faker::Name.name, email: Faker::Internet.email, password: "password")
+        test = User.create(id: i, username: Faker::Name.name, email: Faker::Internet.email, password: "password")
     end
     i += 1
 end

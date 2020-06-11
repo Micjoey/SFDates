@@ -8,9 +8,10 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
 
 
-    has_many :Dates,
+    has_many :dates,
     foreign_key: :user_id,
     class_name: :Datesuggestion
+    
 
 
   def self.find_by_credentials(username, password)
