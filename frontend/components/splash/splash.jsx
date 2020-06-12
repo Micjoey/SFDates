@@ -54,7 +54,8 @@ class Splash extends React.Component {
                         <div className='random-date-information'>
                             {this.randomDate().map((info, idx) => (
                                 <ul key={idx}>
-                                    <p>{dateInfo[idx]} - {info}</p>
+                                    <p className="specific-date-title">{dateInfo[idx]}: </p> 
+                                    <p className="specific-date-information">{info}</p>
                                 </ul>
                             ))}
                         </div>
