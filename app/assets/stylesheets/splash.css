@@ -137,11 +137,15 @@
 }
 
 .random-date-information {
-    width: 50%;
+    width: fit-content;
+    min-width: 400px;
+    max-width: 50%;
+    height: fit-content;
     margin: 1em;
     color: white;
     background-color: #3c010ae5;
     font-size: 16px;
+    font-weight: bolder;
     
 }
     .random-date-information > ul {
@@ -149,7 +153,19 @@
         display: flex;
     }
 
-    .random-date-information > ul > p:last-child {
+    .specific-date-information {
         margin-left: 4px;
+        font-weight: bold;
+        color: seashell;
+        text-overflow: ellipsis;
+        width: 100%;
+        word-wrap: normal;
+        word-spacing: 2px;
+    }
+    .specific-date-title {
+        color: #FBC7CA;
+        width: 103px;
+        padding-bottom: 5px;
+        text-overflow: ellipsis;
     }
     

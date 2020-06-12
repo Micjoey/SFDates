@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_06_11_165543) do
     t.string "approximate_date_length"
     t.string "creator"
     t.string "creator_contact"
+    t.string "address_location"
     t.index ["date_number"], name: "index_date_suggestions_on_date_number"
     t.index ["date_type"], name: "index_date_suggestions_on_date_type"
     t.index ["location"], name: "index_date_suggestions_on_location"

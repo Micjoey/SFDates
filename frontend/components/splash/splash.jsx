@@ -27,7 +27,7 @@ class Splash extends React.Component {
         const randNum = Math.floor(Math.random() * this.state.totalCount)
         const randomDate = Object.values(this.state.allDates[randNum])
         const randomDateEdited = randomDate.slice(1,randomDate.length-2)
-
+        randomDateEdited[0].toUpperCase();
         return randomDateEdited
     }
 
@@ -36,7 +36,7 @@ class Splash extends React.Component {
     render() {
         let dateInfo
         if (this.state.loaded) {
-            dateInfo = [`Title`, `Location`, `Date_type`, `Cost`, `Date_number`, `Description`]
+            dateInfo = [`Title`, `Location`, `Address`, `Date Number`, `Date Type`, `Cost`,  `Description`]
             return (
                 <div className='splash-page'>
                     <div className='background-img'>
@@ -54,8 +54,8 @@ class Splash extends React.Component {
                         <div className='random-date-information'>
                             {this.randomDate().map((info, idx) => (
                                 <ul key={idx}>
-                                    <p className="specific-date-title">{dateInfo[idx]}: </p> 
-                                    <p className="specific-date-information">{info}</p>
+                                    <p className="specific-date-title"> {dateInfo[idx]}: </p> 
+                                    <p className="specific-date-information"> {info}</p>
                                 </ul>
                             ))}
                         </div>
