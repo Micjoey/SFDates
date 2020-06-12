@@ -6,5 +6,10 @@ class DateSuggestion < ApplicationRecord
      foreign_key: :user_id,
      class_name: :User,
      optional: true
+
+
+     def total_count()
+          total_count = DateSuggestion.last.id
+     end
      
 end

@@ -1,60 +1,76 @@
 import React from 'react';
+import LoadingScreen from '../../misc/loading_screen'
 class Splash extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            loaded: false,
+            totalCount: 0,
+            randomDate: null,
+            allDates: null,
+        }
+        this.randomDate = this.randomDate.bind(this)
+    }
+
+    componentDidMount() {
+        const allDates = this.props.retrieveDates()
+        Promise.all([allDates]).then(() => this.setState({loaded: true, allDates: this.props.dates, totalCount: this.props.dates[0].total_count}))
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.dates.length !== prevState.totalCount) {
+            this.setState({totalCount: prevProps.dates.length})
         }
     }
-    
-    componentDidMount() {
-        
+
+    randomDate() {
+        const randNum = Math.floor(Math.random() * this.state.totalCount)
+        const randomDate = Object.values(this.state.allDates[randNum])
+        const randomDateEdited = randomDate.slice(1,randomDate.length-2)
+
+        return randomDateEdited
     }
 
-    render() {
-        return (
-            <div className='splash-page'>
-                <div className='background-img'>
-                    <div className='filter-bar'>
-                        <div className='filter-date-bar'>
-                            <h1>Filler Text</h1>
-                        </div>
-                        <div className='random-date-button'>
-                            <h1>Filler Text</h1>
-                        </div>
 
-                    </div>
-                </div>
-                <div className='random-date-box'>
-                    <div className='random-date-information'>
-                        <ul>
-                            <h3>Title - Terra Linda Sleepy Hollow Hike</h3>
-                        </ul>
-                        <ul>
-                            <h4>Location - San Rafeal</h4>
-                        </ul>
-                        <ul>
-                            <p>Cost - $</p> 
-                        </ul>
-                        <ul>
-                            <p>Type of Date - Hike</p>
-                        </ul>
-                        <ul>
-                            <p>Date Number - #1</p>
-                        </ul>
-                        <ul>
-                            <div>
-                                Description:
-                                <p>Some Description goes here</p>
+
+    render() {
+        let dateInfo
+        if (this.state.loaded) {
+            dateInfo = [`Title`, `Location`, `Date_type`, `Cost`, `Date_number`, `Description`]
+            return (
+                <div className='splash-page'>
+                    <div className='background-img'>
+                        <div className='filter-bar'>
+                            <div className='filter-date-bar'>
+                                <h1>Filler Text</h1>
                             </div>
-                        </ul>
-                        <p></p>
+                            <div className='random-date-button'>
+                                <h1>Filler Text</h1>
+                            </div>
+    
+                        </div>
                     </div>
-                    <div className='random-date-image'>
-                        <img src="" alt="Filler"/>
+                    <div className='random-date-box'>
+                        <div className='random-date-information'>
+                            {this.randomDate().map((info, idx) => (
+                                <ul key={idx}>
+                                    <p>{dateInfo[idx]} - {info}</p>
+                                </ul>
+                            ))}
+                        </div>
+                        <div className='random-date-image'>
+                            <img src="" alt="Filler"/>
+                        </div>
                     </div>
                 </div>
-            </div>
-        )
+            ) 
+        } else {
+            return (
+                <div>
+                    {LoadingScreen()}
+                </div>
+            )
+        }
     }
 
 }

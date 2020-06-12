@@ -1,5 +1,4 @@
 export const retrieveDates = () => {
-    debugger
     return (
         $.ajax({
             method: 'GET',

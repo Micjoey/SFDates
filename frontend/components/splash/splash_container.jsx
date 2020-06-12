@@ -4,18 +4,21 @@ import {retrieveDates, retrieveDate} from '../../actions/date_actions'
 import Splash from './splash'
 
 
-const mapStateToProps = ({ session, entities: { users } }) => {
+const mapStateToProps = ({ session, entities: {users, dates}}) => {
+// const mapStateToProps = (state, ownProps) => {
+    const userId = users.id
+    const allDates = Object.values(dates)
+    // const allDates = Object.values(state.session.dates)
     return {
-        currentUser: users[session.id]
+        currentUser: userId,
+        dates: allDates,
     };
 };
 
-const mapDispatchToProps = dispatch => {
-    return {
-        allDates: () => dispatch(retrieveDates()),
-        retrieveDate: dateId => dispatch(retrieveDate(dateId)),
-    }
-}
+const mapDispatchToProps = dispatch => ({
+    retrieveDates: () => dispatch(retrieveDates()),
+    retrieveDate: dateId => dispatch(retrieveDate(dateId)),
+})
 
 export default connect(
     mapStateToProps,

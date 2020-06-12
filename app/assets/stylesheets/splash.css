@@ -135,3 +135,11 @@
     display: inline-flex;
 }
 
+.random-date-information {
+    width: 50%;
+    margin: 1em;
+    
+}
+    .random-date-information > ul {
+        margin: 4px;
+    }

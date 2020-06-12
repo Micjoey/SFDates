@@ -14,14 +14,12 @@ const receiveDate = date => ({
 
 
 
-export const retrieveDates = () => dispatch => {
-  debugger
-  return (
-    DateAPIUtil.retrieveDates()
-      .then(dates => dispatch(receiveAllDates(dates))
-    )
-  )
-};
+
+
+export const retrieveDates = () => dispatch => (
+  DateAPIUtil.retrieveDates()
+    .then(dates => dispatch(receiveAllDates(dates))
+));
 
 export const retrieveDate = dateId => dispatch => (
   DateAPIUtil.retrieveDate(dateId)
