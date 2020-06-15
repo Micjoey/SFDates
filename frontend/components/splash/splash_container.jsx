@@ -8,7 +8,6 @@ const mapStateToProps = ({ session, entities: {users, dates}}) => {
 // const mapStateToProps = (state, ownProps) => {
     const userId = users.id
     const allDates = Object.values(dates)
-    // const allDates = Object.values(state.session.dates)
     return {
         currentUser: userId,
         dates: allDates,

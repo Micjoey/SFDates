@@ -14,7 +14,7 @@ class Splash extends React.Component {
 
     componentDidMount() {
         const allDates = this.props.retrieveDates()
-        Promise.all([allDates]).then(() => this.setState({loaded: true, allDates: this.props.dates, totalCount: this.props.dates[0].total_count}))
+        Promise.all([allDates]).then(() => this.setState({loaded: true, allDates: this.props.dates}))
     }
 
     componentDidUpdate(prevProps, prevState) {

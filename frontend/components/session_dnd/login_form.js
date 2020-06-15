@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import '../../stylesheet/modal.css'
+
 
 class LoginForm extends React.Component {
     constructor(props) {
