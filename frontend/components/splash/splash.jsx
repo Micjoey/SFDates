@@ -40,10 +40,10 @@ class Splash extends React.Component {
                 <div className='splash-page'>
                     <div className='background-img'>
                         <div className='filter-bar'>
-                            <div className='filter-date-bar'>
+                            <div id='filter-date-bar'>
                                 <button onClick={() => this.props.openModal('date number', 'filter-date-bar')}>Date Number</button>
                             </div>
-                            <div className='filler'>
+                            <div id='filler'>
                                 <button onClick={() => this.props.openModal('location', 'filler')}>Filler</button>
                             </div>
     

@@ -13,7 +13,7 @@ function Modal({ modal, closeModal } ) {
     if (!modal) {
         return null;
     }
-    let divName = modal.divName
+    let idName = modal.divName
     modal = modal.switchName
     let component;
 
@@ -44,14 +44,12 @@ function Modal({ modal, closeModal } ) {
     let left = "50%"
     let top = "50%"
     let elementRect
-    let bodyRect
     let right = ""
     let bottom = ""
 
-    if (divName) {
-        const divElement = Object.values(document.getElementsByClassName(`${divName}`))[0]
+    if (idName) {
+        const divElement = document.getElementById(`${idName}`)
         elementRect = divElement.getBoundingClientRect();
-        bodyRect = document.body.getBoundingClientRect();
         left = elementRect.left 
         top = elementRect.top
         right = elementRect.right
