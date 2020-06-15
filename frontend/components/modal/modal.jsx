@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/model_actions'
 import DateNumberFilter from '../filterbar/date_number_filter';
-import LoginFormContainer from '../session_dnd/login_form_container'
-import SignUpFormContainer from '../session_dnd/signup_form_container'
+import LoginFormContainer from '../session_form_original/login_form_container'
+import SignUpFormContainer from '../session_form_original/sign_up_form_container'
 
 
 
