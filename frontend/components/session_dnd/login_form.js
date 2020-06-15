@@ -7,7 +7,7 @@ class LoginForm extends React.Component {
         super(props);
 
         this.state = {
-            email: '',
+            username: '',
             password: '',
             errors: {}
         };
@@ -29,7 +29,7 @@ class LoginForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = {
-            email: this.state.email,
+            username: this.state.username,
             password: this.state.password
         };
         this.props.login(user).then(res => {
@@ -41,7 +41,7 @@ class LoginForm extends React.Component {
     guestLogin(e) {
         e.preventDefault();
         const user = {
-            email: 'safar@gmail.com',
+          username: 'Lord Fitzgerald',
             password: 'password'
         };
         this.props.login(user).then(res => {
@@ -63,11 +63,11 @@ class LoginForm extends React.Component {
                 <br />
                 <input
                   type="text"
-                  value={this.state.email}
-                  onChange={this.update("email")}
-                  placeholder="Email"
+                  value={this.state.username}
+                  onChange={this.update("username")}
+                  placeholder="Username"
                 />
-                <div className="login-errors">{this.props.errors.email}</div>
+                <div className="login-errors">{this.props.errors.username}</div>
                 <br />
                 <input
                   type="password"
