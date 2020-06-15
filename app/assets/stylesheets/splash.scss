@@ -168,4 +168,28 @@
         padding-bottom: 5px;
         text-overflow: ellipsis;
     }
+
+    .website-info {
+        color: white;
+        display: block;
+        margin: auto;
+        width: 80%;
+        .website-info-text {
+            display: block;
+            text-align: center;
+            .website-info-greeting {
+                padding: 5px;
+                font-size: larger;
+                font-weight: bold;
+                text-decoration: underline;
+                letter-spacing: 5px;
+                line-height: 24px;
+            }
     
+            .website-info-paragraph {
+                word-spacing: 3px;
+                line-height: 24px;
+            }
+        }
+    }
+        

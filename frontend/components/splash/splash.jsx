@@ -1,5 +1,6 @@
 import React from 'react';
 import LoadingScreen from '../../misc/loading_screen'
+import { Link } from 'react-router-dom';
 
 
 
@@ -50,7 +51,8 @@ class Splash extends React.Component {
     
                         </div>
                     </div>
-                    <div className='random-date-box'>
+                    {/* random date box */}
+                    {/* <div className='random-date-box'>
                         <div className='random-date-information'>
                             {this.randomDate().map((info, idx) => (
                                 <ul key={idx}>
@@ -62,6 +64,29 @@ class Splash extends React.Component {
                         <div className='random-date-image'>
                             <img src="" alt="Filler"/>
                         </div>
+                    </div> */}
+                    {/* random date box */}
+                    <div className="website-info">
+                        <div className="website-info-text">
+                            <p className="website-info-greeting">
+                                Welcome to the SF Dates Website!
+                            </p>
+                            <div>
+                            <p className="website-info-paragraph">
+                                I stumbled upon this idea when I was trying to figure out date ideas in San Francisco. As I am sure you would have done in the same situation as myself - I went to the best two resources I had: Google and my friends. 
+
+                                Per usual, when searching over the web, there were ideas, but not necessarily the options I wanted. I was hoping to find something that was in between me and my date and also unique. My friends made great suggestions, but once again, I wasn't sure. 
+
+                                I wanted something to suggest to me a date idea based on what date I am on and a convenient location for both parties. 
+
+                                So I created this website. 
+
+                                I hope that this website will allow people in the Bay Area to find date ideas with relative ease. You are on a second date and need ideas in the Richmond district; {<Link to="">we got you</Link>}. Want to go on a hike; we got you. Been dating awhile and want to go on a random date, we got you. 
+                            </p>
+
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             ) 
