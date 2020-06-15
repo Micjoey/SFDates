@@ -9,10 +9,10 @@ import {
 } from 'react-router-dom';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-// import Modal from './modal/modal'
+import Modal from './modal/modal'
 import SplashContainer from './splash/splash_container';
 import NavBarContainer from './navbar/navbar_container';
-import SignUpContainer from './session_form/sign_up_form_container'
+// import SignUpContainer from './session_form/sign_up_form_container'
 // import IndexDateContainer from './date/index_books_container'
 // import ShowDateContainer from './date/show_book_container';
 // import IndexShelvesContainer from './shelf/index_shelves_container';
@@ -20,7 +20,7 @@ import Footer from './footer/footer';
 
 const App = () => (
   <div className="app">
-      {/* <Modal /> */}
+      <Modal />
     <headers className="header">
       <NavBarContainer />
     </headers>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link} from 'react-router-dom';
-import SearchBarContainer from './search_bar_container';
+import SearchBarContainer from '../filterbar/search_bar_container';
 
 
 
