@@ -13,7 +13,7 @@ function Modal({ modal, closeModal } ) {
     if (!modal) {
         return null;
     }
-    let idName = modal.divName
+    let idName = modal.idName
     modal = modal.switchName
     let component;
 
