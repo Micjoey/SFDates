@@ -4,6 +4,7 @@ import { closeModal } from '../../actions/model_actions'
 import DateNumberFilter from '../filterbar/date_number_filter';
 import LoginFormContainer from '../session_form/login_form_container'
 import SignUpFormContainer from '../session_form/sign_up_form_container'
+import LocationFilter from '../filterbar/date_number_filter'
 
 
 
@@ -15,6 +16,7 @@ function Modal({ modal, closeModal } ) {
     let divName = modal.divName
     modal = modal.switchName
     let component;
+
     let outerClassName = ""
     let innerClassName = ""
     switch(modal) {
@@ -22,6 +24,11 @@ function Modal({ modal, closeModal } ) {
             outerClassName = "date-number-dropdown"
             innerClassName = "date-number-dropdown-child"
             component = <DateNumberFilter/>;
+            break;
+        case 'location':
+            outerClassName = "date-number-dropdown"
+            innerClassName = "date-number-dropdown-child"
+            component = <LocationFilter/>;
             break;
         case 'login':
             component = <LoginFormContainer/>;
@@ -32,21 +39,28 @@ function Modal({ modal, closeModal } ) {
         default:
             return null;
     }
-    let x = 0
-    let y = 0
+
+    // This makes the page automatically fit the dropdown menu to be below the div above it
+    let left = "50%"
+    let top = "50%"
     let elementRect
     let bodyRect
+    let right = ""
+    let bottom = ""
 
     if (divName) {
         const divElement = Object.values(document.getElementsByClassName(`${divName}`))[0]
         elementRect = divElement.getBoundingClientRect();
         bodyRect = document.body.getBoundingClientRect();
-        x = elementRect.left
-        y = elementRect.top
+        left = elementRect.left 
+        top = elementRect.top
+        right = elementRect.right
+        bottom = elementRect.bottom
     }
+
     return (
         <div className="modal-background" id={`${outerClassName}`} onClick={closeModal}>
-            <div className="modal-child" id={`${innerClassName}`} style={{ top: y }, { left: x }} onClick={e => e.stopPropagation()}>
+            <div className="modal-child" id={`${innerClassName}`} style={{ top: top, left: left, right: right, bottom:bottom }} onClick={e => e.stopPropagation()}>
                 { component }
             </div>  
         </div>

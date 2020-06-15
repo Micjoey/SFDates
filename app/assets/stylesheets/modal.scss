@@ -27,13 +27,18 @@
 }
 
 #date-number-dropdown {
-  background: none;
   min-height: 0;
   min-width: 0;
+  background: none;
   #date-number-dropdown-child {
     min-height: 0;
     min-width: 0;
-    
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    box-shadow: none;
+    border: transparent;
+    transform: translate(0%, 25px);
   }
 }
 

@@ -43,8 +43,8 @@ class Splash extends React.Component {
                             <div className='filter-date-bar'>
                                 <button onClick={() => this.props.openModal('date number', 'filter-date-bar')}>Date Number</button>
                             </div>
-                            <div className='random-date-button'>
-                                <h1>Filler Text</h1>
+                            <div className='filler'>
+                                <button onClick={() => this.props.openModal('location', 'filler')}>Filler</button>
                             </div>
     
                         </div>
