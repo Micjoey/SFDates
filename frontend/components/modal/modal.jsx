@@ -12,12 +12,12 @@ function Modal({modal, closeModal}) {
         return null;
     }
     let component;
-    let outerClassName
-    let innerClassName
+    let outerClassName = "modal-background"
+    let innerClassName = "modal-child"
     switch(modal) {
         case 'date number':
-            outerClassName = "modal-dropdown"
-            innerClassName = "date-number-filter"
+            outerClassName += " date-number-dropdown"
+            innerClassName += " date-number-dropdown-child"
             component = <DateNumberFilter/>;
             break;
         case 'login':
@@ -30,8 +30,6 @@ function Modal({modal, closeModal}) {
             return null;
     }
 
-    if (!outerClassName) outerClassName = "modal-background"
-    if (!innerClassName) innerClassName = "modal-child"
 
     return (
         <div className={`${outerClassName}`} onClick={closeModal}>
