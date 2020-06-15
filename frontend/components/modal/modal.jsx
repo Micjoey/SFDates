@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/model_actions'
-import LoginFormContainer from '../session/login_form_container';
-import SignUpFormContainer from '../session/signup_form_container';
+import DateNumberFilter from '../filterbar/date_number_filter';
 
 
 
@@ -12,12 +11,9 @@ function Modal({modal, closeModal}) {
     }
     let component;
     switch(modal) {
-        case 'login':
-            component = <LoginFormContainer />;
-            break;
-        case 'signup':
-            console.log("hit this")
-            component = <SignUpFormContainer/>;
+        case 'date number':
+            console.log("hit dum")
+            component = <DateNumberFilter/>;
             break;
         default:
             return null;

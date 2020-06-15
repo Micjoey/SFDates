@@ -1,5 +1,9 @@
 import React from 'react';
 import LoadingScreen from '../../misc/loading_screen'
+
+
+
+
 class Splash extends React.Component {
     constructor(props) {
         super(props)
@@ -15,12 +19,6 @@ class Splash extends React.Component {
     componentDidMount() {
         const allDates = this.props.retrieveDates()
         Promise.all([allDates]).then(() => this.setState({loaded: true, allDates: this.props.dates}))
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-        if (prevProps.dates.length !== prevState.totalCount) {
-            this.setState({totalCount: prevProps.dates.length})
-        }
     }
 
     randomDate() {
@@ -42,7 +40,9 @@ class Splash extends React.Component {
                     <div className='background-img'>
                         <div className='filter-bar'>
                             <div className='filter-date-bar'>
-                                <h1>Filler Text</h1>
+                                <div>
+                                    <button onClick={() => this.props.openModal('date number')}>Date Number</button>
+                                </div>
                             </div>
                             <div className='random-date-button'>
                                 <h1>Filler Text</h1>
