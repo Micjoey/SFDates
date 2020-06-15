@@ -58,7 +58,8 @@ class LoginForm extends React.Component {
             <div className="login-form-container">
               <form className="login-form" onSubmit={this.handleSubmit}>
                 <h2 className="modal-header">
-                  D <i className="fab fa-d-and-d"></i> M
+                  {/* D <i className="fab fa-d-and-d"></i> M */}
+                  SFDates
                 </h2>
                 <br />
                 <input

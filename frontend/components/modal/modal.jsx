@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/model_actions'
 import DateNumberFilter from '../filterbar/date_number_filter';
-import LoginFormContainer from '../session_form_original/login_form_container'
-import SignUpFormContainer from '../session_form_original/sign_up_form_container'
+import LoginFormContainer from '../session_form/login_form_container'
+import SignUpFormContainer from '../session_form/sign_up_form_container'
 
 
 
@@ -12,26 +12,30 @@ function Modal({modal, closeModal}) {
         return null;
     }
     let component;
+    let outerClassName
+    let innerClassName
     switch(modal) {
         case 'date number':
-            console.log("hit dum")
+            outerClassName = "modal-dropdown"
+            innerClassName = "date-number-filter"
             component = <DateNumberFilter/>;
             break;
         case 'login':
-            console.log("hit login")
             component = <LoginFormContainer/>;
             break;
         case 'sign up':
-            console.log("hit login")
-            component = <SignUpFormContainer/>;
+            component = <SignUpFormContainer />;
             break;
         default:
             return null;
     }
 
+    if (!outerClassName) outerClassName = "modal-background"
+    if (!innerClassName) innerClassName = "modal-child"
+
     return (
-        <div className="modal-background" onClick={closeModal}>
-            <div className="modal-child" onClick={e => e.stopPropagation()}>
+        <div className={`${outerClassName}`} onClick={closeModal}>
+            <div className={`${innerClassName}`} onClick={e => e.stopPropagation()}>
                 { component }
             </div>  
         </div>

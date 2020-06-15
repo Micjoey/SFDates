@@ -69,7 +69,7 @@ class Splash extends React.Component {
                     <div className="website-info">
                         <div className="website-info-text">
                             <p className="website-info-greeting">
-                                Welcome to the SF Dates Website!
+                                Welcome to the SF Dates!
                             </p>
                             <div>
                             <p className="website-info-paragraph">
