@@ -41,9 +41,7 @@ class Splash extends React.Component {
                     <div className='background-img'>
                         <div className='filter-bar'>
                             <div className='filter-date-bar'>
-                                <div>
-                                    <button onClick={() => this.props.openModal('date number')}>Date Number</button>
-                                </div>
+                                <button onClick={() => this.props.openModal('date number', 'filter-date-bar')}>Date Number</button>
                             </div>
                             <div className='random-date-button'>
                                 <h1>Filler Text</h1>

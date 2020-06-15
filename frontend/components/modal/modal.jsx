@@ -7,17 +7,20 @@ import SignUpFormContainer from '../session_form/sign_up_form_container'
 
 
 
-function Modal({modal, closeModal}) {
+function Modal({ modal, closeModal } ) {
+    
     if (!modal) {
         return null;
     }
+    let divName = modal.divName
+    modal = modal.switchName
     let component;
-    let outerClassName = "modal-background"
-    let innerClassName = "modal-child"
+    let outerClassName = ""
+    let innerClassName = ""
     switch(modal) {
         case 'date number':
-            outerClassName += " date-number-dropdown"
-            innerClassName += " date-number-dropdown-child"
+            outerClassName = "date-number-dropdown"
+            innerClassName = "date-number-dropdown-child"
             component = <DateNumberFilter/>;
             break;
         case 'login':
@@ -29,11 +32,21 @@ function Modal({modal, closeModal}) {
         default:
             return null;
     }
+    let x = 0
+    let y = 0
+    let elementRect
+    let bodyRect
 
-
+    if (divName) {
+        const divElement = Object.values(document.getElementsByClassName(`${divName}`))[0]
+        elementRect = divElement.getBoundingClientRect();
+        bodyRect = document.body.getBoundingClientRect();
+        x = elementRect.left
+        y = elementRect.top
+    }
     return (
-        <div className={`${outerClassName}`} onClick={closeModal}>
-            <div className={`${innerClassName}`} onClick={e => e.stopPropagation()}>
+        <div className="modal-background" id={`${outerClassName}`} onClick={closeModal}>
+            <div className="modal-child" id={`${innerClassName}`} style={{ top: y }, { left: x }} onClick={e => e.stopPropagation()}>
                 { component }
             </div>  
         </div>

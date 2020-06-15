@@ -19,7 +19,7 @@ const mapStateToProps = ({ session, entities: {users, dates}}) => {
 const mapDispatchToProps = dispatch => ({
     retrieveDates: () => dispatch(retrieveDates()),
     retrieveDate: dateId => dispatch(retrieveDate(dateId)),
-    openModal: modal => dispatch(openModal(modal)),
+    openModal: (modal, divName) => dispatch(openModal(modal, divName)),
     closeModal: modal => dispatch(closeModal(modal)),
 
 })

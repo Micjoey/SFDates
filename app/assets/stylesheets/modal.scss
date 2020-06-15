@@ -6,24 +6,35 @@
   left: 0;
   background: rgba(0, 0, 0, 0.7);
   z-index: 11;
+  
+    .modal-child {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: black solid 1px;
+      box-shadow: 5px 5px 15px black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #1A0004;
+      border-radius: 10px;
+      min-height: 350px;
+      min-width: 350px;
+      height: auto;
+      width: auto;
+    }
 }
 
-.modal-child {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: black solid 1px;
-  box-shadow: 5px 5px 15px black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #1A0004;
-  border-radius: 10px;
-  min-height: 350px;
-  min-width: 350px;
-  height: auto;
-  width: auto;
+#date-number-dropdown {
+  background: none;
+  min-height: 0;
+  min-width: 0;
+  #date-number-dropdown-child {
+    min-height: 0;
+    min-width: 0;
+    
+  }
 }
 
 .submit-button-modal {

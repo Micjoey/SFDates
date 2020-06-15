@@ -1,10 +1,13 @@
 export const OPEN_MODAL = 'OPEN MODAL';
 export const CLOSE_MODAL = 'CLOSE-MODAL';
 
-export const openModal = modal => {
+export const openModal = (modal, divName = "") => {
     return {
         type: OPEN_MODAL,
-        modal
+        modal : {
+            switchName: modal,
+            divName
+        }
     };
 };
 
