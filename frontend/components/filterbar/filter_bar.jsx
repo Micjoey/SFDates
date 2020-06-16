@@ -33,10 +33,10 @@ class FilterBar extends React.Component {
                     <button onClick={() => this.props.openModal('location', 'date-location-filter')}>Date Location</button>
                 </div>
                 <div id='date-cost-filter'>
-                    <button onClick={() => this.props.openModal('cost', 'date-cost-filter')}>Date Location</button>
+                    <button onClick={() => this.props.openModal('cost', 'date-cost-filter')}>Date Cost</button>
                 </div>
                 <div id='date-type-filter'>
-                    <button onClick={() => this.props.openModal('type', 'date-type-filter')}>Date Location</button>
+                    <button onClick={() => this.props.openModal('type', 'date-type-filter')}>Date Type</button>
                 </div>
             </div>
         )

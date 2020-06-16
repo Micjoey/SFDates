@@ -93,12 +93,22 @@
   background-color: #1a0004;
   display: block;
   height: fit-content;
-  max-height: 7em;
+  max-height: 10em;
   position: relative;
+
 
   .dropdown-menu:active .dropdown-menu:visited {
     text-decoration: none;
   }
+
+.dropdown-menu-items {
+  padding: 2px;
+  margin: 4px;
+  .dropdown-menu-items-location {
+      width: fit-content;
+      max-width: none;
+  }
+}
   
   .no-link {
     color: inherit;
@@ -109,3 +119,4 @@
 .overflow-y {
   overflow-y: scroll;
 }
+
