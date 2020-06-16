@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link, NavLink, useHistory } from 'react-router-dom';
-import DateNumberFilter from './date_number_filter'
+
 
 
 
@@ -29,6 +28,9 @@ class FilterBar extends React.Component {
             <div className="filter-bar">
                 <div id='date-number-filter'>
                     <button onClick={() => this.props.openModal('date number', 'date-number-filter')}>Date Number</button>
+                </div>
+                <div id='date-location-filter'>
+                    <button onClick={() => this.props.openModal('location', 'date-location-filter')}>Date Location</button>
                 </div>
             </div>
         )
