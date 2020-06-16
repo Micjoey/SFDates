@@ -4,7 +4,7 @@ import { closeModal } from '../../actions/model_actions'
 import DateNumberFilter from '../filterbar/date_number_filter';
 import LoginFormContainer from '../session_form/login_form_container'
 import SignUpFormContainer from '../session_form/sign_up_form_container'
-import LocationFilter from '../filterbar/date_number_filter'
+import LocationFilter from '../filterbar/location_filter'
 
 
 
@@ -16,9 +16,9 @@ function Modal({ modal, closeModal } ) {
     let idName = modal.idName
     modal = modal.switchName
     let component;
-
     let outerClassName = ""
     let innerClassName = ""
+    
     switch(modal) {
         case 'date number':
             outerClassName = "date-number-dropdown"

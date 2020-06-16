@@ -39,15 +39,7 @@ class Splash extends React.Component {
             return (
                 <div className='splash-page'>
                     <div className='background-img'>
-                        <div className='filter-bar'>
-                            <div id='filter-date-bar'>
-                                <button onClick={() => this.props.openModal('date number', 'filter-date-bar')}>Date Number</button>
-                            </div>
-                            <div id='filler'>
-                                <button onClick={() => this.props.openModal('location', 'filler')}>Filler</button>
-                            </div>
-    
-                        </div>
+                        
                     </div>
                     {/* random date box */}
                     {/* <div className='random-date-box'>

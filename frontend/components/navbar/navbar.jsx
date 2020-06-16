@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link} from 'react-router-dom';
-import SearchBarContainer from '../filterbar/search_bar_container';
+// import SearchBarContainer from '../filterbar/search_bar_container';
 
 
 
@@ -30,7 +30,7 @@ class Navbar extends React.Component {
                 <Link to="/home" className="nav-bar-home-button" >Home</Link>
                 <Link to="/home" className="nav-bar-home-button" >Saved Dates</Link>
                 {/* <Link to='/Shelf' className="nav-bar-mybooks-button">Date Number</Link> */}
-                <SearchBarContainer allDates={this.props.retrieveDates()}/>
+                {/* <SearchBarContainer allDates={this.props.retrieveDates()}/> */}
                 <div className="dropdown">
                     <img src={images.account_image} className="dropdown-image-icon" alt="" />
                     <disabled className="header-currentuser-name">Hi, {this.props.currentUser.username}!</disabled>
