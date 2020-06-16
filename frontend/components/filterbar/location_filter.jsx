@@ -12,17 +12,20 @@ class LocationFilter extends React.Component {
         }
     }
 
-    componentDidMount() {
-        const uniqueLocations = this.props.uniqueLocations
-        Promise.all([uniqueLocations]).then(uniqueLocations => this.setState({ uniqueLocations: uniqueLocations }))
-    }
+    // componentDidMount() {
+    //     const uniqueLocations = this.props.uniqueLocations
+    //     Promise.all([uniqueLocations]).then(uniqueLocations => this.setState({ uniqueLocations: uniqueLocations }))
+    // }
 
     render() {
-        debugger
+        let uniqueLocations = []
+        if (this.props.uniqueLocations.length > 0) {
+            uniqueLocations = this.props.uniqueLocations
+        }
         return(
             <div>
-                {this.state.uniqueLocations.map((dateNumber, i) => (
-                    <ul className="date-number-filter" key={i}>
+                {uniqueLocations.map((dateNumber, i) => (
+                    <ul className="dropwdown-menu" key={i}>
                         <Link to={`/datelocation/${i + 1}`}>{dateNumber}</Link>
                     </ul>
                 ))}
@@ -32,7 +35,7 @@ class LocationFilter extends React.Component {
 }
 
 const mapStateToProps = ({session, entities}) => {
-    const uniqueLocations = entities.dates[1].unique_date_location
+    let uniqueLocations = entities.dates[1].unique_date_location
     return {
         uniqueLocations: uniqueLocations
     }

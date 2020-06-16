@@ -91,5 +91,8 @@
   width: fit-content;
   color: #FBC7CA;
   background-color: #1a0004c8;
-  
+  display: block;
+  overflow-y: scroll;
+  height: fit-content;
+  max-height: 10px;
 }
