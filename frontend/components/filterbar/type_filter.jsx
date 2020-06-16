@@ -4,20 +4,20 @@ import { connect } from 'react-redux';
 import { retrieveDates } from '../../actions/date_actions'
 
 
-class LocationFilter extends React.Component {
+class TypeFilter extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
-        let uniqueLocations = []
-        if (this.props.uniqueLocations.length > 0) {
-            uniqueLocations = this.props.uniqueLocations
+        let uniqueDateType = []
+        if (this.props.uniqueDateType.length > 0) {
+            uniqueDateType = this.props.uniqueDateType
 
         }
         return(
             <div className="dropdown-menu overflow-y" >
-                {uniqueLocations.map((dateLocation, i) => (
+                {uniqueDateType.map((dateLocation, i) => (
                     <ul className="dropdown-menu-items dropdown-menu-items-location" key={i}>
                         <Link className="no-link" to={`/datelocation/${dateLocation.split(' ').join('')}`}>{dateLocation}</Link>
                     </ul>
@@ -27,10 +27,10 @@ class LocationFilter extends React.Component {
     }
 }
 
-const mapStateToProps = ({session, entities}) => {
-    let uniqueLocations = entities.dates[1].unique_date_location
+const mapStateToProps = ({entities}) => {
+    let uniqueDateType = entities.dates[1].unique_date_type
     return {
-        uniqueLocations: uniqueLocations
+        uniqueDateType: uniqueDateType
     }
 };
 
@@ -40,4 +40,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LocationFilter);
+export default connect(mapStateToProps, mapDispatchToProps)(TypeFilter);

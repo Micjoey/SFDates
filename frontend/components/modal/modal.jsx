@@ -5,7 +5,8 @@ import DateNumberFilter from '../filterbar/date_number_filter';
 import LoginFormContainer from '../session_form/login_form_container'
 import SignUpFormContainer from '../session_form/sign_up_form_container'
 import LocationFilter from '../filterbar/location_filter'
-
+import CostFilter from '../filterbar/cost_filter';
+import TypeFilter from '../filterbar/type_filter'
 
 
 function Modal({ modal, closeModal } ) {
@@ -28,6 +29,12 @@ function Modal({ modal, closeModal } ) {
     
     
     switch(modal) {
+        case 'type':
+            component = <TypeFilter/>;
+            break;
+        case 'cost':
+            component = <CostFilter/>;
+            break;
         case 'date number':
             component = <DateNumberFilter/>;
             break;
