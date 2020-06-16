@@ -16,6 +16,11 @@ class FilterBar extends React.Component {
         // this.resetAllBooks = this.resetAllBooks.bind(this)
     }
 
+    componentDidMount() {
+        const dates = this.props.dates
+        Promise.all([dates]).then(dates => this.setState({allDates: dates}))
+    }
+
 
     render() {
         if (!this.props.dates) return null;

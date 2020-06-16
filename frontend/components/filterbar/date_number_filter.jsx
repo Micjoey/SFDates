@@ -3,6 +3,7 @@ import React from 'react'
 
 
 function DateNumberFilter(allDates, openModal) {
+    let uniqueDateNumbers = getUniqueDateNumbers(allDates)
     return (
         <div>
             <div id='date-number-filter'>
@@ -13,7 +14,9 @@ function DateNumberFilter(allDates, openModal) {
 }
 
 
-
+function getUniqueDateNumbers(allDates) {
+    
+}
 
 
 export default DateNumberFilter;

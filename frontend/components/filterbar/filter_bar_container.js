@@ -5,8 +5,11 @@ import { withRouter } from 'react-router';
 import FilterBar from './filter_bar';
 
 const mapStateToProps = ({ entities: { dates }}) => {
+    const firstDate = dates[1]
     return {
         dates: Object.values(dates),
+        uniqueDateType: firstDate.unique_date_type,
+        uniqueDateLocation: firstDate.unique_date_location,
     };
 };
 
