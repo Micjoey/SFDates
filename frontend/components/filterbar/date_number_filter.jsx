@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux';
 
 
 
@@ -8,7 +7,7 @@ function DateNumberFilter() {
     return (
         <div className="dropwdown-menu">
             {dateNumber.map((dateNumber, i) => (
-                <ul key={i}>
+                <ul className="date-number-filter" key={i}>
                     {dateNumber}
                 </ul>
             ))}

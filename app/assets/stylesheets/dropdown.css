@@ -87,3 +87,8 @@
   scroll-behavior: smooth;
 }
 
+.dropwdown-menu {
+  width: fit-content;
+  color: white;
+  background-color: #D03F53;
+}

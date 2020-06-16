@@ -1,16 +1,17 @@
 .loading-page {
-    height: 100%;
+    height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 101px;
-    color: rgba(152, 126, 22, 0.632);
+    color: #B00023;
+    background-color: #FBC7CA;
+    
 }
 
 .loading-sections {
+    margin: auto;
     display: block;
     align-items: center;
-    margin: 1em;
 }
 
 .loading-circle {
