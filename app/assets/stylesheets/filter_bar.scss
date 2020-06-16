@@ -1,5 +1,9 @@
 .dropdown-menu-items {
     padding: 2px;
     margin: 4px;
+    dropdown-menu-items-location {
+        width: fit-content;
+        max-width: none;
+    }
 }
 

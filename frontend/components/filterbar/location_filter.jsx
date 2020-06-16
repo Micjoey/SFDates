@@ -17,7 +17,7 @@ class LocationFilter extends React.Component {
         return(
             <div className="dropdown-menu">
                 {uniqueLocations.map((dateNumber, i) => (
-                    <ul className="dropdown-menu-items" key={i}>
+                    <ul className="dropdown-menu-items dropdown-menu-items-location" key={i}>
                         <Link className="no-link" to={`/datelocation/${i + 1}`}>{dateNumber}</Link>
                     </ul>
                 ))}
