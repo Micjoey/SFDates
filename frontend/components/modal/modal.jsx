@@ -16,14 +16,14 @@ function Modal({ modal, closeModal } ) {
     let idName = modal.idName
     modal = modal.switchName
     let component;
-    let outerClassName
-    let innerClassName
+    let outerIdName
+    let innerIdName
     if (modal === "sign up" || modal === "login") {
-        outerClassName = ""
-        innerClassName = ""
+        outerIdName = ""
+        innerIdName = ""
     } else {
-        outerClassName = "dropdown-menu"
-        innerClassName = "dropdown-menu-child"
+        outerIdName = "dropdown-menu"
+        innerIdName = "dropdown-menu-child"
     }
     
     
@@ -60,8 +60,8 @@ function Modal({ modal, closeModal } ) {
         bottom = elementRect.bottom
     }
     return (
-        <div className="modal-background" id={`${outerClassName}`} onClick={closeModal}>
-            <div className="modal-child" id={`${innerClassName}`} style={{ top: top, left: left, right: right, bottom:bottom }} onClick={e => e.stopPropagation()}>
+        <div className="modal-background" id={`${outerIdName}`} onClick={closeModal}>
+            <div className="modal-child" id={`${innerIdName}`} style={{ top: top, left: left, right: right, bottom:bottom }} onClick={e => e.stopPropagation()}>
                 { component }
             </div>  
         </div>

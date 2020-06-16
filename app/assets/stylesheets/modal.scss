@@ -1,5 +1,5 @@
 .modal-background {
-  position: fixed;
+  position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
@@ -27,7 +27,7 @@
 }
 
 #dropdown-menu {
-  position: fixed;
+  // position: fixed;
   min-height: 0;
   min-width: 0;
   background: none;
@@ -41,7 +41,6 @@
     box-shadow: none;
     border: transparent;
     transform: translate(0%, 25px);
-
   }
 }
 

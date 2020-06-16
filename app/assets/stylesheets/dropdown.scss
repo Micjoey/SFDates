@@ -95,6 +95,7 @@
   overflow-y: scroll;
   height: fit-content;
   max-height: 7em;
+  position: relative;
 
   .dropdown-menu:active .dropdown-menu:visited {
     text-decoration: none;

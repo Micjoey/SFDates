@@ -27,6 +27,7 @@ class DateSuggestion < ApplicationRecord
                .select(:location)
                .distinct
                .map{|date| date.location}
+               .sort()
      end
      
 end

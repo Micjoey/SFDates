@@ -20,7 +20,7 @@ import Footer from './footer/footer';
 
 const App = () => (
   <div className="app">
-      <Modal />
+      <Modal/>
     <headers className="header">
       <NavBarContainer />
     </headers>
