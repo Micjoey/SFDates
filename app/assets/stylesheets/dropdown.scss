@@ -87,12 +87,22 @@
   scroll-behavior: smooth;
 }
 
-.dropwdown-menu {
-  width: fit-content;
-  color: #FBC7CA;
-  background-color: #1a0004c8;
+.dropdown-menu {
+  width: 12em;
+  color: white;
+  background-color: #1a0004;
   display: block;
   overflow-y: scroll;
   height: fit-content;
-  max-height: 10px;
+  max-height: 7em;
+
+  .dropdown-menu:active .dropdown-menu:visited {
+    text-decoration: none;
+  }
+  
+  .no-link {
+    color: inherit;
+  }
 }
+
+

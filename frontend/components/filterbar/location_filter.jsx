@@ -7,15 +7,7 @@ import { retrieveDates } from '../../actions/date_actions'
 class LocationFilter extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            uniqueLocations: [],
-        }
     }
-
-    // componentDidMount() {
-    //     const uniqueLocations = this.props.uniqueLocations
-    //     Promise.all([uniqueLocations]).then(uniqueLocations => this.setState({ uniqueLocations: uniqueLocations }))
-    // }
 
     render() {
         let uniqueLocations = []
@@ -23,10 +15,10 @@ class LocationFilter extends React.Component {
             uniqueLocations = this.props.uniqueLocations
         }
         return(
-            <div>
+            <div className="dropdown-menu">
                 {uniqueLocations.map((dateNumber, i) => (
-                    <ul className="dropwdown-menu" key={i}>
-                        <Link to={`/datelocation/${i + 1}`}>{dateNumber}</Link>
+                    <ul className="date-location-item" key={i}>
+                        <Link className="no-link" to={`/datelocation/${i + 1}`}>{dateNumber}</Link>
                     </ul>
                 ))}
             </div>
