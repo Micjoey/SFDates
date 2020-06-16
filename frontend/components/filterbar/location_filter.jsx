@@ -1,27 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux';
-import { retrieveDates} from '../../actions/date_actions'
+import {Link} from 'react-router-dom'
 
 
-function LocationFilter() {
+function DateNumberFilter(allDates) {
     
-
-    return (
+    return(
         <div>
-            <h1 className="test"> Worked #2</h1>
+            <h1 className="test"> Worked </h1>
         </div>
     )
 }
 
-const mapStateToProps = state => {
-    
-};
-
-const mapDispatchToProps = dispatch => {
-    return {
-        retrieveDates: () => dispatch(retrieveDates()),
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(LocationFilter);
+export default (DateNumberFilter)

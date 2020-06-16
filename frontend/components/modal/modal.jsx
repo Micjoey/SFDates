@@ -13,6 +13,7 @@ function Modal({ modal, closeModal } ) {
     if (!modal) {
         return null;
     }
+    debugger
     let idName = modal.idName
     modal = modal.switchName
     let component;
@@ -55,7 +56,6 @@ function Modal({ modal, closeModal } ) {
         right = elementRect.right
         bottom = elementRect.bottom
     }
-
     return (
         <div className="modal-background" id={`${outerClassName}`} onClick={closeModal}>
             <div className="modal-child" id={`${innerClassName}`} style={{ top: top, left: left, right: right, bottom:bottom }} onClick={e => e.stopPropagation()}>

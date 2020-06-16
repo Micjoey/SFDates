@@ -1,6 +1,7 @@
 import React from 'react';
 import LoadingScreen from '../../misc/loading_screen'
 import { Link } from 'react-router-dom';
+import FilterBarContainer from '../filterbar/filter_bar_container';
 
 
 
@@ -39,7 +40,7 @@ class Splash extends React.Component {
             return (
                 <div className='splash-page'>
                     <div className='background-img'>
-                        
+                        <FilterBarContainer />
                     </div>
                     {/* random date box */}
                     {/* <div className='random-date-box'>

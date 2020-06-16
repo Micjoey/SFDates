@@ -1,28 +1,19 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux';
-import { retrieveDates } from '../../actions/date_actions'
 
 
-function DateNumberFilter() {
 
-    
-
+function DateNumberFilter(allDates, openModal) {
     return (
         <div>
-            <h1 className="test"> Worked #2</h1>
+            <div id='date-number-filter'>
+                <button onClick={() => openModal('location', 'date-number-filter')}>Filler</button>
+            </div>
         </div>
     )
 }
 
-const mapStateToProps = state => {
 
-};
 
-const mapDispatchToProps = dispatch => {
-    return {
-        retrieveDates: () => dispatch(retrieveDates()),
-    };
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(DateNumberFilter);
+
+export default DateNumberFilter;
