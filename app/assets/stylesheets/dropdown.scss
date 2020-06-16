@@ -92,7 +92,6 @@
   color: white;
   background-color: #1a0004;
   display: block;
-  overflow-y: scroll;
   height: fit-content;
   max-height: 7em;
   position: relative;
@@ -107,3 +106,6 @@
 }
 
 
+.overflow-y {
+  overflow-y: scroll;
+}

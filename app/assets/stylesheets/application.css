@@ -18,6 +18,11 @@
     display: block;
  }
 
+ a {
+     color: red;
+     font-weight: 500;
+ }
+
 
  button {
     /* border-radius: 28px; */

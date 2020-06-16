@@ -13,9 +13,10 @@ class LocationFilter extends React.Component {
         let uniqueLocations = []
         if (this.props.uniqueLocations.length > 0) {
             uniqueLocations = this.props.uniqueLocations
+
         }
         return(
-            <div className="dropdown-menu">
+            <div className="dropdown-menu overflow-y" >
                 {uniqueLocations.map((dateNumber, i) => (
                     <ul className="dropdown-menu-items dropdown-menu-items-location" key={i}>
                         <Link className="no-link" to={`/datelocation/${i + 1}`}>{dateNumber}</Link>
