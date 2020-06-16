@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, NavLink, useHistory } from 'react-router-dom';
-import { openModal } from '../../actions/model_actions';
 import DateNumberFilter from './date_number_filter'
 
 
@@ -27,9 +26,9 @@ class FilterBar extends React.Component {
         let allDates
         (this.state.allDates.length < 1) ? allDates = this.props.dates : allDates = this.state.allDates
         return (
-            <div>
-                <div className='filter-bar'>
-                    {DateNumberFilter(allDates, this.props.openModal)}
+            <div className="filter-bar">
+                <div id='date-number-filter'>
+                    <button onClick={() => this.props.openModal('date number', 'date-number-filter')}>Date Number</button>
                 </div>
             </div>
         )

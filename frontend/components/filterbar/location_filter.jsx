@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 
-function DateNumberFilter(allDates) {
+function LocationFilter(allDates) {
     
     return(
         <div>
@@ -11,4 +11,4 @@ function DateNumberFilter(allDates) {
     )
 }
 
-export default (DateNumberFilter)
+export default (LocationFilter)

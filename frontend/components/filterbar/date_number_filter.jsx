@@ -1,22 +1,21 @@
 import React from 'react'
+import { connect } from 'react-redux';
 
 
 
-function DateNumberFilter(allDates, openModal) {
-    let uniqueDateNumbers = getUniqueDateNumbers(allDates)
+function DateNumberFilter() {
+    const dateNumber = ['Date #1', 'Date #2', 'Date #3', 'Date #4 or More']
     return (
-        <div>
-            <div id='date-number-filter'>
-                <button onClick={() => openModal('location', 'date-number-filter')}>Filler</button>
-            </div>
+        <div className="dropwdown-menu">
+            {dateNumber.map((dateNumber, i) => (
+                <ul key={i}>
+                    {dateNumber}
+                </ul>
+            ))}
         </div>
     )
 }
 
 
-function getUniqueDateNumbers(allDates) {
-    
-}
+export default (DateNumberFilter);
 
-
-export default DateNumberFilter;

@@ -13,22 +13,25 @@ function Modal({ modal, closeModal } ) {
     if (!modal) {
         return null;
     }
-    debugger
     let idName = modal.idName
     modal = modal.switchName
     let component;
-    let outerClassName = ""
-    let innerClassName = ""
+    let outerClassName
+    let innerClassName
+    if (modal === "sign up" || modal === "login") {
+        outerClassName = ""
+        innerClassName = ""
+    } else {
+        outerClassName = "dropdown-menu"
+        innerClassName = "dropdown-menu-child"
+    }
+    
     
     switch(modal) {
         case 'date number':
-            outerClassName = "date-number-dropdown"
-            innerClassName = "date-number-dropdown-child"
             component = <DateNumberFilter/>;
             break;
         case 'location':
-            outerClassName = "date-number-dropdown"
-            innerClassName = "date-number-dropdown-child"
             component = <LocationFilter/>;
             break;
         case 'login':
