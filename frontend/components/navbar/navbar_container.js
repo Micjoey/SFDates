@@ -14,10 +14,9 @@ const mapStateToProps = ({ session, entities: { users} }) => {
 
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout()),
-    openModal: modal => dispatch(openModal(modal)),
+    openModal: (modal, idName) => dispatch(openModal(modal, idName)),
     closeModal: modal => dispatch(closeModal(modal)),
     retrieveDates: () => dispatch(retrieveDates())
-    // idSwitch: target => dispatch(dropDownIdSwitch(target))
 });
 
 export default connect(
