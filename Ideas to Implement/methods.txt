@@ -1,0 +1,3 @@
+I can create a page that will render all dates based off of the params that are passed in from the link
+    I.e if /sfdates/datesuggestion/date#4
+    it will render all date#4's

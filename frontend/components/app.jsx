@@ -30,7 +30,7 @@ const App = () => (
         {/* <ProtectedRoute exact path="/home" component={IndexDateContainer} /> */}
         {/* <ProtectedRoute exact path="/date/:dateId" component={ShowDateContainer}/> */}
         {/* <ProtectedRoute exact path="/shelf" component={IndexShelvesContainer} /> */}
-        <Redirect to="/home" />
+        <Redirect to="/" />
       </Switch>
       <footer className="footer">
         <Route path='/' component={Footer}/>
