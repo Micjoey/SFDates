@@ -178,8 +178,8 @@
             display: block;
             text-align: center;
             .website-info-greeting {
-                padding: 5px;
-                font-size: larger;
+                padding: 1em;
+                font-size: 26px;
                 font-weight: bold;
                 text-decoration: underline;
                 letter-spacing: 5px;
@@ -187,8 +187,9 @@
             }
     
             .website-info-paragraph {
-                word-spacing: 3px;
+                word-spacing: 5px;
                 line-height: 24px;
+                font-size: 20px;
             }
         }
     }

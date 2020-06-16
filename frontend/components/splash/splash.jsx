@@ -64,7 +64,7 @@ class Splash extends React.Component {
                             </p>
                             <div>
                             <p className="website-info-paragraph">
-                                I stumbled upon this idea when I was trying to figure out date ideas in San Francisco. As I am sure you would have done in the same situation as myself - I went to the best two resources I had: Google and my friends. 
+                                I stumbled upon the idea of creating a website that suggests dates when I was trying to figure out date ideas in San Francisco. As I am sure you would have done in the same situation as myself - I went to the best two resources I had: Google and my friends. 
 
                                 Per usual, when searching over the web, there were ideas, but not necessarily the options I wanted. I was hoping to find something that was in between me and my date and also unique. My friends made great suggestions, but once again, I wasn't sure. 
 
