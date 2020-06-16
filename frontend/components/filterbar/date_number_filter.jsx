@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 
 
@@ -8,7 +9,7 @@ function DateNumberFilter() {
         <div className="dropwdown-menu">
             {dateNumber.map((dateNumber, i) => (
                 <ul className="date-number-filter" key={i}>
-                    {dateNumber}
+                    <Link to={`/datenumber/${i+1}`}>{dateNumber}</Link>
                 </ul>
             ))}
         </div>
