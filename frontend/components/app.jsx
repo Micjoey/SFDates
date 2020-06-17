@@ -27,7 +27,7 @@ const App = () => (
       <Switch>
         <AuthRoute exact path="/home" component={SplashContainer} /> 
         <AuthRoute exact path="/datesuggestions/:date_type" component={DateTypeContainer} />
-        {/* <Redirect to="/home" /> */}
+        <Redirect to="/home" />
       </Switch>
       <footer className="footer">
         <Route path='/' component={Footer}/>

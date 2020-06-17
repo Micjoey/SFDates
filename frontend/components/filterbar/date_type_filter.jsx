@@ -8,7 +8,11 @@ import { closeModal } from '../../actions/model_actions';
 class TypeFilter extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            loaded: false,
+        }
     }
+    
 
     render() {
         let uniqueDateType = []
@@ -25,7 +29,6 @@ class TypeFilter extends React.Component {
                             to={`/datesuggestions/${dateLocation}`}
                             // to={`/datesuggestions/${dateLocation                 //     .split(' ')
                             //     .join('')}`}
-                            
                         >
                             {dateLocation}
                         </Link>
@@ -38,13 +41,18 @@ class TypeFilter extends React.Component {
 }
 
 const mapStateToProps = ({entities}) => {
-    let uniqueDateType = entities.dates[1].unique_date_type
+    let uniqueDateType = []
+    let firstId = Object.keys(entities.dates)[0]
+    if (entities.dates) {
+        uniqueDateType = entities.dates[firstId].unique_date_type
+    }
     return {
         uniqueDateType: uniqueDateType
     }
 };
 
 const mapDispatchToProps = dispatch => {
+    debugger
     return {
         retrieveDates: () => dispatch(retrieveDates()),
     };

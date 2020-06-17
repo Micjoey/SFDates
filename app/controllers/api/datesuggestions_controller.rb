@@ -1,7 +1,6 @@
 
 class Api::DatesuggestionsController < ApplicationController
     def index
-        # debugger
         if (params[:date_number])
             @date_suggestions = DateSuggestion.where(date_number: params[:date_number])
         elsif(params[:location])
@@ -18,7 +17,6 @@ class Api::DatesuggestionsController < ApplicationController
 
 
     def show
-        debugger
         if (params[:date_number])
             @date_suggestions = DateSuggestion.where(date_number: params[:date_number])
         elsif(params[:location])

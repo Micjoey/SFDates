@@ -1,5 +1,4 @@
 export const retrieveDates = (info) => {
-    debugger
     if (!!info) {
         return (
             $.ajax({
