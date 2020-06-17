@@ -20,6 +20,7 @@ class DateSuggestion < ApplicationRecord
                .select(:date_type)
                .distinct
                .map{|date| date.date_type}
+               .sort()
      end
 
      def unique_date_location() 

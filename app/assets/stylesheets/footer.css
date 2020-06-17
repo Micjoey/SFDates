@@ -9,7 +9,7 @@
 .footer-inner {
     display: flex;
     justify-content: space-evenly;
-    background-color: #f4f2e9;
+    background-color: rgb(99, 4, 23);
     height: 50px;
     align-items: center;
     bottom: 0px;

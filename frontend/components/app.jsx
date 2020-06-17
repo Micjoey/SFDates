@@ -12,11 +12,8 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Modal from './modal/modal'
 import SplashContainer from './splash/splash_container';
 import NavBarContainer from './navbar/navbar_container';
-// import SignUpContainer from './session_form/sign_up_form_container'
-// import IndexDateContainer from './date/index_books_container'
-// import ShowDateContainer from './date/show_book_container';
-// import IndexShelvesContainer from './shelf/index_shelves_container';
 import Footer from './footer/footer';
+// import DateTypeContainer from './date_types/date_type_container'
 
 const App = () => (
   <div className="app">
@@ -26,11 +23,9 @@ const App = () => (
     </headers>
     <div className="content">
       <Switch>
-        <AuthRoute path="/" component={SplashContainer} /> 
-        {/* <ProtectedRoute exact path="/home" component={IndexDateContainer} /> */}
-        {/* <ProtectedRoute exact path="/date/:dateId" component={ShowDateContainer}/> */}
-        {/* <ProtectedRoute exact path="/shelf" component={IndexShelvesContainer} /> */}
-        <Redirect to="/" />
+        <AuthRoute exact path="/home" component={SplashContainer} /> 
+        {/* <AuthRoute exact path="/datenumber/1" component={DateTypeContainer} /> */}
+        <Redirect to="/home" />
       </Switch>
       <footer className="footer">
         <Route path='/' component={Footer}/>

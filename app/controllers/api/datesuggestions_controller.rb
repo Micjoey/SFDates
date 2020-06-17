@@ -8,14 +8,14 @@ class Api::DatesuggestionsController < ApplicationController
 
     def show
         @date_suggestion = DateSuggestion.find(params[:id])
-        # render "api/date_suggestion/:id"
+        # render "api/datesuggestion/:id"
         render :show
     end
 
     private
 
     def date_params
-        params.require(:datesuggestion).permit(:id, :user_id)
+        params.require(:datesuggestion).permit(:id, :location, :date_type, :cost, :date_number)
     end
 
  
