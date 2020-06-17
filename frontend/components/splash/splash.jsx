@@ -20,6 +20,7 @@ class Splash extends React.Component {
 
     componentDidMount() {
         const allDates = this.props.retrieveDates()
+        // debugger
         Promise.all([allDates]).then(() => this.setState({loaded: true, allDates: this.props.dates}))
     }
 

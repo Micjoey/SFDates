@@ -8,20 +8,31 @@ class DateType extends React.Component {
         super(props)
         this.state = {
             loaded: false,
+            currentDateList: [],
         }
     }
 
     componentDidMount() {
         // const dateMount = this.props.retrieveDate(this.props.match.params.dateNumber)
-        const allDates = this.props.retrieveDates()
+        const key = Object.keys(this.props.match.params)[0]
+        const value = this.props.match.params[key]
+        const allDates = this.props.retrieveDates([key, value])
         Promise.all([allDates]).then(() => this.setState({ loaded: true }))
     }
 
     render() {
+        let dates = []
         if (this.state.loaded) {
+            dates = this.props.dates
             return (
                 <div className='background-color'>
-                    <p>Test</p>
+                   {
+                        Object.keys(dates).map(num => (
+                            Object.values(dates[num]).map( ele => (
+                                <p className="test">{ele}</p>
+                            ))
+                        ))  
+                   } 
                 </div>
             )
         } else {

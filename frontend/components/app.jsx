@@ -13,7 +13,9 @@ import Modal from './modal/modal'
 import SplashContainer from './splash/splash_container';
 import NavBarContainer from './navbar/navbar_container';
 import Footer from './footer/footer';
-// import DateTypeContainer from './date_types/date_type_container'
+import DateTypeContainer from './date_types/date_type_container'
+// import DateNumberContainer from './filterbar/date_number_filter';
+
 
 const App = () => (
   <div className="app">
@@ -24,8 +26,8 @@ const App = () => (
     <div className="content">
       <Switch>
         <AuthRoute exact path="/home" component={SplashContainer} /> 
-        {/* <AuthRoute exact path="/datenumber/1" component={DateTypeContainer} /> */}
-        <Redirect to="/home" />
+        <AuthRoute exact path="/datesuggestions/:date_type" component={DateTypeContainer} />
+        {/* <Redirect to="/home" /> */}
       </Switch>
       <footer className="footer">
         <Route path='/' component={Footer}/>

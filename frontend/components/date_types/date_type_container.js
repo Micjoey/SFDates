@@ -4,19 +4,18 @@ import { withRouter } from 'react-router';
 import DateType from './date_type';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
-    const date = state.entities.dates[ownProps.match.params.dateNumber];
+    const dates = state.entities.dates;
     // const user = state.entities.users[state.session];
     // const userId = state.session.id
     // const allUsers = state.entities.users
     return ({
-        date: date,
+        dates: dates,
     })
 }
 
 const mapDispatchToProps = dispatch => ({
     retrieveDate: dateId => dispatch(retrieveDate(dateId)),
-    retrieveDates: () => dispatch(retrieveDates()) 
+    retrieveDates: info => dispatch(retrieveDates(info)) 
 })
 
 export default withRouter(connect(

@@ -6,7 +6,7 @@ import LoginFormContainer from '../session_form/login_form_container'
 import SignUpFormContainer from '../session_form/sign_up_form_container'
 import LocationFilter from '../filterbar/location_filter'
 import CostFilter from '../filterbar/cost_filter';
-import TypeFilter from '../filterbar/type_filter'
+import TypeFilter from '../filterbar/date_type_filter'
 
 
 function Modal({ modal, closeModal } ) {
@@ -66,6 +66,8 @@ function Modal({ modal, closeModal } ) {
         right = elementRect.right
         bottom = elementRect.bottom
     }
+
+
     return (
         <div className="modal-background" id={`${outerIdName}`} onClick={closeModal}>
             <div className="modal-child" id={`${innerIdName}`} style={{ top: top, left: left, right: right, bottom:bottom }} onClick={e => e.stopPropagation()}>

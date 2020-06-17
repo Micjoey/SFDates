@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux';
 import { retrieveDates } from '../../actions/date_actions'
+import { closeModal } from '../../actions/model_actions';
 
 
 class LocationFilter extends React.Component {
@@ -37,6 +38,7 @@ const mapStateToProps = ({session, entities}) => {
 const mapDispatchToProps = dispatch => {
     return {
         retrieveDates: () => dispatch(retrieveDates()),
+        closeModal: () => dispatch(closeModal())
     };
 };
 

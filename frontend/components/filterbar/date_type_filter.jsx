@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux';
 import { retrieveDates } from '../../actions/date_actions'
+import { closeModal } from '../../actions/model_actions';
 
 
 class TypeFilter extends React.Component {
@@ -19,7 +20,16 @@ class TypeFilter extends React.Component {
             <div className="dropdown-menu overflow-y" >
                 {uniqueDateType.map((dateLocation, i) => (
                     <ul className="dropdown-menu-items dropdown-menu-items-location" key={i}>
-                        <Link className="no-link" to={`/datelocation/${dateLocation.split(' ').join('')}`}>{dateLocation}</Link>
+                        <Link 
+                            className="no-link" 
+                            to={`/datesuggestions/${dateLocation}`}
+                            // to={`/datesuggestions/${dateLocation                 //     .split(' ')
+                            //     .join('')}`}
+                            
+                        >
+                            {dateLocation}
+                        </Link>
+                                
                     </ul>
                 ))}
             </div>

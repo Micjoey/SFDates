@@ -6,6 +6,10 @@ import FilterBar from './filter_bar';
 
 const mapStateToProps = ({ entities: { dates }}) => {
     const firstDate = dates[1]
+    // let uniqueDateType
+    // let uniqueDateLocation
+    // firstDate.unique_date_type ? uniqueDateType = firstDate.unique_date_type : uniqueDateType = []
+    // firstDate.unique_date_location ? uniqueDateLocation = firstDate.unique_date_location : uniqueDateLocation =[]
     return {
         dates: Object.values(dates),
         uniqueDateType: firstDate.unique_date_type,

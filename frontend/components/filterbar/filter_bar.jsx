@@ -16,7 +16,7 @@ class FilterBar extends React.Component {
 
     componentDidMount() {
         const dates = this.props.dates
-        Promise.all([dates]).then(dates => this.setState({allDates: dates}))
+        Promise.all([dates]).then(dates => this.setState({allDates: dates, loaded: true}))
     }
 
 
