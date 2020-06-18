@@ -30,16 +30,16 @@ function Modal({ modal, closeModal } ) {
     
     switch(modal) {
         case 'type':
-            component = <TypeFilter/>;
+            component = <TypeFilter shutModal={shutModal}/>;
             break;
         case 'cost':
-            component = <CostFilter/>;
+            component = <CostFilter shutModal={shutModal}/>;
             break;
         case 'date number':
-            component = <DateNumberFilter/>;
+            component = <DateNumberFilter shutModal={shutModal}/>;
             break;
         case 'location':
-            component = <LocationFilter/>;
+            component = <LocationFilter shutModal={shutModal}/>;
             break;
         case 'login':
             component = <LoginFormContainer/>;
@@ -67,9 +67,14 @@ function Modal({ modal, closeModal } ) {
         bottom = elementRect.bottom
     }
 
+    function shutModal(e = null, closeModal) {
+        e.stopPropagation()
+        closeModal()
+        debugger
+    }
 
     return (
-        <div className="modal-background" id={`${outerIdName}`} onClick={closeModal}>
+        <div className="modal-background" id={`${outerIdName}`} onClick={() => closeModal()}>
             <div className="modal-child" id={`${innerIdName}`} style={{ top: top, left: left, right: right, bottom:bottom }} onClick={e => e.stopPropagation()}>
                 { component }
             </div>  

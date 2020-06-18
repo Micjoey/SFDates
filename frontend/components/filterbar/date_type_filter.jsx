@@ -13,6 +13,8 @@ class TypeFilter extends React.Component {
         }
     }
     
+    
+    
 
     render() {
         let uniqueDateType = []
@@ -20,6 +22,7 @@ class TypeFilter extends React.Component {
             uniqueDateType = this.props.uniqueDateType
 
         }
+        // debugger
         return(
             <div className="dropdown-menu overflow-y" >
                 {uniqueDateType.map((dateLocation, i) => (
@@ -27,8 +30,7 @@ class TypeFilter extends React.Component {
                         <Link 
                             className="no-link" 
                             to={`/datesuggestions/${dateLocation}`}
-                            // to={`/datesuggestions/${dateLocation                 //     .split(' ')
-                            //     .join('')}`}
+                            onClick={e => this.props.shutModal(e, this.props.closeModal)}
                         >
                             {dateLocation}
                         </Link>
@@ -52,9 +54,9 @@ const mapStateToProps = ({entities}) => {
 };
 
 const mapDispatchToProps = dispatch => {
-    debugger
     return {
         retrieveDates: () => dispatch(retrieveDates()),
+        closeModal: () => dispatch(closeModal())
     };
 };
 
