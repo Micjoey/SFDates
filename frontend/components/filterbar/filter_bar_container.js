@@ -5,20 +5,19 @@ import { withRouter } from 'react-router';
 import FilterBar from './filter_bar';
 
 const mapStateToProps = ({ entities: { dates }}) => {
-    const firstDate = dates[1]
-    // let uniqueDateType
-    // let uniqueDateLocation
-    // firstDate.unique_date_type ? uniqueDateType = firstDate.unique_date_type : uniqueDateType = []
-    // firstDate.unique_date_location ? uniqueDateLocation = firstDate.unique_date_location : uniqueDateLocation =[]
+    let dateArray = Object.values(dates)
+    const dateType = [...new Set(dateArray.map(date => date.date_type))]
+    const dateLocation = [...new Set(dateArray.map(date => date.location))]
     return {
-        dates: Object.values(dates),
-        uniqueDateType: firstDate.unique_date_type,
-        uniqueDateLocation: firstDate.unique_date_location,
+        dates: Object.values(dateArray),
+        uniqueDateType: dateType,
+        uniqueDateLocation: dateLocation,
+        totalCount: dateArray.length,
     };
 };
 
 const mapDispatchToProps = dispatch => ({
-    openModal: (modal, idName) => dispatch(openModal(modal, idName)),
+    openModal: (modal, idName, dates) => dispatch(openModal(modal, idName, dates)),
     retrieveDates: () => dispatch(retrieveDates()),
     retrieveDate: dateId => dispatch(retrieveDate(dateId))
 });

@@ -25,7 +25,6 @@ class DateType extends React.Component {
         let dates = []
         if (this.state.loaded) {
             dates = this.props.dates
-            debugger
             return (
                 <div className='background-color'>
                     <div className="date-specific-parent-container">

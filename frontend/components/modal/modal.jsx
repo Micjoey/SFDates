@@ -14,8 +14,9 @@ function Modal({ modal, closeModal } ) {
     if (!modal) {
         return null;
     }
-    let idName = modal.idName
-    modal = modal.switchName
+    let allDates = Object.values(modal.dates);
+    let idName = modal.idName;
+    modal = modal.switchName;
     let component;
     let outerIdName
     let innerIdName
@@ -30,16 +31,16 @@ function Modal({ modal, closeModal } ) {
     
     switch(modal) {
         case 'type':
-            component = <TypeFilter shutModal={shutModal}/>;
+            component = <TypeFilter shutModal={shutModal} allDateInfo={allDates}/>;
             break;
         case 'cost':
-            component = <CostFilter shutModal={shutModal}/>;
+            component = <CostFilter shutModal={shutModal} allDateInfo={allDates}/>;
             break;
         case 'date number':
-            component = <DateNumberFilter shutModal={shutModal}/>;
+            component = <DateNumberFilter shutModal={shutModal} allDateInfo={allDates}/>;
             break;
         case 'location':
-            component = <LocationFilter shutModal={shutModal}/>;
+            component = <LocationFilter shutModal={shutModal} allDateInfo={allDates}/>;
             break;
         case 'login':
             component = <LoginFormContainer/>;
@@ -57,6 +58,7 @@ function Modal({ modal, closeModal } ) {
     let elementRect
     let right = ""
     let bottom = ""
+    let minWidth = ""
 
     if (idName) {
         const divElement = document.getElementById(`${idName}`)
@@ -65,6 +67,7 @@ function Modal({ modal, closeModal } ) {
         top = elementRect.top
         right = elementRect.right
         bottom = elementRect.bottom
+        minWidth = elementRect.width
     }
 
     function shutModal(e, closeModal) {
@@ -74,7 +77,7 @@ function Modal({ modal, closeModal } ) {
 
     return (
         <div className="modal-background" id={`${outerIdName}`} onClick={() => closeModal()}>
-            <div className="modal-child" id={`${innerIdName}`} style={{ top: top, left: left, right: right, bottom:bottom }} onClick={e => e.stopPropagation()}>
+            <div className="modal-child" id={`${innerIdName}`} style={{ top: top, left: left, right: right, bottom:bottom, minWidth:minWidth }} onClick={e => e.stopPropagation()}>
                 { component }
             </div>  
         </div>

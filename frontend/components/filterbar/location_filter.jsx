@@ -36,9 +36,11 @@ class LocationFilter extends React.Component {
 }
 
 const mapStateToProps = ({session, entities}) => {
-    let uniqueLocations = entities.dates[1].unique_date_location
+    let dates = Object.values(entities.dates)
+    const dateLocation = [...new Set(dates.map(date => date.location))]
     return {
-        uniqueLocations: uniqueLocations
+        dates: dates,
+        uniqueLocations: dateLocation.sort(),
     }
 };
 

@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 import { connect } from 'react-redux';
 import { retrieveDates } from '../../actions/date_actions'
 import { closeModal } from '../../actions/model_actions';
-import { uniqueDateLocation } from '../misc/date_information'
 
 
 class TypeFilter extends React.Component {
@@ -12,26 +11,27 @@ class TypeFilter extends React.Component {
         this.state = {
             loaded: false,
             allDates: [],
+            uniqueDateType: [],
         }
+        this.fixState = this.fixState.bind(this)
     }
     
     componentDidMount() {
         const dates = this.props.dates
-        Promise.all([dates]).then(dates => this.setState({ allDates: dates, loaded: true }))
+        Promise.all([dates])
+        .then(this.fixState())
+        .then(() => this.setState({ loaded: true}))
     }
-    
+  
+
+    fixState() {
+        this.setState({allDates: this.props.dates})
+    }
 
     render() {
-        debugger
-        let uniqueDateType = []
-        let dates = this.state.allDates
-        if (this.state.allDates) {
-            uniqueDateType = this.props.uniqueLocations(dates)
-
-        }
         return(
             <div className="dropdown-menu overflow-y" >
-                {uniqueDateType.map((dateLocation, i) => (
+                {this.props.dateType.map((dateLocation, i) => (
                     <ul className="dropdown-menu-items dropdown-menu-items-location" key={i}>
                         <Link 
                             className="no-link" 
@@ -49,9 +49,11 @@ class TypeFilter extends React.Component {
 }
 
 const mapStateToProps = ({entities}) => {
-    const dates = Object.values(entities.dates)
+    let dates = Object.values(entities.dates)
+    const dateType = [...new Set(dates.map(date => date.date_type))]
     return {
-        dates: dates
+        dates: dates,
+        dateType: dateType,
     }
 };
 
@@ -59,7 +61,6 @@ const mapDispatchToProps = dispatch => {
     return {
         retrieveDates: () => dispatch(retrieveDates()),
         closeModal: () => dispatch(closeModal()),
-        uniqueLocations: dates => dispatch(uniqueDateLocation(dates))
     };
 };
 

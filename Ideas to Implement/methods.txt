@@ -5,3 +5,5 @@ I can create a page that will render all dates based off of the params that are 
 
 
     create tables for each filter of dates
+
+    create a cache for data

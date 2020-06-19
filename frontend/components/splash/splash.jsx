@@ -1,5 +1,5 @@
 import React from 'react';
-import LoadingScreen from '../../misc/loading_screen'
+import LoadingScreen from '../misc/loading_screen'
 import { Link } from 'react-router-dom';
 import FilterBarContainer from '../filterbar/filter_bar_container';
 
