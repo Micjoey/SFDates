@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import { connect } from 'react-redux';
 import { retrieveDates } from '../../actions/date_actions'
 import { closeModal } from '../../actions/model_actions';
+import { uniqueDateLocation } from '../misc/date_information'
 
 
 class TypeFilter extends React.Component {
@@ -10,19 +11,24 @@ class TypeFilter extends React.Component {
         super(props);
         this.state = {
             loaded: false,
+            allDates: [],
         }
     }
     
-    
+    componentDidMount() {
+        const dates = this.props.dates
+        Promise.all([dates]).then(dates => this.setState({ allDates: dates, loaded: true }))
+    }
     
 
     render() {
+        debugger
         let uniqueDateType = []
-        if (this.props.uniqueDateType.length > 0) {
-            uniqueDateType = this.props.uniqueDateType
+        let dates = this.state.allDates
+        if (this.state.allDates) {
+            uniqueDateType = this.props.uniqueLocations(dates)
 
         }
-        // debugger
         return(
             <div className="dropdown-menu overflow-y" >
                 {uniqueDateType.map((dateLocation, i) => (
@@ -43,20 +49,17 @@ class TypeFilter extends React.Component {
 }
 
 const mapStateToProps = ({entities}) => {
-    let uniqueDateType = []
-    let firstId = Object.keys(entities.dates)[0]
-    if (entities.dates) {
-        uniqueDateType = entities.dates[firstId].unique_date_type
-    }
+    const dates = Object.values(entities.dates)
     return {
-        uniqueDateType: uniqueDateType
+        dates: dates
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
         retrieveDates: () => dispatch(retrieveDates()),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        uniqueLocations: dates => dispatch(uniqueDateLocation(dates))
     };
 };
 

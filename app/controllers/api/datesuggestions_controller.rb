@@ -33,10 +33,7 @@ class Api::DatesuggestionsController < ApplicationController
         render :show
     end
 
-    # def date_number
-    #     @date_number = DateSuggestion.where(date_number: params[:date_number])
-    #     render :date_number
-    # end
+
 
     private
 

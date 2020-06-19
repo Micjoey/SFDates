@@ -1,0 +1,19 @@
+.date-specific-parent-container {
+    .date-specific-header {
+        display: flex;
+    }
+    .date-specific-filter {
+        display: block;
+    }
+    .date-specific-info {
+        display: flex;
+    }
+    .date-specific-info-container {
+        display: block;
+        height: 95%;
+        width: 50%;
+        .date-specific {
+
+        }
+    }
+}
