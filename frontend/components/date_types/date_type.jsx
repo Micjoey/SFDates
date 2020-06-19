@@ -10,13 +10,10 @@ class DateType extends React.Component {
             loaded: false,
             currentDateList: [],
         }
-        this.getProperKey = this.getProperKey.bind(this)
-        this.getProperValue = this.getProperValue.bind(this)
     }
 
     componentDidMount() {
-        let key = Object.keys(this.props.match.params)[0]
-        debugger
+        const key = Object.keys(this.props.match.params)[0]
         const value = this.props.match.params[key]
         const allDates = this.props.retrieveDates([key, value])
         Promise.all([allDates]).then(() => this.setState({ loaded: true }))
