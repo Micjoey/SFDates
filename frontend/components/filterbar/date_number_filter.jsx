@@ -21,7 +21,7 @@ class DateNumberFilter extends React.Component {
                 {dateNumber.map((dateNumber, i) => (
                     <ul className="dropdown-menu-items" key={i}>
                         <Link 
-                            to={`/datesuggestions/date_number${dateNumber}`} 
+                            to={`/datesuggestions/date_number_${dateNumber}`} 
                             onClick={e => this.props.shutModal(e, this.props.closeModal)} 
                             className="no-link">{dateNumber}
                         </Link>

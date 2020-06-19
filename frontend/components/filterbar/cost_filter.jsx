@@ -20,7 +20,7 @@ class CostFilter extends React.Component {
                 {costAmount.map((costAmount, i) => (
                     <ul className="dropdown-menu-items" key={i}>
                         <Link 
-                            to={`/datesuggestions/cost_filter_${costAmount}`}
+                            to={`/datesuggestions/date_cost_${costAmount}`}
                             className="no-link"
                             onClick={e => this.props.shutModal(e, this.props.closeModal)}
                         >

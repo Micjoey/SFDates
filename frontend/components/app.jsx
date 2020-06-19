@@ -28,8 +28,8 @@ const App = () => (
         <AuthRoute exact path="/home" component={SplashContainer} /> 
         <AuthRoute exact path="/datesuggestions/date_type_:date_type" component={DateTypeContainer} />
         <AuthRoute exact path="/datesuggestions/date_cost_:cost" component={DateTypeContainer} />
-        <AuthRoute exact path="/datesuggestions/date_number:date_number" component={DateTypeContainer} />
-        <AuthRoute exact path="/datesuggestions/date_type_:date_type" component={DateTypeContainer} />
+        <AuthRoute exact path="/datesuggestions/date_number_:date_number" component={DateTypeContainer} />
+        <AuthRoute exact path="/datesuggestions/location_:location" component={DateTypeContainer} />
         <Redirect to="/home" />
       </Switch>
       <footer className="footer">

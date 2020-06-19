@@ -15,33 +15,12 @@ class DateType extends React.Component {
     }
 
     componentDidMount() {
-        // const dateMount = this.props.retrieveDate(this.props.match.params.dateNumber)
         let key = Object.keys(this.props.match.params)[0]
         debugger
         const value = this.props.match.params[key]
         const allDates = this.props.retrieveDates([key, value])
         Promise.all([allDates]).then(() => this.setState({ loaded: true }))
     }
-
-    // clean up the above function with the bottom two
-
-    getProperValue() {
-        const params = this.props.match.params
-        const key = this.getProperKey(params)
-        let value = [];
-        if (params[key]) {
-            value = params[key]
-        } 
-        return value
-    }
-
-    getProperKey(params) {
-        let keys = Object.keys(params)
-        const firstKey = keys[0]
-        return firstKey
-    }
-
-
 
 
     render() {
