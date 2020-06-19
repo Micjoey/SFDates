@@ -67,10 +67,9 @@ function Modal({ modal, closeModal } ) {
         bottom = elementRect.bottom
     }
 
-    function shutModal(e = null, closeModal) {
+    function shutModal(e, closeModal) {
         e.stopPropagation()
         closeModal()
-        debugger
     }
 
     return (

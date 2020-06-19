@@ -1,21 +1,51 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { closeModal } from '../../actions/model_actions';
+import { connect } from 'react-redux';
 
 
 
-function CostFilter() {
-    const dateNumber = ['None', 'Low', 'Medium', 'Expensive', 'Very Expensive']
-    return (
-        <div className="dropdown-menu">
-            {dateNumber.map((dateNumber, i) => (
-                <ul className="dropdown-menu-items" key={i}>
-                    <Link to={`/datenumber/${i+1}`} className="no-link">{dateNumber}</Link>
-                </ul>
-            ))}
-        </div>
-    )
+
+class CostFilter extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+
+        }
+    }
+    render() {
+        const costAmount = ['None', 'Low', 'Medium', 'Expensive', 'Very Expensive']
+        return (
+            <div className="dropdown-menu">
+                {costAmount.map((costAmount, i) => (
+                    <ul className="dropdown-menu-items" key={i}>
+                        <Link 
+                            to={`/datesuggestions/cost_filter_${costAmount}`}
+                            className="no-link"
+                            onClick={e => this.props.shutModal(e, this.props.closeModal)}
+                        >
+                            {costAmount}
+                        </Link>
+                    </ul>
+                ))}
+            </div>
+        )
+    }
 }
 
+const mapStateToProps = ({ entities }) => {
+    return {
 
-export default (CostFilter);
+    }
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        // retrieveDates: () => dispatch(retrieveDates()),
+        closeModal: () => dispatch(closeModal())
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CostFilter);
+
 

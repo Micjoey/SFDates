@@ -11,7 +11,7 @@ class Footer extends React.Component {
                 <a href="https://github.com/Micjoey/SFDates" rel="noopener noreferrer" target="_blank" >
                     <img src={images.github} className="footer-github" />
                 </a>
-                <a href="https://macallan.space" id="footerLink" rel="noopener noreferrer" target='_blank'>Macallan Savett</a>
+                <a href="https://macallan.space" id="footerLink" rel="noopener noreferrer" target='_blank'>Personal Portfolio</a>
             </div>
         );
     }

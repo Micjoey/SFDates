@@ -29,7 +29,7 @@ class TypeFilter extends React.Component {
                     <ul className="dropdown-menu-items dropdown-menu-items-location" key={i}>
                         <Link 
                             className="no-link" 
-                            to={`/datesuggestions/${dateLocation}`}
+                            to={`/datesuggestions/date_type_${dateLocation}`}
                             onClick={e => this.props.shutModal(e, this.props.closeModal)}
                         >
                             {dateLocation}

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { retrieveDates, retrieveDate } from '../../actions/date_actions'
 import { withRouter } from 'react-router';
-import DateType from './date_type';
+import DateType from './date_type'
 
 const mapStateToProps = (state, ownProps) => {
     const dates = state.entities.dates;
