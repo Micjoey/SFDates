@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 export default function generateKeyNumber() {
-    debugger
     const [keys, newKeys] = useState(0);
     let random = Math.random() * Math.random()
     let checker = false

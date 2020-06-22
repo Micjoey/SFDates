@@ -38,6 +38,7 @@ button:focus {outline:0;}
     /* background-color: red; */
     /*  */
     width: 100%;
+    height: 105%;
 }
 
  .content {

@@ -33,9 +33,9 @@ const App = () => (
         <AuthRoute exact path="/datesuggestions/location_:location" component={DateTypeContainer} />
         <Redirect to="/home" />
       </Switch>
-      <footer className="footer">
+      {/* <footer className="footer"> */}
         <Route path='/' component={Footer}/>
-      </footer>
+      {/* </footer> */}
     </div>
   </div>
 );

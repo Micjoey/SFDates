@@ -16,6 +16,7 @@ class DateType extends React.Component {
         this.headerName = this.headerName.bind(this)
         this.generateKeyNumber = this.generateKeyNumber.bind(this)
         this.renderDates = this.renderDates.bind(this)
+        this.capitalize = this.capitalize.bind(this)
     }
 
     componentDidMount() {
@@ -28,22 +29,69 @@ class DateType extends React.Component {
     renderDates() {
         const dates = this.props.dates
         const values = Object.values(dates)
-        return (
-            values.map(date => (
-                <div className="inner-date-specific-container" key={this.generateKeyNumber()}>
-                    <p>Title: {date.title}</p>
-                    <p>Location: {date.location}</p>
-                    <p>Cost: {date.cost}</p>
-                    <p>Type: {date.date_type}</p>
-                    <p>Description: {date.description}</p>
-                </div>
-            ))
+        return(
+            values.map((date, i) => {
+                    let values = Object.values(date)
+                    values = values.slice(1, values.length-1)
+                    let titles = Object.keys(date)
+                    titles = titles.slice(1, titles.length-1)
+                    return (
+                        <div className="inner-date-specific-container" key={Math.random() * Math.random(100)}>
+                            {
+                                titles.map((title,idx) => {
+                                    title = this.dateAlter(title)
+                                    return(  
+                                        <p key={`${title}-${values[idx]}`}>{title}: {values[idx]}</p>
+                                    )
+                                }
+                                )
+                            }
+                        </div >
+                    )
+                }       
+            )
         )
     }
-
+    capitalize(sentence) {
+        let splitter
+        if (sentence.includes("_")) {
+            splitter = "_"
+        } else {
+            splitter = " "
+        }
+        sentence = sentence
+        .split(splitter)
+        .map(word => {
+                if (!word.includes("#")) {
+                    return word = word[0].toUpperCase() + word.slice(1, word.length)
+                } else {
+                    return word = word.slice(0,1) + word[1].toUpperCase() + word.slice(2, word.length)
+                }
+            })
+        sentence = sentence.join(" ")
+        return sentence
+    }
     dateAlter(ele) {
-        if (ele && ele.includes("Date")) {
-            ele = ele.split(" ").join(" #")
+        switch (ele) {
+            case "title":
+                return ele = "Title"
+            case "location":
+                return ele = "Location"
+            case "title":
+                return ele = "Title"
+            case "date_number":
+                ele = ele.split("_").join(" #")
+                return ele = this.capitalize(ele)
+            case "address_location":
+                return ele = this.capitalize(ele)
+            case "date_type":
+                return ele = this.capitalize(ele) 
+            case "cost":
+                return ele = this.capitalize(ele) 
+            case "description":
+                return ele = this.capitalize(ele) 
+            default:
+                break;
         }
         return ele
     }
