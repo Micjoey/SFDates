@@ -30,8 +30,7 @@
         border: lightslategray 1px solid;
         padding: 5px;
         margin: 5px;
-        // margin-bottom: 50px;
-        // height: fit-content;
+        margin-bottom: 53px;
         .inner-date-specific-container:last-of-type {
             margin-bottom: 50px;
         }
@@ -48,7 +47,10 @@
                     // padding-right: 1em;
                 }
                 .info-for-date {
+                    display: block;
                     height: fit-content;
+                    max-width: 85%;
+                    word-wrap: break-word;
                 }
             }
         }

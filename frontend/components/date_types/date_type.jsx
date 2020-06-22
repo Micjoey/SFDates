@@ -89,7 +89,7 @@ class DateType extends React.Component {
             case "title":
                 return ele = "Title"
             case "date_number":
-                ele = ele.split("_").join(" #")
+                ele = ele.split("_").join(" ")
                 return ele = this.capitalize(ele)
             case "address_location":
                 return ele = this.capitalize(ele)
