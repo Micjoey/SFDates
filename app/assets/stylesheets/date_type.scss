@@ -40,17 +40,18 @@
             padding: 3px;
             .title-info-container {
                 display: flex;
+                margin: 5px;
                 .title-for-date {
                     display: flex;
-                    width: 127px;
+                    width: 150px;
                     min-width: max-content;
-                    // padding-right: 1em;
+                    padding-right: 1em;
+                    text-align: right;
                 }
                 .info-for-date {
                     display: block;
                     height: fit-content;
-                    max-width: 85%;
-                    word-wrap: break-word;
+                    width: 100%;
                 }
             }
         }
