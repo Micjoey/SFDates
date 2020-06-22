@@ -48,7 +48,7 @@ button:focus {outline:0;}
 }
 
  .content {
-     height: 100vh;
+     /* height: 100vh; */
  }
 
  .empty-space {
