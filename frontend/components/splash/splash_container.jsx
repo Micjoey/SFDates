@@ -21,7 +21,7 @@ const mapDispatchToProps = dispatch => ({
     retrieveDate: dateId => dispatch(retrieveDate(dateId)),
     openModal: (modal, divName) => dispatch(openModal(modal, divName)),
     closeModal: modal => dispatch(closeModal(modal)),
-
+    
 })
 
 export default connect(

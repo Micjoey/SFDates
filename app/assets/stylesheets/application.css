@@ -33,7 +33,8 @@
  button {
     /* border-radius: 28px; */
     border-radius: 4px;
-    background-color: #8C8c8c;
+    background-color: #600054;
+    color: rgb(171, 165, 0);
     font-weight: 600;
 }
 button:focus {outline:0;}

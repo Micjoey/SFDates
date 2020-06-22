@@ -139,9 +139,11 @@
     margin: auto;
     justify-content: center;
     padding: 10px;
+    
 }
 
 .random-date-information {
+    display: none;
     text-align: center;
     margin: auto;
     justify-content: center;
@@ -154,7 +156,6 @@
     background-color: #3c010ae5;
     font-size: 16px;
     font-weight: bolder;
-    display: none;
     padding-bottom: 20px;
     text-align: left;
     
@@ -209,3 +210,15 @@
         }
     }
         
+.random-date-button {
+    margin: 10px 0px 5px 0px;
+}
+
+.random-date-button:hover {
+    background-color: rgba(28, 115, 191, 0.742);
+    height: 100%;
+    color: crimson;
+}
+.random-date-button:active {
+    background-color: rgba(12, 90, 159, 0.742);
+}
