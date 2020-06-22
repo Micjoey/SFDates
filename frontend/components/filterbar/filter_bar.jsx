@@ -22,21 +22,20 @@ class FilterBar extends React.Component {
 
     render() {
         if (!this.props.dates) return null;
-        let allDates
-        (this.state.allDates.length < 1) ? allDates = this.props.dates : allDates = this.state.allDates
+        let allDates = Object.values(this.props.dates)
         return (
             <div className="filter-bar">
                 <div id='date-number-filter'>
-                    <button onClick={() => this.props.openModal('date number', 'date-number-filter')}>Date Number</button>
+                    <button onClick={() => this.props.openModal('date number', 'date-number-filter', allDates)}>Date Number</button>
                 </div>
                 <div id='date-location-filter'>
-                    <button onClick={() => this.props.openModal('location', 'date-location-filter')}>Date Location</button>
+                    <button onClick={() => this.props.openModal('location', 'date-location-filter', allDates)}>Date Location</button>
                 </div>
                 <div id='date-cost-filter'>
-                    <button onClick={() => this.props.openModal('cost', 'date-cost-filter')}>Date Cost</button>
+                    <button onClick={() => this.props.openModal('cost', 'date-cost-filter', allDates)}>Date Cost</button>
                 </div>
                 <div id='date-type-filter'>
-                    <button onClick={() => this.props.openModal('type', 'date-type-filter')}>Date Type</button>
+                    <button onClick={() => this.props.openModal('type', 'date-type-filter', allDates)}>Date Type</button>
                 </div>
             </div>
         )

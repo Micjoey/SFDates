@@ -10,6 +10,7 @@ class DateType extends React.Component {
             loaded: false,
             currentDateList: [],
         }
+        this.dateAlter = this.dateAlter.bind(this)
     }
 
     componentDidMount() {
@@ -19,7 +20,13 @@ class DateType extends React.Component {
         Promise.all([allDates]).then(() => this.setState({ loaded: true }))
     }
 
+    dateAlter(ele) {
 
+        if (ele && ele.includes("Date")) {
+            ele = ele.split(" ").join(" #")
+        }
+        return ele
+    }
 
     render() {
         let dates = []
@@ -49,15 +56,16 @@ class DateType extends React.Component {
                         </div>
                         <div className="date-specific-info">
                             <div className="date-specific-info-container">
-                                {/* {
+                                {
                                     Object.keys(dates).map(num => (
                                         Object.values(dates[num])
                                             .slice(1,dates[num.length-2])
                                             .map( ele => (
-                                            <p className="date-specific">{ele}</p>
-                                        ))
+                                                <p className="date-specific">{this.dateAlter(ele)}</p>
+                                            )
+                                        )
                                     ))  
-                                } */}
+                                }
                             </div>
                             <div>
                                 <h1>
