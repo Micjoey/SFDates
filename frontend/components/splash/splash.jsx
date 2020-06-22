@@ -3,9 +3,6 @@ import LoadingScreen from '../misc/loading_screen'
 import { Link } from 'react-router-dom';
 import FilterBarContainer from '../filterbar/filter_bar_container';
 
-
-
-
 class Splash extends React.Component {
     constructor(props) {
         super(props)
@@ -26,6 +23,12 @@ class Splash extends React.Component {
         
     }
 
+    componentDidUpdate(prevState, prevProps) {
+        if (prevState.randomDate !== this.state.randomDate) {
+            this.randomDate();
+        }
+    }
+
     toggleDisplay(div) {
         div = div[0]
         const outerDiv = document.getElementsByClassName("random-date-box")[0]
@@ -35,32 +38,46 @@ class Splash extends React.Component {
         } else {
             div.style.display = ''
             outerDiv.style = "background-color: null;"
+            this.state.randomDate++
         } 
+        this.setState({randomDate: this.state.randomDate+1})
     }
 
+
     randomDate() {
-        let randNum = Math.floor(Math.random() * this.state.totalCount)
-        let randomDate = Object.values(this.state.allDates[randNum])
-        const randomDateEdited = randomDate.slice(1,randomDate.length-1)
-        randomDateEdited[0].toUpperCase();
-        return randomDateEdited
+        let randNum
+        let randomDate
+        let dateInfo
+        let randomDateEdited = []
+        if (this.state.allDates) {
+            randNum = Math.floor(Math.random() * this.state.totalCount)
+            randomDate = Object.values(this.state.allDates[randNum])
+            dateInfo = [`Title`, `Location`, `Address`, `Date Number`, `Date Type`, `Cost`, `Description`]
+            randomDateEdited = randomDate.slice(1,randomDate.length-1)
+            randomDateEdited[0].toUpperCase();
+        }
+
+        return (
+            randomDateEdited.map((info, idx) => (
+                <ul key={idx} id="random-date">
+                    <p className="specific-date-title"> {dateInfo[idx]}: </p>
+                    <p className="specific-date-information"> {info}</p>
+                </ul>
+            ))
+        )
     }
 
 
 
     render() {
-        let dateInfo
         let toggleDiv
         if (this.state.loaded) {
-            dateInfo = [`Title`, `Location`, `Address`, `Date Number`, `Date Type`, `Cost`,  `Description`]
             toggleDiv = document.getElementsByClassName("random-date-information")
             return (
                 <div className='splash-page'>
                     <div className='background-img'>
                         <FilterBarContainer />
                     </div>
-                    {/* random date box */}
-                    {/* random date box */}
                     <div className="website-info">
                         <div className="website-info-text">
                             <p className="website-info-greeting">
@@ -82,27 +99,17 @@ class Splash extends React.Component {
                         </div>
                         <br>
                         </br>
+
                         <div className='random-date-box'>
                             <button
-                                onClick={() => this.toggleDisplay(toggleDiv)}
+                                onClick={(() => this.toggleDisplay(toggleDiv))}
                                 className="random-date-button"
                             >
                                 Random Date
                             </button>
-                          
                                 <div className='random-date-information'>
-                                    {this.randomDate().map((info, idx) => (
-                                        <ul key={idx} id="random-date">
-                                            <p className="specific-date-title"> {dateInfo[idx]}: </p>
-                                            <p className="specific-date-information"> {info}</p>
-                                        </ul>
-                                    ))}
+                                    {this.randomDate()}
                                 </div>
-
-                          
-                            {/* <div className='random-date-image'>
-                            <img src="" alt="Filler"/>
-                        </div> */}
                         </div>
                     </div>
                 </div>

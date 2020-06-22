@@ -6,6 +6,7 @@ import { openModal, closeModal } from '../../actions/model_actions';
 
 
 
+
 const mapStateToProps = ({ session, entities: {users, dates}}) => {
 // const mapStateToProps = (state, ownProps) => {
     const userId = users.id
@@ -21,7 +22,6 @@ const mapDispatchToProps = dispatch => ({
     retrieveDate: dateId => dispatch(retrieveDate(dateId)),
     openModal: (modal, divName) => dispatch(openModal(modal, divName)),
     closeModal: modal => dispatch(closeModal(modal)),
-    
 })
 
 export default connect(
