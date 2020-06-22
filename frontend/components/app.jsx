@@ -26,6 +26,7 @@ const App = () => (
     <div className="content">
       <Switch>
         <AuthRoute exact path="/home" component={SplashContainer} /> 
+        <AuthRoute exact path="/datesuggestions/" component={DateTypeContainer} />
         <AuthRoute exact path="/datesuggestions/date_type_:date_type" component={DateTypeContainer} />
         <AuthRoute exact path="/datesuggestions/date_cost_:cost" component={DateTypeContainer} />
         <AuthRoute exact path="/datesuggestions/date_number_:date_number" component={DateTypeContainer} />

@@ -1,7 +1,7 @@
 .footer {
-    min-height: 100%;
-    position: fixed;
-    height: 70px;
+    /* min-height: 100%; */
+    position: relative;
+    height: 50px;
     bottom: 0px;
     clear: both;;
 }

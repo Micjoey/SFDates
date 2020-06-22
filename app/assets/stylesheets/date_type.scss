@@ -1,26 +1,50 @@
 .date-specific-parent-container {
-    .date-specific-header {
-        display: flex;
-        height: 3em;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        font-size: 20px;
-        font-weight: bold;
-        background-color: lightcoral;
+    // height: 100vh;
+    .date-specific-header-container {
+        .date-specific-header {
+            display: flex;
+            height: 3em;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: lightcoral;
+        }
     }
     .date-specific-filter {
         display: block;
+        margin: 5px;
+        border: lightslategray 1px solid;
     }
     .date-specific-info {
         display: flex;
+        height: 100%;
+        max-height: 100vh;
+
     }
     .date-specific-info-container {
         display: block;
-        height: 95%;
         width: 50%;
-        .date-specific {
-
+        overflow-y: scroll;
+        border: lightslategray 1px solid;
+        padding: 5px;
+        margin: 5px;
+        .date-specific-info-container:last-child {
+            margin-bottom: 5px;
+        }
+        .inner-date-specific-container {
+            margin: 10px 0px;
+            border: solid 1px black;
+            padding: 3px;
+            .date-specific {
+    
+            }
         }
     }
+}
+
+.map-container {
+    margin: 10px;
+    width: 50%;
 }
