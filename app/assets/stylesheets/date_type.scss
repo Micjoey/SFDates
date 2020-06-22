@@ -1,6 +1,13 @@
 .date-specific-parent-container {
     .date-specific-header {
         display: flex;
+        height: 3em;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: lightcoral;
     }
     .date-specific-filter {
         display: block;

@@ -9,23 +9,60 @@ class DateType extends React.Component {
         this.state = {
             loaded: false,
             currentDateList: [],
+            header: "",
         }
         this.dateAlter = this.dateAlter.bind(this)
+        this.headerName = this.headerName.bind(this)
     }
 
     componentDidMount() {
         const key = Object.keys(this.props.match.params)[0]
         const value = this.props.match.params[key]
         const allDates = this.props.retrieveDates([key, value])
-        Promise.all([allDates]).then(() => this.setState({ loaded: true }))
+        Promise.all([allDates]).then(() => this.setState({ loaded: true, header: key }))
     }
 
     dateAlter(ele) {
-
         if (ele && ele.includes("Date")) {
             ele = ele.split(" ").join(" #")
         }
         return ele
+    }
+
+    headerName() {
+        const key = this.state.header
+        switch (key) {
+            case "date_type":
+                return (
+                    <h1 className="date-specific-header">
+                         Welcome to Date Type Suggestions!
+                    </h1>
+                )
+            case "cost":
+                return (
+                    <h1 className="date-specific-header"> 
+                        Welcome to date cost Suggestions!
+                    </h1>
+                )
+            case "location":
+                return (
+                    <h1 className="date-specific-header"> 
+                        Welcome to Location Suggestions!
+                    </h1>
+                )
+            case "date_number":
+                return (
+                    <h1 className="date-specific-header"> 
+                        Welcome to Date Number Suggestions!
+                    </h1>
+                )
+            default:
+                return (
+                    <h1> 
+                        Welcome!
+                    </h1>
+                )
+        }
     }
 
     render() {
@@ -35,8 +72,8 @@ class DateType extends React.Component {
             return (
                 <div className='background-color'>
                     <div className="date-specific-parent-container">
-                        <div className="date-specific-header">
-                            <p>Header</p>
+                        <div className="date-specific-header-container">
+                            {this.headerName()}
                         </div>
                         {/* Going to be a seperate function in time */}
                         <div className="date-specific-filter">

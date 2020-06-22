@@ -12,48 +12,13 @@ body {
      width: 100%;
  }
 
-.navbar-view-to-login {
-    display: flex;
-    justify-content: space-between;
-    background-color: #1A0004;
-    height: 100px;
-    vertical-align: text-bottom;
-    align-items: center;
-    flex-wrap: nowrap;
-    border-bottom: black solid thin;
-    
-}
+ 
 
-.navbar-view-to-login-or-signup {
-    width: 100%;
-    /* padding: 0px; */
-    position: fixed;
 
-}
 
-.FunReads-title {
-    text-decoration: none;
-    font-size: 40px;
-    color: black;
-    vertical-align: middle;
-    padding-left: 100px;
-    padding-right: 50px;
-    height: 50px;
-    
-}
-
-.FunReads-title,
 .SfDates-title-logged-in {
     color: lightcoral
 }
-
- .filler-background-box {
-        object-fit: cover;
-        z-index: -2;
-        /* height: 2000px; */
-        background-color: gray;
-    }
-
 
 
 
@@ -84,19 +49,6 @@ body {
     border-bottom: 1px solid black;
     align-content: center;
 }
-
-/* .header-link {
-
-    align-items: left;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 50px;
-    background-color: #f4f2e9;
-    text-decoration: none;
-    align-items: center;
-    vertical-align: middle; 
-
-} */
 
 .session-submit:hover {
     background-color: darkgray;

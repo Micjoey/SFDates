@@ -27,13 +27,13 @@
  button {
     /* border-radius: 28px; */
     border-radius: 4px;
-    background-color: rgba(237, 205, 164, 0.81);
+    background-color: #737373;
     font-weight: 600;
 }
 button:focus {outline:0;}
 
 .background-color {
-    background-color: #f4f2e980;
+    background-color: #FBC7CA;
     /* Test Color */
     /* background-color: red; */
     /*  */
@@ -43,9 +43,17 @@ button:focus {outline:0;}
 
  .content {
      height: 100vh;
-     /* padding-bottom: 100px; */
-     /* background-color: #dad8cd; */
  }
+
+ .empty-space {
+    display: block;
+    height: 30px;
+}
+
+.test {
+    background-color: red;
+    border: 10px solid yellow;
+}
 
 
 
