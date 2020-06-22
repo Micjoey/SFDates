@@ -41,7 +41,16 @@ class DateType extends React.Component {
                                 titles.map((title,idx) => {
                                     title = this.dateAlter(title)
                                     return(  
-                                        <p key={`${title}-${values[idx]}`}>{title}: {values[idx]}</p>
+                                        <div className="title-info-container" key={`${values[idx]}`}>
+                                                <p 
+                                                    key={`${title}-${values[idx]}`}
+                                                    className="title-for-date"
+                                                >{title}: </p>
+                                                <p 
+                                                    key={`${values[idx]}-${title}`}
+                                                    className="info-for-date"
+                                                >{values[idx]}</p>
+                                            </div>
                                     )
                                 }
                                 )

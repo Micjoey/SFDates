@@ -30,16 +30,26 @@
         border: lightslategray 1px solid;
         padding: 5px;
         margin: 5px;
-        height: fit-content;
-        .date-specific-info-container:last-child {
-            margin-bottom: 5px;
+        // margin-bottom: 50px;
+        // height: fit-content;
+        .inner-date-specific-container:last-of-type {
+            margin-bottom: 50px;
         }
         .inner-date-specific-container {
             margin: 10px 0px;
             border: solid 1px black;
             padding: 3px;
-            .date-specific {
-    
+            .title-info-container {
+                display: flex;
+                .title-for-date {
+                    display: flex;
+                    width: 127px;
+                    min-width: max-content;
+                    // padding-right: 1em;
+                }
+                .info-for-date {
+                    height: fit-content;
+                }
             }
         }
     }
