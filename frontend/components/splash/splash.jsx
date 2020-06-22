@@ -29,18 +29,24 @@ class Splash extends React.Component {
         }
     }
 
-    toggleDisplay(div) {
+    toggleDisplay(div, close = null) {
         div = div[0]
         const outerDiv = document.getElementsByClassName("random-date-box")[0]
+        const closeWindow = document.getElementsByClassName("close-window-button")[0]
         if (div && div.style.display === '') {
             div.style.display = "block"
+            closeWindow.style.display = "flex"
             outerDiv.style = "background-color: darkkhaki;"
-        } else {
-            div.style.display = ''
+            document.getElementById("random-date-generator").innerHTML = "Generate Another Random Date"
+        } else if (close) {
+            document.getElementById("random-date-generator").innerHTML = "Random Date"
+            div.style.display = ""
+            closeWindow.style.display = ""
             outerDiv.style = "background-color: null;"
-            this.state.randomDate++
+        } else {
+            this.setState({randomDate: this.state.randomDate+1})
         } 
-        this.setState({randomDate: this.state.randomDate+1})
+    
     }
 
 
@@ -104,12 +110,20 @@ class Splash extends React.Component {
                             <button
                                 onClick={(() => this.toggleDisplay(toggleDiv))}
                                 className="random-date-button"
+                                id="random-date-generator"
                             >
                                 Random Date
                             </button>
-                                <div className='random-date-information'>
-                                    {this.randomDate()}
-                                </div>
+                            
+                            <div className='random-date-information'>
+                                {this.randomDate()}
+                            </div>
+                            <button 
+                                className="close-window-button"
+                                onClick={() => this.toggleDisplay(toggleDiv, "close")}
+                            >
+                                Close Window
+                            </button>
                         </div>
                     </div>
                 </div>
