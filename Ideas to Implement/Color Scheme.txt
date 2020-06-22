@@ -1,6 +1,6 @@
-Headers:
+Headers: #1b4b59
 Subheaders:
-Buttons: #737373
+Buttons: #8C8c8c
 Links:
 Active-Links:
 Font: 

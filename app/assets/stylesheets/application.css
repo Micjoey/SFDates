@@ -19,21 +19,27 @@
  }
 
  a {
-     color: red;
      font-weight: 500;
  }
+
+ a:hover {
+     background-color: rgba(95, 158, 160, 0.536);
+ }
+
+
 
 
  button {
     /* border-radius: 28px; */
     border-radius: 4px;
-    background-color: #737373;
+    background-color: #8C8c8c;
     font-weight: 600;
 }
 button:focus {outline:0;}
 
 .background-color {
-    background-color: #FBC7CA;
+    /* background-color: #FBC7CA; */
+    background-color: #43010b;
     /* Test Color */
     /* background-color: red; */
     /*  */

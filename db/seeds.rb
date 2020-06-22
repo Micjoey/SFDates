@@ -53,6 +53,7 @@ csv.each do |row|
     t = DateSuggestion.new
     t.title = row['Date Title (I.e Terra Linda Sleepy Hollow Hike)'] # string
     t.location = row['Location (I.e San Rafael or Marina District)'] # string
+    t.address_location = row['Address (if you know it)'] # string
     t.date_type = row['Type of Date'] # string
     t.cost = row['How expensive?'] # integer
     t.date_number = row['Which date do you think this would be good for? (Would you take someone to this date on Date #X?)'] #integer
