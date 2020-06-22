@@ -16,11 +16,21 @@ class Splash extends React.Component {
             allDates: null,
         }
         this.randomDate = this.randomDate.bind(this)
+        this.toggleDisplay = this.toggleDisplay.bind(this)
     }
 
     componentDidMount() {
         const allDates = this.props.retrieveDates()
         Promise.all([allDates]).then(() => this.setState({loaded: true, allDates: this.props.dates}))
+    }
+
+    toggleDisplay(div) {
+        div = div[0]
+        if (div && div.style.display === '') {
+            div.style.display = "block"
+        } else {
+            div.style.display = 'none'
+        } 
     }
 
     randomDate() {
@@ -35,50 +45,53 @@ class Splash extends React.Component {
 
     render() {
         let dateInfo
+        let toggleDiv
         if (this.state.loaded) {
             dateInfo = [`Title`, `Location`, `Address`, `Date Number`, `Date Type`, `Cost`,  `Description`]
+            toggleDiv = document.getElementsByClassName("random-date-information")
             return (
                 <div className='splash-page'>
                     <div className='background-img'>
                         <FilterBarContainer />
                     </div>
                     {/* random date box */}
-                    {/* <div className='random-date-box'>
-                        <div className='random-date-information'>
-                            {this.randomDate().map((info, idx) => (
-                                <ul key={idx}>
-                                    <p className="specific-date-title"> {dateInfo[idx]}: </p> 
-                                    <p className="specific-date-information"> {info}</p>
-                                </ul>
-                            ))}
-                        </div>
-                        <div className='random-date-image'>
-                            <img src="" alt="Filler"/>
-                        </div>
-                    </div> */}
                     {/* random date box */}
                     <div className="website-info">
+                        <div className='random-date-box'>
+                            <button onClick={() => this.toggleDisplay(toggleDiv)}>Random Date</button>
+                            <div className='random-date-information'>
+                                {this.randomDate().map((info, idx) => (
+                                    <ul key={idx}>
+                                        <p className="specific-date-title"> {dateInfo[idx]}: </p>
+                                        <p className="specific-date-information"> {info}</p>
+                                    </ul>
+                                ))}
+                            </div>
+                            {/* <div className='random-date-image'>
+                            <img src="" alt="Filler"/>
+                        </div> */}
+                        </div>
                         <div className="website-info-text">
                             <p className="website-info-greeting">
                                 Welcome to the SF Dates!
                             </p>
                             <div>
-                            <p className="website-info-paragraph">
-                                I stumbled upon the idea of creating a website that suggests dates when I was trying to figure out date ideas in San Francisco. As I am sure you would have done in the same situation as myself - I went to the best two resources I had: Google and my friends. 
+                                <p className="website-info-paragraph">
+                                    I stumbled upon the idea of creating a website that suggests dates when I was trying to figure out date ideas in San Francisco. As I am sure you would have done in the same situation as myself - I went to the best two resources I had: Google and my friends. 
 
-                                Per usual, when searching over the web, there were ideas, but not necessarily the options I wanted. I was hoping to find something that was in between me and my date and also unique. My friends made great suggestions, but once again, I wasn't sure. 
+                                    Per usual, when searching over the web, there were ideas, but not necessarily the options I wanted. I was hoping to find something that was in between me and my date and also unique. My friends made great suggestions, but once again, I wasn't sure. 
 
-                                I wanted something to suggest to me a date idea based on what date I am on and a convenient location for both parties. 
+                                    I wanted something to suggest to me a date idea based on what date I am on and a convenient location for both parties. 
 
-                                So I created this website. 
+                                    So I created this website. 
 
-                                I hope that this website will allow people in the Bay Area to find date ideas with relative ease. You are on a second date and need ideas in the Richmond district; {<Link to="">we got you</Link>}. Want to go on a hike; we got you. Been dating awhile and want to go on a random date, we got you. 
-                            </p>
-
+                                    I hope that this website will allow people in the Bay Area to find date ideas with relative ease. You are on a second date and need ideas in the Richmond district; {<Link to="">we got you</Link>}. Want to go on a hike; we got you. Been dating awhile and want to go on a random date, we got you. 
+                                </p>
                             </div>
                         </div>
                         
                     </div>
+                    
                 </div>
             ) 
         } else {

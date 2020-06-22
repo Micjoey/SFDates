@@ -16,6 +16,7 @@
 
  .app {
     display: block;
+    height: 100%;
  }
 
  a {
