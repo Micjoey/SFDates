@@ -51,6 +51,11 @@ button:focus {outline:0;}
 
  .content {
      /* height: 100vh; */
+     min-height: 100vh;
+ }
+ 
+ #root {
+     min-height: 100vh;
  }
 
  .empty-space {

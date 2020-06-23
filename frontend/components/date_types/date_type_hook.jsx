@@ -3,6 +3,23 @@ import LoadingScreen from '../misc/loading_screen';
 
 export const RenderDates = ({match}) => {
     const key = Object.keys(match.params)
+    const value = match.params[key]
+    const [currentDateList, setcurrentDateList] = useState(0)
+    useEffect(() => {
+        const fetchDates = async () => {
+            const result = await fetch(`/api/datesuggestions/?${key}=${value}`)
+            const body = await result.json();
+            console.log(body)
+            // setcurrentDateList(body);
+        }
+        fetchDates()
+    }, [value])
+
+    return (
+        <div>
+            <h1>{currentDateList}</h1>
+        </div>
+    )
 }
 
 

@@ -1,6 +1,7 @@
 .date-specific-parent-container {
     // height: 100vh;
     color: white;
+    min-height: 100vh;
     .date-specific-header-container {
         .date-specific-header {
             display: flex;
@@ -44,7 +45,7 @@
                 margin: 5px;
                 .title-for-date {
                     display: flex;
-                    width: 150px;
+                    width: 164px;
                     min-width: max-content;
                     padding-right: 1em;
                     text-align: right;
