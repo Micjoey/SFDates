@@ -22,9 +22,9 @@ import { RenderDates } from './date_types/date_type_hook';
 const App = () => (
   <div className="app">
       <Modal/>
-    <headers className="header">
+    <div className="header">
       <NavBarContainer />
-    </headers>
+    </div>
     <div className="content">
       <Switch>
         <AuthRoute exact path="/home" component={SplashContainer} /> 
