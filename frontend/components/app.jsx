@@ -14,6 +14,8 @@ import SplashContainer from './splash/splash_container';
 import NavBarContainer from './navbar/navbar_container';
 import Footer from './footer/footer';
 import DateTypeContainer from './date_types/date_type_container'
+import { RenderDates } from './date_types/date_type_hook';
+
 // import DateNumberContainer from './filterbar/date_number_filter';
 
 
@@ -31,6 +33,8 @@ const App = () => (
         <AuthRoute exact path="/datesuggestions/date_cost_:cost" component={DateTypeContainer} />
         <AuthRoute exact path="/datesuggestions/date_number_:date_number" component={DateTypeContainer} />
         <AuthRoute exact path="/datesuggestions/location_:location" component={DateTypeContainer} />
+        <AuthRoute exact path="/test" component={RenderDates} />
+
         <Redirect to="/home" />
       </Switch>
       {/* <footer className="footer"> */}
