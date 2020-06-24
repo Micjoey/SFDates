@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import LoadingScreen from '../misc/loading_screen';
 import IterateOverDates from './all_dates'
 import HeaderName from './changing_header_name';
+import { DateFilter } from './filter/filter';
 
 
 export const RenderDates = ({match}) => {
@@ -28,7 +29,7 @@ export const RenderDates = ({match}) => {
                     <HeaderName keyValue={keyValue}/>
                 </div>
                 <div className="date-specific-filter">
-                    filter bar
+                    <DateFilter dates={currentDateList}/>
                 </div>
                 <div className="date-specific-info">
                     <div className="date-specific-info-container">
