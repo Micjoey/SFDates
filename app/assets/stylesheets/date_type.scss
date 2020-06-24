@@ -18,6 +18,17 @@
         display: block;
         margin: 5px;
         border: lightslategray 1px solid;
+        width: max-content;
+        padding: 10px;
+        .specific-filter {
+            display: flex;
+            p:last-child {
+                padding-left: 5px;
+            }
+        }
+        .date-drop-down {
+            display: none;
+        }
     }
     .date-specific-info {
         display: flex;

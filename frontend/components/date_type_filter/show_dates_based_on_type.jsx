@@ -33,7 +33,23 @@ export const RenderDates = ({match}) => {
                     <HeaderName keyValue={keyValue}/>
                 </div>
                 <div className="date-specific-filter">
-                    <h1>check boxs</h1>
+                    <div className="specific-filter">
+                        <p>Cost: </p>
+                        <p onClick={() => dropDown("cost-date-drop-down")}>Click on me</p>
+                        {costAmount()}
+                    </div>
+                    <div className="specific-filter">
+                        <p>Type: </p>
+                        <p onClick={() => dropDown("type-date-drop-down")}>Click on me</p>
+                        <div id="type-date-drop-down" className="date-drop-down">
+                            <ul>
+                                <li>
+                                    <input id="c1" type="checkbox" />
+                                    <label for="c1">Cost</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div className="date-specific-info">
                     <div className="date-specific-info-container">
@@ -65,4 +81,30 @@ const locationFilter = (filteredDates) => {
 
 const dateTypeFilter = (filteredDates) => {
 
+}
+
+const dropDown = (className) => {
+    const currentDiv = document.getElementById(`${className}`)
+    if (currentDiv.style.display === "none" || currentDiv.style.display === "") {
+        currentDiv.style.display = "flex"
+    } else {
+        currentDiv.style.display = "none"
+    }
+}
+
+const costAmount = () => {
+    const costAmount = ['None', 'Low', 'Medium', 'Expensive', 'Very Expensive']
+    return (
+       
+            <div id="cost-date-drop-down" className="date-drop-down">
+                <ul>
+                    {costAmount.map((cost, idx) => (
+                        <li>
+                            <input id={`c${idx + 1}`} type="checkbox" />
+                            <label for={`c${idx + 1}`}>{cost}</label>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+    )
 }
