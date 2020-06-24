@@ -13,7 +13,7 @@ import Modal from './modal/modal'
 import SplashContainer from './splash/splash_container';
 import NavBarContainer from './navbar/navbar_container';
 import Footer from './footer/footer';
-import { RenderDates } from './date_types/date_type_hook';
+import { RenderDates } from './date_types/show_dates_based_on_type';
 
 // import DateNumberContainer from './filterbar/date_number_filter';
 

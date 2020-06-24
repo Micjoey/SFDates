@@ -1,12 +1,17 @@
 import React, {useState, useEffect} from 'react';
 import LoadingScreen from '../misc/loading_screen';
-import IterateOverDates from './all_dates_hook'
-// import HeaderName from './changing_header_name'
+import IterateOverDates from './all_dates'
+import HeaderName from './changing_header_name';
+
 
 export const RenderDates = ({match}) => {
     const key = Object.keys(match.params)[0]
     const value = match.params[key]
     const [currentDateList, setCurrentDateList] = useState({})
+    const [keyValue, setKeyValue] = useState({
+        key,
+        value
+    })
     useEffect(() => {
         const fetchDates = async () => {
             const result = await fetch(`/api/datesuggestions/?${ key }=${ value }`)
@@ -20,7 +25,7 @@ export const RenderDates = ({match}) => {
         <div className='background-color'>
             <div className="date-specific-parent-container">
                 <div className="date-specific-header-container">
-                    {/* <HeaderName/> */}
+                    <HeaderName keyValue={keyValue}/>
                 </div>
                 <div className="date-specific-filter">
                     filter bar
