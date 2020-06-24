@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import LoadingScreen from '../misc/loading_screen';
 import IterateOverDates from './all_dates'
 import HeaderName from './changing_header_name';
-import { DateFilter } from './filter/filter';
 
 
 export const RenderDates = ({match}) => {
@@ -12,6 +10,12 @@ export const RenderDates = ({match}) => {
     const [keyValue, setKeyValue] = useState({
         key,
         value
+    })
+    const [checkedBox, setCheckedBox] = useState({
+        costFilter: false,
+        dateNumberFilter: false,
+        locationFilter: false,
+        dateTypeFilter: false
     })
     useEffect(() => {
         const fetchDates = async () => {
@@ -29,7 +33,7 @@ export const RenderDates = ({match}) => {
                     <HeaderName keyValue={keyValue}/>
                 </div>
                 <div className="date-specific-filter">
-                    <DateFilter dates={currentDateList}/>
+                    <h1>check boxs</h1>
                 </div>
                 <div className="date-specific-info">
                     <div className="date-specific-info-container">
@@ -47,3 +51,18 @@ export const RenderDates = ({match}) => {
 }
 
 
+const costFilter = (filteredDates) => {
+
+}
+
+const dateNumberFilter = (filteredDates) => {
+
+}
+
+const locationFilter = (filteredDates) => {
+
+}
+
+const dateTypeFilter = (filteredDates) => {
+
+}
