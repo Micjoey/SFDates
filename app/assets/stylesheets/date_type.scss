@@ -1,6 +1,7 @@
 .date-specific-parent-container {
     // height: 100vh;
     color: white;
+    min-height: 100vh;
     .date-specific-header-container {
         .date-specific-header {
             display: flex;
@@ -17,6 +18,17 @@
         display: block;
         margin: 5px;
         border: lightslategray 1px solid;
+        width: max-content;
+        padding: 10px;
+        .specific-filter {
+            display: flex;
+            p:last-child {
+                padding-left: 5px;
+            }
+        }
+        .date-drop-down {
+            display: none;
+        }
     }
     .date-specific-info {
         display: flex;
@@ -32,27 +44,46 @@
         padding: 5px;
         margin: 5px;
         margin-bottom: 53px;
+        overflow-x: hidden;
+
         .inner-date-specific-container:last-of-type {
             margin-bottom: 50px;
         }
         .inner-date-specific-container {
-            margin: 10px 0px;
-            border: solid 1px black;
-            padding: 3px;
             .title-info-container {
-                display: flex;
-                margin: 5px;
+                // display: flex;
+                // margin: 5px;
+                margin: 10px 0px;
+                border: solid 1px black;
+                padding: 3px;
                 .title-for-date {
                     display: flex;
-                    width: 150px;
+                    width: 164px;
                     min-width: max-content;
                     padding-right: 1em;
                     text-align: right;
                 }
-                .info-for-date {
-                    display: block;
+                .info-for-date, .date-website-link {
+                    display: flex;
                     height: fit-content;
                     width: 100%;
+                    padding: 5px 0px;
+                    word-wrap: break-word;
+                }
+                .info-for-date:last-child {
+                    padding: 5px 0px;
+                }
+                p {
+                    margin: 5px 0px;
+                    font-size: 18px;
+                }
+                h4 {
+                    font-size: 22px;
+                    text-decoration: underline;
+                } 
+                a {
+                    color: white;
+                    padding-left: 5px;
                 }
             }
         }
