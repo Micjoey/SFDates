@@ -1,6 +1,9 @@
 //React
+import 'whatwg-fetch'
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+require("regenerator-runtime/runtime");
 //Components
 import Root from './components/root';
 import configureStore from './store/store';

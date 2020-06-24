@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -36,6 +37,9 @@ class FilterBar extends React.Component {
                 </div>
                 <div id='date-type-filter'>
                     <button onClick={() => this.props.openModal('type', 'date-type-filter', allDates)}>Date Type</button>
+                </div>
+                <div id='date-type-filter'>
+                    <Link to="/test/date_type_Activity">test</Link>
                 </div>
             </div>
         )

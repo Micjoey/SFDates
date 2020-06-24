@@ -1,26 +1,27 @@
 import React, {useState, useEffect} from 'react';
-import LoadingScreen from '../misc/loading_screen';
+import LoadingScreen from '../../misc/loading_screen';
+import IterateOverDates from './tester_hook'
 
 export const RenderDates = ({match}) => {
-    const key = Object.keys(match.params)
+    const key = Object.keys(match.params)[0]
     const value = match.params[key]
-    const [currentDateList, setcurrentDateList] = useState(0)
+    const [currentDateList, setCurrentDateList] = useState({})
     useEffect(() => {
         const fetchDates = async () => {
-            const result = await fetch(`/api/datesuggestions/?${key}=${value}`)
+            const result = await fetch(`/api/datesuggestions/?${ key }=${ value }`)
             const body = await result.json();
-            console.log(body)
-            // setcurrentDateList(body);
+            setCurrentDateList(body);
         }
         fetchDates()
-    }, [value])
+    }, [key])
 
     return (
-        <div>
-            <h1>{currentDateList}</h1>
-        </div>
+        <>
+        <IterateOverDates dates={currentDateList} />
+        </>
     )
 }
+
 
 
 // class DateType extends React.Component {
