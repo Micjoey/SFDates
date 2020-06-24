@@ -33,7 +33,7 @@ const thirdParty = (date) => {
     if (thirdParty) {
         return (
             <>
-                <p>Creator: {dateCreator}</p>
+                <p className="date-website-link">Creator: {dateCreator}</p>
                 <p className="date-website-link">
                     Website Location:
                     {<a href={date.creator_contact} target="_blank">
