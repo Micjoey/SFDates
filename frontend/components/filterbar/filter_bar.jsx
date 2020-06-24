@@ -12,7 +12,7 @@ class FilterBar extends React.Component {
             loaded: false,
             allDates: [],
         }
-        // this.resetAllBooks = this.resetAllBooks.bind(this)
+        this.redirect = this.redirect.bind(this)
     }
 
     componentDidMount() {
@@ -20,12 +20,20 @@ class FilterBar extends React.Component {
         Promise.all([dates]).then(dates => this.setState({allDates: dates, loaded: true}))
     }
 
+    redirect() {
+        return (
+            <Link to="/datesuggestions/"></Link>
+        )
+    }
 
     render() {
         if (!this.props.dates) return null;
         let allDates = Object.values(this.props.dates)
         return (
             <div className="filter-bar">
+                <div id='all-dates-button'>
+                    <button onClick={() => window.location.href="#/datesuggestions/"}>All Dates</button>
+                </div>
                 <div id='date-number-filter'>
                     <button onClick={() => this.props.openModal('date number', 'date-number-filter', allDates)}>Date Number</button>
                 </div>
@@ -37,9 +45,6 @@ class FilterBar extends React.Component {
                 </div>
                 <div id='date-type-filter'>
                     <button onClick={() => this.props.openModal('type', 'date-type-filter', allDates)}>Date Type</button>
-                </div>
-                <div id='date-type-filter'>
-                    <Link to="/test/date_type_Activity">test</Link>
                 </div>
             </div>
         )
