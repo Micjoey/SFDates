@@ -8,18 +8,12 @@ export const DateFilter = ({dates}) => {
         locationFilter: false,
         dateTypeFilter: false
     })
-    const key = Object.keys(match.params)[0]
-    const value = match.params[key]
-    const [currentDateList, setCurrentDateList] = useState({})
-    useEffect(() => {
-        const fetchDates = async () => {
-            const result = await fetch(`/api/datesuggestions/?${key}=${value}`)
-            const body = await result.json();
-            setCurrentDateList(body);
-        }
-        fetchDates()
-    }, [key])
-    debugger
+    console.log(dates)
+    return (
+        <>
+            <h1>HASDFASDF</h1>
+        </>
+    )
 }
 
 
