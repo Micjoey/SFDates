@@ -186,20 +186,6 @@ class DateType extends React.Component {
                         <div className="date-specific-info">
                             <div className="date-specific-info-container">
                                 {this.renderDates()}
-                                {/* {
-                                    Object.keys(dates).map((num,idx) => {
-                                        return (
-                                            <div className="inner-date-specific-container" key={this.generateKeyNumber()}>
-                                                {Object.values(dates[num])
-                                                    .slice(1,dates[num.length-2])
-                                                    .map( ele => (
-                                                            
-                                                        )
-                                                    )}
-                                            </div>
-                                        )
-                                    })  
-                                } */}
                             </div>
                             <div className="map-container">
                                 <h1>

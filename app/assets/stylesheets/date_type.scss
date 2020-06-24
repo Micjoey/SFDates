@@ -41,8 +41,11 @@
             border: solid 1px black;
             padding: 3px;
             .title-info-container {
-                display: flex;
-                margin: 5px;
+                // display: flex;
+                // margin: 5px;
+                margin: 10px 0px;
+                border: solid 1px black;
+                padding: 3px;
                 .title-for-date {
                     display: flex;
                     width: 164px;
