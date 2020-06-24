@@ -58,8 +58,8 @@ class Splash extends React.Component {
         if (this.state.allDates) {
             randNum = Math.floor(Math.random() * this.state.totalCount)
             randomDate = Object.values(this.state.allDates[randNum])
-            dateInfo = [`Title`, `Location`, `Address`, `Date Number`, `Date Type`, `Cost`, `Description`]
-            randomDateEdited = randomDate.slice(1,randomDate.length-1)
+            dateInfo = [`Title`, `Location`, `Address`, `Date Number`, `Date Type`, `Cost`, `Description`, "Creator", "Website Link"]
+            randomDateEdited = randomDate.slice(1,randomDate.length-3)
             randomDateEdited[0].toUpperCase();
         }
 
