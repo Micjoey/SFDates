@@ -2,14 +2,19 @@ import React, {useState, useEffect} from 'react';
 import IterateOverDates from './iterate_over_dates'
 import HeaderName from './changing_header_name';
 import dateFilter from './date_filter'
+import LoadingScreen from '../misc/loading_screen';
 
 export const RenderDates = ({match}) => {
     const [currentDateList, setCurrentDateList] = useState({})
+    const [originalDateList, setOriginalDateList] = useState({})
+    const [loaded, setLoaded] = useState({isLoaded: false})
     useEffect(() => {
         const fetchDates = async () => {
             const result = await fetch(`/api/datesuggestions/`)
             const body = await result.json();
             setCurrentDateList(body);
+            setOriginalDateList(body)
+            setLoaded({isLoaded: true})
         }
         fetchDates()
     }, [checkedBox])
@@ -19,67 +24,74 @@ export const RenderDates = ({match}) => {
         location: false,
         date_type: false
     })
-    const costAmount = ['Low', 'Medium', 'Expensive', 'Very Expensive']
-    const dateNumber = ['Date #1', 'Date #2', 'Date #3', 'Date #4 or More']
-    return (
-        <div className='background-color'>
-            <div className="date-specific-header-container">
-                <HeaderName/>
-                <h2>{Object.keys(currentDateList).length} - Count</h2>
-                <h2>{Object.values(checkedBox)} - test for setCheckedBox</h2>
-            </div>
-            <div className="date-specific-parent-container">
-                <div className="date-specific-filter">
-                    <button onClick={() => dateFilter(currentDateList, checkedBox, setCheckedBox, setCurrentDateList)}> Filter By:</button>
-                    <div className="specific-filter">
-                        <p>Cost: </p>
-                        <div>
-                            {dropDownMenu(costAmount, "cost-date-drop-down", "cost")}
+
+    if (loaded.isLoaded) {
+        debugger
+        return (
+            <div className='background-color'>
+                <div className="date-specific-header-container">
+                    <HeaderName/>
+                </div>
+                <div className="date-specific-parent-container">
+                    <div className="date-specific-filter">
+                        <button onClick={() => dateFilter(currentDateList, checkedBox, setCheckedBox, setCurrentDateList)}> Filter By:</button>
+                        <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Reset Search:</button>
+                        <div className="specific-filter">
+                            <p>Cost: </p>
+                            <div>
+                                {dropDownMenu(grabUniqAspectOfDate(currentDateList, "cost"), "cost-date-drop-down", "cost")}
+                            </div>
+                        </div>
+                        <div className="specific-filter">
+                            <p>Type: </p>
+                            <div>
+                                {dropDownMenu(grabUniqAspectOfDate(currentDateList, "date_type"),"type-date-drop-down", "date_type")}
+                            </div>
+                        </div>
+                        <div className="specific-filter">
+                            <p>Location: </p>
+                            <div>
+                                {/* {dropDownMenu(grabUniqAspectOfDate(currentDateList, "location"),"location-date-drop-down", "location")} */}
+                            </div>
+                        </div>
+                        <div className="specific-filter">
+                            <p>Date Number: </p>
+                            <div>
+                                {dropDownMenu(grabUniqAspectOfDate(currentDateList, "date_number"),"datenumber-date-drop-down", "date_number")}
+                            </div>
                         </div>
                     </div>
-                    <div className="specific-filter">
-                        <p>Type: </p>
-                        <div>
-                            {dropDownMenu(allTypesOfDates(currentDateList),"type-date-drop-down", "date_type")}
+                    <div className="date-specific-info">
+                        <div className="date-specific-info-container">
+                            <IterateOverDates dates={currentDateList} />
                         </div>
-                    </div>
-                    <div className="specific-filter">
-                        <p>Location: </p>
-                        <div>
-                            {dropDownMenu([],"location-date-drop-down", "location")}
-                        </div>
-                    </div>
-                    <div className="specific-filter">
-                        <p>Date Number: </p>
-                        <div>
-                            {dropDownMenu(dateNumber,"datenumber-date-drop-down", "date_number")}
+                        <div className="map-container">
+                            <h1>
+                                <p>Map Placeholder</p>
+                            </h1>
                         </div>
                     </div>
                 </div>
-                <div className="date-specific-info">
-                    <div className="date-specific-info-container">
-                        <IterateOverDates dates={currentDateList} />
-                    </div>
-                    <div className="map-container">
-                        <h1>
-                            <p>Map Placeholder</p>
-                        </h1>
-                    </div>
-                </div>
             </div>
-        </div>
-    )
+        )
+    } else {
+        return (
+            <LoadingScreen/>
+        )
+    }
 }
 
 
 
 
 
+const resetFilter = (originalDateList, setCurrentDateList) => {
+    setCurrentDateList(originalDateList)
+}
 
-
-const allTypesOfDates = (allDates) => {
+const grabUniqAspectOfDate = (allDates, uniqAspect) => {
     const dates = Object.values(allDates)
-    const dateType = [...new Set(dates.map(date => date.date_type))]
+    const dateType = [...new Set(dates.map(date => date[uniqAspect]))]
     return dateType
 }
 
