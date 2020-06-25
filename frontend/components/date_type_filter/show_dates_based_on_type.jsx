@@ -5,7 +5,6 @@ import HeaderName from './changing_header_name';
 
 export const RenderDates = ({match}) => {
     const [currentDateList, setCurrentDateList] = useState({})
-    const allDates = currentDateList
     useEffect(() => {
         const fetchDates = async () => {
             const result = await fetch(`/api/datesuggestions/`)
@@ -22,10 +21,7 @@ export const RenderDates = ({match}) => {
     })
     const costAmount = ['None', 'Low', 'Medium', 'Expensive', 'Very Expensive']
     
-    // const dates = Object.values(currentDateList)
-    // const dateTypes = [...new Set(dates.map(date => date.date_type))]
-
-
+    
     return (
         <div className='background-color'>
             <div className="date-specific-parent-container">
@@ -35,22 +31,22 @@ export const RenderDates = ({match}) => {
                 <div className="date-specific-filter">
                     <div className="specific-filter">
                         <p>Cost: </p>
-                        <p 
+                        {/* <p 
                             onClick={() => dropDown("cost-date-drop-down")}
                             className="click-me"
-                        >Click on me</p>
+                        >Click on me</p> */}
                         <div>
                             {dropDownMenu(costAmount, "cost-date-drop-down")}
                         </div>
                     </div>
                     <div className="specific-filter">
                         <p>Type: </p>
-                        <p 
+                        {/* <p 
                             onClick={() => dropDown("type-date-drop-down")}
                             className="click-me"
-                        >Click on me</p>
+                        >Click on me</p> */}
                         <div>
-                            {/* {dropDownMenu(datetypes,"type-date-drop-down")} */}
+                            {dropDownMenu(allTypesOfDates(currentDateList),"type-date-drop-down")}
                         </div>
                     </div>
                 </div>
@@ -96,19 +92,31 @@ const dropDown = (className) => {
 }
 
 const dropDownMenu = (menu, id) => {
-    return (
-       
+    if (menu.length > 5) {
+        return (
             <div id={id} className="date-drop-down">
-                <ul>
+                <select>
                     {menu.map((item, idx) => (
-                        <li key={`${item} - ${idx}`}>
-                            <input id={`c${idx + 1}`} type="checkbox" />
-                            <label for={`c${idx + 1}`}>{item}</label>
-                        </li>
+                        <option value={item} key={`${item}-${idx}`}> {item} </option>
                     ))}
-                </ul>
+                </select>
             </div>
-    )
+        )
+    } else {
+        return (
+           
+                <div id={id} className="date-drop-down">
+                    <ul>
+                        {menu.map((item, idx) => (
+                            <li key={`${item} - ${idx}`}>
+                                <input id={`c${idx + 1}`} type="checkbox" />
+                                <label for={`c${idx + 1}`}>{item}</label>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+        )
+    }
 }
 
 const allTypesOfDates = (allDates) => {
