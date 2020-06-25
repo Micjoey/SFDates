@@ -1,7 +1,7 @@
 import React from 'react'
 
-const HeaderName = ({keyValue}) => {
-        switch (keyValue.key) {
+const HeaderName = (key = "") => {
+        switch (key) {
             case "date_type":
                 return (
                     <h1 className="date-specific-header">

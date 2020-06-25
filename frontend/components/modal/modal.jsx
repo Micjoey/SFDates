@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/model_actions'
-import DateNumberFilter from '../filterbar/date_number_filter';
+import DateNumberFilter from '../../old_code/filterbar/date_number_filter';
 import LoginFormContainer from '../session_form/login_form_container'
 import SignUpFormContainer from '../session_form/sign_up_form_container'
-import LocationFilter from '../filterbar/location_filter'
-import CostFilter from '../filterbar/cost_filter';
-import TypeFilter from '../filterbar/date_type_filter'
+import LocationFilter from '../../old_code/filterbar/location_filter'
+import CostFilter from '../../old_code/filterbar/cost_filter';
+import TypeFilter from '../../old_code/filterbar/date_type_filter'
 
 
 function Modal({ modal, closeModal } ) {
@@ -30,24 +30,24 @@ function Modal({ modal, closeModal } ) {
     
     
     switch(modal) {
-        case 'type':
-            component = <TypeFilter shutModal={shutModal} allDateInfo={allDates}/>;
-            break;
-        case 'cost':
-            component = <CostFilter shutModal={shutModal} allDateInfo={allDates}/>;
-            break;
-        case 'date number':
-            component = <DateNumberFilter shutModal={shutModal} allDateInfo={allDates}/>;
-            break;
-        case 'location':
-            component = <LocationFilter shutModal={shutModal} allDateInfo={allDates}/>;
-            break;
-        case 'login':
-            component = <LoginFormContainer/>;
-            break;
-        case 'sign up':
-            component = <SignUpFormContainer />;
-            break;
+        // case 'type':
+        //     component = <TypeFilter shutModal={shutModal} allDateInfo={allDates}/>;
+        //     break;
+        // case 'cost':
+        //     component = <CostFilter shutModal={shutModal} allDateInfo={allDates}/>;
+        //     break;
+        // case 'date number':
+        //     component = <DateNumberFilter shutModal={shutModal} allDateInfo={allDates}/>;
+        //     break;
+        // case 'location':
+        //     component = <LocationFilter shutModal={shutModal} allDateInfo={allDates}/>;
+        //     break;
+        // case 'login':
+        //     component = <LoginFormContainer/>;
+        //     break;
+        // case 'sign up':
+        //     component = <SignUpFormContainer />;
+        //     break;
         default:
             return null;
     }

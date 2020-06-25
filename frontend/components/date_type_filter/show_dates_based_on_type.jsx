@@ -4,24 +4,16 @@ import HeaderName from './changing_header_name';
 
 
 export const RenderDates = ({match}) => {
-    const key = Object.keys(match.params)[0]
-    const value = match.params[key]
     const [currentDateList, setCurrentDateList] = useState({})
-    const [keyValue, setKeyValue] = useState({
-        key,
-        value
-    })
-    
+    const allDates = currentDateList
     useEffect(() => {
         const fetchDates = async () => {
-            const result = await fetch(`/api/datesuggestions/?${ key }=${ value }`)
+            const result = await fetch(`/api/datesuggestions/`)
             const body = await result.json();
             setCurrentDateList(body);
         }
         fetchDates()
-    }, [key])
-
-    const [datetypes, setDateTypes] = useState()
+    }, [checkedBox])
     const [checkedBox, setCheckedBox] = useState({
         costFilter: false,
         dateNumberFilter: false,
@@ -30,15 +22,15 @@ export const RenderDates = ({match}) => {
     })
     const costAmount = ['None', 'Low', 'Medium', 'Expensive', 'Very Expensive']
     
-    const dates = Object.values(currentDateList)
-    const dateType = [...new Set(dates.map(date => date.date_type))]
+    // const dates = Object.values(currentDateList)
+    // const dateTypes = [...new Set(dates.map(date => date.date_type))]
 
 
     return (
         <div className='background-color'>
             <div className="date-specific-parent-container">
                 <div className="date-specific-header-container">
-                    <HeaderName keyValue={keyValue}/>
+                    <HeaderName/>
                 </div>
                 <div className="date-specific-filter">
                     <div className="specific-filter">
@@ -58,7 +50,7 @@ export const RenderDates = ({match}) => {
                             className="click-me"
                         >Click on me</p>
                         <div>
-                            {dropDownMenu(datetypes,"type-date-drop-down")}
+                            {/* {dropDownMenu(datetypes,"type-date-drop-down")} */}
                         </div>
                     </div>
                 </div>

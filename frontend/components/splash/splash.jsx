@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import LoadingScreen from '../misc/loading_screen'
 import { Link } from 'react-router-dom';
-import FilterBarContainer from '../filterbar/filter_bar_container';
+import AllDatesButton from '../date_type_filter/all_dates_button'
+
 
 class Splash extends React.Component {
     constructor(props) {
@@ -82,7 +83,8 @@ class Splash extends React.Component {
             return (
                 <div className='splash-page'>
                     <div className='background-img'>
-                        <FilterBarContainer />
+                        {/* <FilterBar /> */}
+                        <AllDatesButton/>
                     </div>
                     <div className="website-info">
                         <div className="website-info-text">
