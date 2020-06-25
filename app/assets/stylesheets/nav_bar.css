@@ -31,6 +31,10 @@
     padding-top: 5px;
     }
 
+    .SfDates-title-logged-in:hover {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
     .nav-bar-home-button {
         text-decoration: none;
         color: white;

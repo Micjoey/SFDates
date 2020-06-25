@@ -11,12 +11,7 @@ export const RenderDates = ({match}) => {
         key,
         value
     })
-    const [checkedBox, setCheckedBox] = useState({
-        costFilter: false,
-        dateNumberFilter: false,
-        locationFilter: false,
-        dateTypeFilter: false
-    })
+    
     useEffect(() => {
         const fetchDates = async () => {
             const result = await fetch(`/api/datesuggestions/?${ key }=${ value }`)
@@ -25,6 +20,19 @@ export const RenderDates = ({match}) => {
         }
         fetchDates()
     }, [key])
+
+    const [datetypes, setDateTypes] = useState()
+    const [checkedBox, setCheckedBox] = useState({
+        costFilter: false,
+        dateNumberFilter: false,
+        locationFilter: false,
+        dateTypeFilter: false
+    })
+    const costAmount = ['None', 'Low', 'Medium', 'Expensive', 'Very Expensive']
+    
+    const dates = Object.values(currentDateList)
+    const dateType = [...new Set(dates.map(date => date.date_type))]
+
 
     return (
         <div className='background-color'>
@@ -35,19 +43,22 @@ export const RenderDates = ({match}) => {
                 <div className="date-specific-filter">
                     <div className="specific-filter">
                         <p>Cost: </p>
-                        <p onClick={() => dropDown("cost-date-drop-down")}>Click on me</p>
-                        {costAmount()}
+                        <p 
+                            onClick={() => dropDown("cost-date-drop-down")}
+                            className="click-me"
+                        >Click on me</p>
+                        <div>
+                            {dropDownMenu(costAmount, "cost-date-drop-down")}
+                        </div>
                     </div>
                     <div className="specific-filter">
                         <p>Type: </p>
-                        <p onClick={() => dropDown("type-date-drop-down")}>Click on me</p>
-                        <div id="type-date-drop-down" className="date-drop-down">
-                            <ul>
-                                <li>
-                                    <input id="c1" type="checkbox" />
-                                    <label for="c1">Cost</label>
-                                </li>
-                            </ul>
+                        <p 
+                            onClick={() => dropDown("type-date-drop-down")}
+                            className="click-me"
+                        >Click on me</p>
+                        <div>
+                            {dropDownMenu(datetypes,"type-date-drop-down")}
                         </div>
                     </div>
                 </div>
@@ -86,25 +97,31 @@ const dateTypeFilter = (filteredDates) => {
 const dropDown = (className) => {
     const currentDiv = document.getElementById(`${className}`)
     if (currentDiv.style.display === "none" || currentDiv.style.display === "") {
-        currentDiv.style.display = "flex"
+        currentDiv.style.display = "block"
     } else {
         currentDiv.style.display = "none"
     }
 }
 
-const costAmount = () => {
-    const costAmount = ['None', 'Low', 'Medium', 'Expensive', 'Very Expensive']
+const dropDownMenu = (menu, id) => {
     return (
        
-            <div id="cost-date-drop-down" className="date-drop-down">
+            <div id={id} className="date-drop-down">
                 <ul>
-                    {costAmount.map((cost, idx) => (
-                        <li>
+                    {menu.map((item, idx) => (
+                        <li key={`${item} - ${idx}`}>
                             <input id={`c${idx + 1}`} type="checkbox" />
-                            <label for={`c${idx + 1}`}>{cost}</label>
+                            <label for={`c${idx + 1}`}>{item}</label>
                         </li>
                     ))}
                 </ul>
             </div>
     )
+}
+
+const allTypesOfDates = (allDates) => {
+    const dates = Object.values(allDates)
+    const dateType = [...new Set(dates.map(date => date.date_type))]
+    // console.log(dateType)
+    return dateType
 }

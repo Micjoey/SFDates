@@ -22,7 +22,8 @@
         padding: 10px;
         .specific-filter {
             display: flex;
-            p:last-child {
+            padding: 5px 0px;
+            .click-me {
                 padding-left: 5px;
             }
         }
