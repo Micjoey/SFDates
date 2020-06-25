@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LoadingScreen from '../misc/loading_screen'
 import { Link } from 'react-router-dom';
-import AllDatesButton from '../date_type_filter/all_dates_button'
+// import AllDatesButton from '../date_type_filter/all_dates_button'
 
 
 class Splash extends React.Component {
@@ -83,8 +83,6 @@ class Splash extends React.Component {
             return (
                 <div className='splash-page'>
                     <div className='background-img'>
-                        {/* <FilterBar /> */}
-                        <AllDatesButton/>
                     </div>
                     <div className="website-info">
                         <div className="website-info-text">
@@ -105,15 +103,19 @@ class Splash extends React.Component {
                                     Been dating awhile and want to go on a random date, we got you - click on the button below <i className="fa fa-angle-double-down down-arrow" onClick={() => this.toggleDisplay(toggleDiv, "close")}></i>.
                                     </p>
                                     <br/>
-                                    
-
-                                
                             </div>
                         </div>
                         <br>
                         </br>
+                        <button
+                            onClick={() => window.location.href = "#/datesuggestions/"}
+                            className="random-date-button"
+                        >
+                            All Dates
+                        </button>
 
                         <div className='random-date-box'>
+                            
                             <button
                                 onClick={() => this.toggleDisplay(toggleDiv)}
                                 className="random-date-button"
@@ -121,7 +123,6 @@ class Splash extends React.Component {
                             >
                                 Random Date
                             </button>
-                            
                             <div className='random-date-information'>
                                 {this.randomDate()}
                             </div>

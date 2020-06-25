@@ -41,7 +41,7 @@ button:focus {outline:0;}
 
 .background-color {
     /* background-color: #FBC7CA; */
-    background-color: #43010b;
+    background-color:rgb(244, 238, 229);
     /* Test Color */
     /* background-color: red; */
     /*  */
@@ -70,7 +70,7 @@ button:focus {outline:0;}
 
 
 .arrow {
-  border: solid white;
+  border: solid black;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;

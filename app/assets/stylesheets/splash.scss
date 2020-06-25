@@ -82,10 +82,10 @@
     .filter-bar {
         display: flex;
         justify-content: space-evenly;
-        background-color: rgba(28, 115, 191, 0.742);
+        // background-color: rgba(28, 115, 191, 0.742);
         height: 2em;
         align-items: center;
-        color: ivory;
+        color: black;
         position: relative;
     }
     .flavor-text {
@@ -127,7 +127,7 @@
 
 .splash-page {
     display: block;
-    background-color: #1A0004;
+    background-color:white;
     min-height: 100vh;
     width: 100%;
     padding-bottom: 20px;
@@ -152,8 +152,8 @@
     max-width: 50%;
     height: fit-content;
     margin: auto;
-    color: white;
-    background-color: #3c010ae5;
+    color: black;
+    background-color: white;
     font-size: 16px;
     font-weight: bolder;
     padding-bottom: 20px;
@@ -170,7 +170,7 @@
     .specific-date-information {
         margin-left: 4px;
         font-weight: bold;
-        color: seashell;
+        color: black;
         text-overflow: ellipsis;
         width: 100%;
         word-wrap: normal;
@@ -186,7 +186,7 @@
     }
 
     .website-info {
-        color: white;
+        color: black;
         display: block;
         margin: auto;
         width: 80%;
@@ -211,7 +211,10 @@
     }
         
 .random-date-button {
-    margin: 10px 0px 5px 0px;
+    // margin: 10px;
+    display: block;
+    margin: auto;
+    margin-bottom: 8px;
 }
 
 .random-date-button:hover {
@@ -227,10 +230,11 @@
     display: none;
     text-align: center;
     margin: auto;
+    margin-top: 5px;
 }
 
 .body-link {
-    color: white;
+    color: black;
     font-weight: bold;
 }
 
