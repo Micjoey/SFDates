@@ -14,7 +14,7 @@
 //         }
 //     }
 //     render() {
-//         const costAmount = ['None', 'Low', 'Medium', 'Expensive', 'Very Expensive']
+//         const costAmount = ['Low', 'Medium', 'Expensive', 'Very Expensive']
 //         return (
 //             <div className="dropdown-menu">
 //                 {costAmount.map((costAmount, i) => (

@@ -22,9 +22,15 @@
         border: lightslategray 1px solid;
         width: max-content;
         padding: 10px;
+        height: fit-content;
         .specific-filter {
-            display: flex;
+            display: block;
             padding: 5px 0px;
+            width: max-content;
+            min-width: fit-content;
+            p {
+                width: 6em;
+            }
             .click-me {
                 padding-left: 5px;
             }
@@ -44,7 +50,7 @@
         width: 50%;
         overflow-y: scroll;
         border: lightslategray 1px solid;
-        padding: 5px;
+        padding: 12px;
         margin: 5px;
         margin-bottom: 53px;
         overflow-x: hidden;

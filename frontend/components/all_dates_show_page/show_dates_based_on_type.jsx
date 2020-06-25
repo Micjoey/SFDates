@@ -19,7 +19,8 @@ export const RenderDates = ({match}) => {
         locationFilter: false,
         dateTypeFilter: false
     })
-    const costAmount = ['None', 'Low', 'Medium', 'Expensive', 'Very Expensive']
+    const costAmount = ['Low', 'Medium', 'Expensive', 'Very Expensive']
+    const dateNumber = ['Date #1', 'Date #2', 'Date #3', 'Date #4 or More']
     
     
     return (
@@ -31,22 +32,26 @@ export const RenderDates = ({match}) => {
                 <div className="date-specific-filter">
                     <div className="specific-filter">
                         <p>Cost: </p>
-                        {/* <p 
-                            onClick={() => dropDown("cost-date-drop-down")}
-                            className="click-me"
-                        >Click on me</p> */}
                         <div>
                             {dropDownMenu(costAmount, "cost-date-drop-down")}
                         </div>
                     </div>
                     <div className="specific-filter">
                         <p>Type: </p>
-                        {/* <p 
-                            onClick={() => dropDown("type-date-drop-down")}
-                            className="click-me"
-                        >Click on me</p> */}
                         <div>
                             {dropDownMenu(allTypesOfDates(currentDateList),"type-date-drop-down")}
+                        </div>
+                    </div>
+                    <div className="specific-filter">
+                        <p>Location: </p>
+                        <div>
+                            {dropDownMenu([],"type-date-drop-down")}
+                        </div>
+                    </div>
+                    <div className="specific-filter">
+                        <p>Date Number: </p>
+                        <div>
+                            {dropDownMenu(dateNumber,"type-date-drop-down")}
                         </div>
                     </div>
                 </div>
@@ -92,17 +97,20 @@ const dropDown = (className) => {
 }
 
 const dropDownMenu = (menu, id) => {
-    if (menu.length > 5) {
-        return (
-            <div id={id} className="date-drop-down">
-                <select>
-                    {menu.map((item, idx) => (
-                        <option value={item} key={`${item}-${idx}`}> {item} </option>
-                    ))}
-                </select>
-            </div>
-        )
-    } else {
+    // if (menu.length > 5) {
+    //     return (
+    //         <div id={id} className="date-drop-down">
+    //             <ul>
+    //                 {menu.map((item, idx) => (
+    //                     <li key={`${item} - ${idx}`}>
+    //                         <input id={`c${idx + 1}`} type="checkbox" />
+    //                         <label for={`c${idx + 1}`}>{item}</label>
+    //                     </li>
+    //                 ))}
+    //             </ul>
+    //         </div>
+    //     )
+    // } else {
         return (
            
                 <div id={id} className="date-drop-down">
@@ -116,7 +124,7 @@ const dropDownMenu = (menu, id) => {
                     </ul>
                 </div>
         )
-    }
+    // }
 }
 
 const allTypesOfDates = (allDates) => {
