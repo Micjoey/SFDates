@@ -26,7 +26,6 @@ export const RenderDates = ({match}) => {
     })
 
     if (loaded.isLoaded) {
-        debugger
         return (
             <div className='background-color'>
                 <div className="date-specific-header-container">
@@ -39,25 +38,25 @@ export const RenderDates = ({match}) => {
                         <div className="specific-filter">
                             <p>Cost: </p>
                             <div>
-                                {dropDownMenu(grabUniqAspectOfDate(currentDateList, "cost"), "cost-date-drop-down", "cost")}
+                                {dropDownMenu(grabUniqAspectOfDate(originalDateList, "cost"), "cost-date-drop-down", "cost")}
                             </div>
                         </div>
                         <div className="specific-filter">
                             <p>Type: </p>
                             <div>
-                                {dropDownMenu(grabUniqAspectOfDate(currentDateList, "date_type"),"type-date-drop-down", "date_type")}
+                                {dropDownMenu(grabUniqAspectOfDate(originalDateList, "date_type"),"type-date-drop-down", "date_type")}
                             </div>
                         </div>
                         <div className="specific-filter">
                             <p>Location: </p>
                             <div>
-                                {/* {dropDownMenu(grabUniqAspectOfDate(currentDateList, "location"),"location-date-drop-down", "location")} */}
+                                {/* {dropDownMenu(grabUniqAspectOfDate(originalDateList, "location"),"location-date-drop-down", "location")} */}
                             </div>
                         </div>
                         <div className="specific-filter">
                             <p>Date Number: </p>
                             <div>
-                                {dropDownMenu(grabUniqAspectOfDate(currentDateList, "date_number"),"datenumber-date-drop-down", "date_number")}
+                                {dropDownMenu(grabUniqAspectOfDate(originalDateList, "date_number"),"datenumber-date-drop-down", "date_number")}
                             </div>
                         </div>
                     </div>

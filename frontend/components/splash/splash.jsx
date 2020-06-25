@@ -99,7 +99,12 @@ class Splash extends React.Component {
 
                                     So I created this website. 
 
-                                    I hope that this website will allow people in the Bay Area to find date ideas with relative ease. You are on a second date and need ideas in the Richmond district; {<Link className="body-link" to="datesuggestions/location_Outer Richmond">we got you</Link>}. Want to go on a hike; {<Link className="body-link" to="datesuggestions/date_type_Hike">we got you</Link>}. 
+                                    I hope that this website will allow people in the Bay Area to find date ideas with relative ease. You are on a second date and need ideas in the Richmond district
+                                        {/* ; {<Link className="body-link" to="datesuggestions/location_Outer Richmond">we got you</Link>} */}
+                                    . 
+                                    Want to go on a hike
+                                    {/* ; {<Link className="body-link" to="datesuggestions/date_type_Hike">we got you</Link>} */}
+                                    . 
                                     Been dating awhile and want to go on a random date, we got you - click on the button below <i className="fa fa-angle-double-down down-arrow" onClick={() => this.toggleDisplay(toggleDiv, "close")}></i>.
                                     </p>
                                     <br/>
