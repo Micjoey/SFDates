@@ -24,10 +24,10 @@ export const RenderDates = ({match}) => {
     
     return (
         <div className='background-color'>
+            <div className="date-specific-header-container">
+                <HeaderName/>
+            </div>
             <div className="date-specific-parent-container">
-                <div className="date-specific-header-container">
-                    <HeaderName/>
-                </div>
                 <div className="date-specific-filter">
                     <div className="specific-filter">
                         <p>Cost: </p>
