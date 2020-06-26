@@ -12,6 +12,7 @@ const dateFilter = (allDates, checkedBoxes, setCheckedBox, setCurrentDateList, d
     for (let x = 1; x <= dateList.length; x++) {
         dateListHash[x] = dateList[x - 1]
     }
+    debugger
     setCurrentDateList(dateListHash)
 }
 
@@ -38,7 +39,8 @@ const setValues = (dateType) => {
 }
 
 const setFilteredDates = (values, dateList) => {
-    let newDateList = dateList
+    dateList = dateList.slice('')
+    let newDateListArray = []
     let keys
     if (values) {
         keys = Object.keys(values)
@@ -46,15 +48,15 @@ const setFilteredDates = (values, dateList) => {
             let toFilterParts = values[key]
             for (let x = 0; x < toFilterParts.length; x++) {
                 let filterPiece = toFilterParts[x]
-                newDateList = newDateList.filter(date => {
-                    return (
-                        date[key] === filterPiece
-                        )
+                dateList.map(date => {
+                    if (date[key] === filterPiece)
+                        newDateListArray.push(date)
                     })
+                    // newDateList.concat(tempArray)
                 }
             })
         }
-    return newDateList
+    return newDateListArray
 }
 
 export default dateFilter

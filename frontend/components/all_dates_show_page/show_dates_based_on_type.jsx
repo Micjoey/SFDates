@@ -33,7 +33,7 @@ export const RenderDates = ({match}) => {
                 </div>
                 <div className="date-specific-parent-container">
                     <div className="date-specific-filter">
-                        <button onClick={() => dateFilter(currentDateList, checkedBox, setCheckedBox, setCurrentDateList)}> Filter By:</button>
+                        <button onClick={() => dateFilter(originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}> Filter By:</button>
                         <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Reset Search:</button>
                         <div className="specific-filter">
                             <p>Cost: </p>
@@ -91,8 +91,20 @@ const resetFilter = (originalDateList, setCurrentDateList) => {
 const grabUniqAspectOfDate = (allDates, uniqAspect) => {
     const dates = Object.values(allDates)
     const dateType = [...new Set(dates.map(date => date[uniqAspect]))]
-    return dateType
+    switch (uniqAspect) {
+        case "date_type":
+            return dateType.sort()
+        case "location":
+            return dateType.sort()
+        case "cost":
+            return dateType.sort((a, b) => a.length - b.length);
+        case "date_number":
+            return dateType.sort()
+        default:
+            return dateType;
+    }
 }
+
 
 const dropDown = (className) => {
     const currentDiv = document.getElementById(`${className}`)
