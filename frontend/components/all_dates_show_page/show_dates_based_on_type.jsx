@@ -18,6 +18,7 @@ export const RenderDates = ({match}) => {
         }
         fetchDates()
     }, [checkedBox])
+    
     const [checkedBox, setCheckedBox] = useState({
         cost: false,
         date_number: false,
@@ -33,7 +34,7 @@ export const RenderDates = ({match}) => {
                 </div>
                 <div className="date-specific-parent-container">
                     <div className="date-specific-filter">
-                        <button onClick={() => dateFilter(originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}> Filter By:</button>
+                        <button onClick={() => dateFilter(currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}> Filter By:</button>
                         <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Reset Search:</button>
                         <div className="specific-filter">
                             <p>Cost: </p>
@@ -91,6 +92,7 @@ const resetFilter = (originalDateList, setCurrentDateList) => {
 const grabUniqAspectOfDate = (allDates, uniqAspect) => {
     const dates = Object.values(allDates)
     const dateType = [...new Set(dates.map(date => date[uniqAspect]))]
+    
     switch (uniqAspect) {
         case "date_type":
             return dateType.sort()
