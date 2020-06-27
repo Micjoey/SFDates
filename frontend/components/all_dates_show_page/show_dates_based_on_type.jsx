@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import IterateOverDates from './iterate_over_dates'
-import HeaderName from './changing_header_name';
+
 import dateFilter from './date_filter'
 import LoadingScreen from '../misc/loading_screen';
 
@@ -30,7 +30,9 @@ export const RenderDates = ({match}) => {
         return (
             <div className='background-color'>
                 <div className="date-specific-header-container">
-                    <HeaderName/>
+                    <h1 className="date-specific-header">
+                        Welcome!
+                    </h1>
                 </div>
                 <div className="date-specific-parent-container">
                     <div className="date-specific-filter">
