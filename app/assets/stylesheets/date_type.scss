@@ -23,6 +23,7 @@
         display: block;
         margin: 5px;
         border: lightslategray 1px solid;
+        min-width: max-content;
         width: max-content;
         padding: 10px;
         height: fit-content;
@@ -51,6 +52,7 @@
     .date-specific-info-container {
         display: block;
         width: 50%;
+        min-width: 50%;
         overflow-y: scroll;
         border: lightslategray 1px solid;
         padding: 12px;
@@ -101,6 +103,8 @@
         }
     }
 }
+
+
 
 .map-container {
     margin: 10px;

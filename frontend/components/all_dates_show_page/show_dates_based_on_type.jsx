@@ -31,13 +31,12 @@ export const RenderDates = ({match}) => {
             <div className='background-color'>
                 <div className="date-specific-header-container">
                     <h1 className="date-specific-header">
-                        Welcome!
+                        Welcome to Date Suggestions!
                     </h1>
                 </div>
                 <div className="date-specific-parent-container">
                     <div className="date-specific-filter">
                         <button onClick={() => dateFilter(currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}> Filter By:</button>
-                        <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Reset Search:</button>
                         <div className="specific-filter">
                             <p>Cost: </p>
                             <div>
@@ -52,8 +51,8 @@ export const RenderDates = ({match}) => {
                         </div>
                         <div className="specific-filter">
                             <p>Location: </p>
-                            <div>
-                                {/* {dropDownMenu(grabUniqAspectOfDate(originalDateList, "location"),"location-date-drop-down", "location")} */}
+                            <div className="location-filter">
+                                {dropDownMenu(grabUniqAspectOfDate(originalDateList, "location"),"location-date-drop-down", "location")}
                             </div>
                         </div>
                         <div className="specific-filter">
@@ -62,6 +61,7 @@ export const RenderDates = ({match}) => {
                                 {dropDownMenu(grabUniqAspectOfDate(originalDateList, "date_number"),"datenumber-date-drop-down", "date_number")}
                             </div>
                         </div>
+                        <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Reset Search:</button>
                     </div>
                     <div className="date-specific-info">
                         <div className="date-specific-info-container">
@@ -94,7 +94,6 @@ const resetFilter = (originalDateList, setCurrentDateList) => {
 const grabUniqAspectOfDate = (allDates, uniqAspect) => {
     const dates = Object.values(allDates)
     const dateType = [...new Set(dates.map(date => date[uniqAspect]))]
-    
     switch (uniqAspect) {
         case "date_type":
             return dateType.sort()
