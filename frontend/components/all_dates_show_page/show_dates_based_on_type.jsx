@@ -5,9 +5,9 @@ import dateFilter from './date_filter'
 import LoadingScreen from '../misc/loading_screen';
 
 export const RenderDates = ({match}) => {
-    const [currentDateList, setCurrentDateList] = useState({})
-    const [originalDateList, setOriginalDateList] = useState({})
-    const [loaded, setLoaded] = useState({isLoaded: false})
+    const [currentDateList, setCurrentDateList] = useState({}) // Current list of dates
+    const [originalDateList, setOriginalDateList] = useState({}) // Main list of dates
+    const [loaded, setLoaded] = useState({isLoaded: false}) // loading screen for information
     useEffect(() => {
         const fetchDates = async () => {
             const result = await fetch(`/api/datesuggestions/`)
@@ -51,7 +51,7 @@ export const RenderDates = ({match}) => {
                         <div className="specific-filter">
                             <p>Location: </p>
                             <div>
-                                {/* {dropDownMenu(grabUniqAspectOfDate(originalDateList, "location"),"location-date-drop-down", "location")} */}
+                                {dropDownMenu(grabUniqAspectOfDate(originalDateList, "location"),"location-date-drop-down", "location")}
                             </div>
                         </div>
                         <div className="specific-filter">
@@ -86,13 +86,15 @@ export const RenderDates = ({match}) => {
 
 
 const resetFilter = (originalDateList, setCurrentDateList) => {
+    // resets the current search filter to the original list.
     setCurrentDateList(originalDateList)
 }
 
 const grabUniqAspectOfDate = (allDates, uniqAspect) => {
+    // Grabs all date information and then grabs unique data
     const dates = Object.values(allDates)
     const dateType = [...new Set(dates.map(date => date[uniqAspect]))]
-    
+    // Sorts the data based off of what type of data it is
     switch (uniqAspect) {
         case "date_type":
             return dateType.sort()
@@ -118,16 +120,39 @@ const dropDown = (className) => {
 }
 
 const dropDownMenu = (menu, id, type = "default") => {
-    return (
-        <div id={id} className="date-drop-down">
-            <ul>
-                {menu.map((item, idx) => (
-                    <li key={`${item} - ${idx}`}>
-                        <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${item}`} />
-                        <label for={`${type}${idx + 1}`}>{item}</label>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    )
+    // creates the dropdown of all the filters
+    let firstFourItems = []
+    for (let x=0; x < 4; x++) {
+        firstFourItems.push(menu[x])
+    }
+    if (menu.length < 4) {
+        // if menu length is less than four then wont have an additional button to make it bigger
+        return (
+            <div id={id} className="date-drop-down">
+                <ul>
+                    {firstFourItems.map((item, idx) => (
+                        <li key={`${item} - ${idx}`}>
+                            <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${item}`} />
+                            <label for={`${type}${idx + 1}`}>{item}</label>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        )
+    } else {
+        // has a button that pulls up a modal which filters additionally
+        return (
+            <div id={id} className="date-drop-down">
+                <ul>
+                    {firstFourItems.map((item, idx) => (
+                        <li key={`${item} - ${idx}`}>
+                            <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${item}`} />
+                            <label for={`${type}${idx + 1}`}>{item}</label>
+                        </li>
+                    ))}
+                </ul>
+                <a onClick={}>See more</a>
+            </div>
+        )
+    }
 }

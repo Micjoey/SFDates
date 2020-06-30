@@ -33,21 +33,14 @@ function Modal({ modal, closeModal } ) {
         // case 'type':
         //     component = <TypeFilter shutModal={shutModal} allDateInfo={allDates}/>;
         //     break;
-        // case 'cost':
-        //     component = <CostFilter shutModal={shutModal} allDateInfo={allDates}/>;
-        //     break;
-        // case 'date number':
-        //     component = <DateNumberFilter shutModal={shutModal} allDateInfo={allDates}/>;
-        //     break;
-        // case 'location':
-        //     component = <LocationFilter shutModal={shutModal} allDateInfo={allDates}/>;
-        //     break;
         // case 'login':
         //     component = <LoginFormContainer/>;
         //     break;
         // case 'sign up':
         //     component = <SignUpFormContainer />;
         //     break;
+        // case 'date_type':
+        //     component = 
         default:
             return null;
     }
