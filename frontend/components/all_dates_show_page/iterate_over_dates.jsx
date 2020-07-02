@@ -7,7 +7,7 @@ const IterateOverDates = ({ dates }) => {
             <div className="inner-date-specific-container">
                 {Object.values(dates).map((date, key) => (
                     <div className="title-info-container" key={key}>
-                        <h4 className="title-for-date">Title: {date.title}</h4>
+                        <h4 className="title-for-date">{date.title}</h4>
                         <p className="info-for-date">Date Number: {date.date_number}</p>
                         <p className="info-for-date">Type: {date.date_type}</p>
                         <p className="info-for-date">Cost: {date.cost}</p>

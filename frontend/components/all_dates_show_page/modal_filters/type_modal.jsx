@@ -1,10 +1,9 @@
 import React from 'react'
-import { closeModal } from '../../../actions/model_actions';
+import { closeModal, openModal } from '../../../actions/model_actions';
 
-const typeModal = () => {
-    
+const TypeModal = () => {
+    <h1>Tester</h1>
 }
 
-export default typeModal
+export default TypeModal
 
-// <button onClick={() => this.props.openModal('date number', 'date-number-filter', allDates)}>Date Number</button>

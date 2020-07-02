@@ -1,20 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/model_actions'
-import DateNumberFilter from '../../old_code/filterbar/date_number_filter';
-import LoginFormContainer from '../session_form/login_form_container'
-import SignUpFormContainer from '../session_form/sign_up_form_container'
-import LocationFilter from '../../old_code/filterbar/location_filter'
-import CostFilter from '../../old_code/filterbar/cost_filter';
-import TypeFilter from '../../old_code/filterbar/date_type_filter'
+// import DateNumberFilter from '../../old_code/filterbar/date_number_filter';
+// import LoginFormContainer from '../session_form/login_form_container'
+// import SignUpFormContainer from '../session_form/sign_up_form_container'
+// import LocationFilter from '../../old_code/filterbar/location_filter'
+// import CostFilter from '../../old_code/filterbar/cost_filter';
+// import TypeFilter from '../../old_code/filterbar/date_type_filter'
+import TypeModal from '../all_dates_show_page/modal_filters/type_modal';
+
 
 
 function Modal({ modal, closeModal } ) {
-    
     if (!modal) {
         return null;
     }
-    let allDates = Object.values(modal.dates);
+    debugger
+    // let allDates = Object.values(modal.dates);
     let idName = modal.idName;
     modal = modal.switchName;
     let component;
@@ -30,17 +32,16 @@ function Modal({ modal, closeModal } ) {
     
     
     switch(modal) {
-        // case 'type':
-        //     component = <TypeFilter shutModal={shutModal} allDateInfo={allDates}/>;
-        //     break;
-        // case 'login':
-        //     component = <LoginFormContainer/>;
-        //     break;
-        // case 'sign up':
-        //     component = <SignUpFormContainer />;
-        //     break;
-        // case 'date_type':
-        //     component = 
+        case 'date_type':
+            component = <TypeModal/>;
+            break;
+        case 'login':
+            component = <LoginFormContainer/>;
+            break;
+        case 'sign up':
+            component = <SignUpFormContainer />;
+            break;
+
         default:
             return null;
     }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { closeModal } from '../../../actions/model_actions';
+import { closeModal, openModal } from '../../../actions/model_actions';
 
 
 const dateNumberModal = () => {
