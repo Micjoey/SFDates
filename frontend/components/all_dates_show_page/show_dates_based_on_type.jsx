@@ -129,7 +129,7 @@ const dropDown = (className) => {
 const dropDownMenu = (menu, id, type = "default") => {
     // creates the dropdown of all the filters
     let firstFourItems = []
-    for (let x=0; x < 4; x++) {
+    for (let x=0; x < menu.length && x < 4; x++) {
         firstFourItems.push(menu[x])
     }
     if (menu.length < 5) {
