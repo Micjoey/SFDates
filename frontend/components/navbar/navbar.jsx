@@ -54,14 +54,14 @@ class Navbar extends React.Component {
                     {/* <Link to='/Shelf' className="nav-bar-mybooks-button">Date Number</Link> */}
                     {/* <button>Date Number Placeholder</button> */}
                     {/* <SearchBarContainer allDates={this.props.retrieveDates()} /> */}
-                    {/* <div className="dropdown">
+                    <div className="dropdown">
                         <img src="https://img.icons8.com/fluent/48/000000/menu-2.png" className="dropdown-image-icon" alt="" />
                         <div className="dropdown-content">
                             <Link to="/home" className="nav-bar-dropdown-mybooks-button" >Home</Link>
                             <button onClick={() => this.props.openModal('login')}>Log in</button>
                             <button onClick={() => this.props.openModal('sign up')}>Sign Up</button>
                         </div>
-                    </div> */}
+                    </div>
                 </div>
             </div>
             )

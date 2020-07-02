@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useReducer} from 'react';
 import IterateOverDates from './iterate_over_dates'
-
 import dateFilter from './date_filter'
 import LoadingScreen from '../misc/loading_screen';
 import { openModal } from '../../actions/model_actions';
+
+
 
 export const RenderDates = ({match}) => {
     const [currentDateList, setCurrentDateList] = useState({}) // Current list of dates
@@ -26,7 +27,6 @@ export const RenderDates = ({match}) => {
         location: false,
         date_type: false
     })
-
     if (loaded.isLoaded) {
         return (
             <div className='background-color'>
@@ -52,9 +52,9 @@ export const RenderDates = ({match}) => {
                             </div>
                         </div>
                         <div className="specific-filter">
-                            <p>Location: </p>
+                            <p>Type: </p>
                             <div>
-                                {dropDownMenu(grabUniqAspectOfDate(originalDateList, "location"),"location-date-drop-down", "location")}
+                                {dropDownMenu(grabUniqAspectOfDate(originalDateList, "date_type"),"location-date-drop-down", "date_type")}
                             </div>
                         </div>
                         <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Reset Search:</button>
@@ -158,9 +158,7 @@ const dropDownMenu = (menu, id, type = "default") => {
                         </li>
                     ))}
                 </ul>
-                <button onClick={(modal, idName) => openModal('date number', 'date-number-filter')}>Date Number</button>
-                <button onClick={(id, menu) => openModal(id, id, menu)}>See more</button>
-
+                <button onClick={() => openModal(type, id, menu)}>See more</button>
             </div>
         )
     }

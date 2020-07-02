@@ -1,12 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/model_actions'
-// import DateNumberFilter from '../../old_code/filterbar/date_number_filter';
-// import LoginFormContainer from '../session_form/login_form_container'
-// import SignUpFormContainer from '../session_form/sign_up_form_container'
-// import LocationFilter from '../../old_code/filterbar/location_filter'
-// import CostFilter from '../../old_code/filterbar/cost_filter';
-// import TypeFilter from '../../old_code/filterbar/date_type_filter'
 import TypeModal from '../all_dates_show_page/modal_filters/type_modal';
 
 
@@ -33,6 +27,11 @@ function Modal({ modal, closeModal } ) {
     
     switch(modal) {
         case 'date_type':
+            console.log("hit")
+            component = <TypeModal/>;
+            break;
+        case 'location':
+            console.log("hit")
             component = <TypeModal/>;
             break;
         case 'login':

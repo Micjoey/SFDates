@@ -47,11 +47,9 @@ const setFilteredDates = (values = {}, dateList) => {
             let toFilterParts = values[key]
             // dateList = newDateListArray
             for (let x = 0; x < toFilterParts.length; x++) {
-                debugger
                 let filterPiece = toFilterParts[x]
                 let temp = dateList.filter(date => date[key] === filterPiece)
                 if (temp.length < dateList.length) {
-                    // newDateListArray.concat(temp)
                     Object.assign(newDateListArray, temp)
                 }
             }
