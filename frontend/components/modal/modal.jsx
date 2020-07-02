@@ -1,7 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { closeModal } from '../../actions/model_actions'
+
 import TypeModal from '../all_dates_show_page/modal_filters/type_modal';
+import { closeModal } from '../../actions/model_actions';
+import LoginFormContainer from '../../old_code/login_form_container' 
+import renderModal from './modal_render';
+
 
 
 
@@ -9,7 +13,6 @@ function Modal({ modal, closeModal } ) {
     if (!modal) {
         return null;
     }
-    debugger
     // let allDates = Object.values(modal.dates);
     let idName = modal.idName;
     modal = modal.switchName;
@@ -69,11 +72,7 @@ function Modal({ modal, closeModal } ) {
     }
 
     return (
-        <div className="modal-background" id={`${outerIdName}`} onClick={() => closeModal()}>
-            <div className="modal-child" id={`${innerIdName}`} style={{ top: top, left: left, right: right, bottom:bottom, minWidth:minWidth }} onClick={e => e.stopPropagation()}>
-                { component }
-            </div>  
-        </div>
+        renderModal(component, outerIdName, innerIdName)
     );
 }
 

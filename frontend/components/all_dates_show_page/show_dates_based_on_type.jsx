@@ -2,8 +2,8 @@ import React, {useState, useEffect, useReducer} from 'react';
 import IterateOverDates from './iterate_over_dates'
 import dateFilter from './date_filter'
 import LoadingScreen from '../misc/loading_screen';
-import { openModal } from '../../actions/model_actions';
-
+import { openModal, closeModal } from '../../actions/model_actions';
+import filterModal from '../modal/filters_modal'
 
 
 export const RenderDates = ({match}) => {
@@ -150,7 +150,6 @@ const dropDownMenu = (menu, id, type = "default") => {
         }
     }
 
-    
     if (menu.length < 5) {
         // if menu length is less than four then wont have an additional button to make it bigger
         return (
@@ -177,7 +176,7 @@ const dropDownMenu = (menu, id, type = "default") => {
                         </li>
                     ))}
                 </ul>
-                <button onClick={() => openModal(type, id, menu)}>See more</button>
+                <button onClick={() => filterModal(type, id, menu)}>See more</button>
             </div>
         )
     }

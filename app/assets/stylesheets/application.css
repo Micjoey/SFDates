@@ -68,6 +68,15 @@ button:focus {outline:0;}
     border: 10px solid yellow;
 }
 
+.test-modal {
+    background-color: red;
+    border: 10px solid yellow;
+    z-index: 200;
+    margin: auto;
+    top: 50%;
+    left: 50%
+}
+
 
 .arrow {
   border: solid black;
