@@ -128,10 +128,29 @@ const dropDown = (className) => {
 
 const dropDownMenu = (menu, id, type = "default") => {
     // creates the dropdown of all the filters
+    // debugger
     let firstFourItems = []
-    for (let x=0; x < menu.length && x < 4; x++) {
-        firstFourItems.push(menu[x])
+    let original = menu.slice('')
+    if (type === "cost") {
+        firstFourItems = original.map(word => {
+            switch (word) {
+                case "Low":
+                    return "$"
+                case "Medium":
+                    return "$$"
+                case "Expensive":
+                    return "$$$"
+                case "Very Expensive":
+                    return "$$$$"
+            }
+        })
+    } else {
+        for (let x=0; x < menu.length && x < 4; x++) {
+            firstFourItems.push(original[x])
+        }
     }
+
+    
     if (menu.length < 5) {
         // if menu length is less than four then wont have an additional button to make it bigger
         return (
@@ -139,7 +158,7 @@ const dropDownMenu = (menu, id, type = "default") => {
                 <ul>
                     {firstFourItems.map((item, idx) => (
                         <li key={`${item} - ${idx}`}>
-                            <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${item}`} />
+                            <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${menu[idx]}`} />
                             <label for={`${type}${idx + 1}`}>{item}</label>
                         </li>
                     ))}
@@ -153,7 +172,7 @@ const dropDownMenu = (menu, id, type = "default") => {
                 <ul>
                     {firstFourItems.map((item, idx) => (
                         <li key={`${item} - ${idx}`}>
-                            <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${item}`} />
+                            <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${menu[idx]}`} />
                             <label for={`${type}${idx + 1}`}>{item}</label>
                         </li>
                     ))}
