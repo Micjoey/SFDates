@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import IterateOverDates from './iterate_over_dates'
-import HeaderName from './changing_header_name';
+
 import dateFilter from './date_filter'
 import LoadingScreen from '../misc/loading_screen';
 import { openModal } from '../../actions/model_actions';
@@ -33,7 +33,6 @@ export const RenderDates = ({match}) => {
                 <div className="date-specific-parent-container">
                     <div className="date-specific-filter">
                         <button onClick={() => dateFilter(currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}> Filter By:</button>
-                        <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Reset Search:</button>
                         <div className="specific-filter">
                             <p>Cost: </p>
                             <div>
@@ -47,9 +46,9 @@ export const RenderDates = ({match}) => {
                             </div>
                         </div>
                         <div className="specific-filter">
-                            <p>Type: </p>
-                            <div>
-                                {dropDownMenu(grabUniqAspectOfDate(originalDateList, "date_type"),"type-date-drop-down", "date_type")}
+                            <p>Location: </p>
+                            <div className="location-filter">
+                                {dropDownMenu(grabUniqAspectOfDate(originalDateList, "location"),"location-date-drop-down", "location")}
                             </div>
                         </div>
                         <div className="specific-filter">
@@ -58,6 +57,7 @@ export const RenderDates = ({match}) => {
                                 {dropDownMenu(grabUniqAspectOfDate(originalDateList, "location"),"location-date-drop-down", "location")}
                             </div>
                         </div>
+                        <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Reset Search:</button>
                     </div>
                     <div className="date-specific-info">
                         <div className="date-specific-info-container">
