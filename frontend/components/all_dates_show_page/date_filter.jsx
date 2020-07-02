@@ -6,9 +6,8 @@ const dateFilter = (allDates, originalDates, checkedBoxes, setCheckedBox, setCur
     let dateList = Object.values(allDates)
     let dateListHash = {}
     let values = setValues(dateType)
-    checkedBoxes = changeCheckBoxes(checkedBoxes, values, setCheckedBox)    
+    checkedBoxes = changeCheckBoxes(checkedBoxes, values, setCheckedBox)   
     dateList = setFilteredDates(values, originalDatesArray)
-    console.log(dateList)
     for (let x = 1; x <= dateList.length; x++) {
         dateListHash[x] = dateList[x - 1]
     }
@@ -35,7 +34,6 @@ const setValues = (dateType) => {
             values[type] = []
             checkbox.forEach((checkbox) => {
                 values[type].push(checkbox.value)
-
             })
         }
     })
@@ -46,12 +44,18 @@ const setFilteredDates = (values = {}, dateList) => {
     let newDateListArray = Object.values(dateList)
     let keys = Object.keys(values)
     if (keys.length) {
+        newDateListArray = [];
         keys.forEach(key => {
             let toFilterParts = values[key]
-            dateList = newDateListArray
+            // dateList = newDateListArray
             for (let x = 0; x < toFilterParts.length; x++) {
+                debugger
                 let filterPiece = toFilterParts[x]
-                newDateListArray = dateList.filter(date => date[key] === filterPiece)
+                let temp = dateList.filter(date => date[key] === filterPiece)
+                if (temp.length < dateList.length) {
+                    // newDateListArray.concat(temp)
+                    Object.assign(newDateListArray, temp)
+                }
             }
         })
     }
