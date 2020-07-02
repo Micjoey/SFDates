@@ -30,9 +30,6 @@ export const RenderDates = ({match}) => {
     if (loaded.isLoaded) {
         return (
             <div className='background-color'>
-                {/* <div className="date-specific-header-container">
-                    <HeaderName/>
-                </div> */}
                 <div className="date-specific-parent-container">
                     <div className="date-specific-filter">
                         <button onClick={() => dateFilter(currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}> Filter By:</button>
@@ -152,8 +149,9 @@ const dropDownMenu = (menu, id, type = "default") => {
                         </li>
                     ))}
                 </ul>
-                <button onClick={() => openModal('date number', 'date-number-filter', menu)}>Date Number</button>
-                <a onClick={(id, menu) => openModal(id, id, menu)}>See more</a>
+                <button onClick={(modal, idName) => openModal('date number', 'date-number-filter')}>Date Number</button>
+                <button onClick={(id, menu) => openModal(id, id, menu)}>See more</button>
+
             </div>
         )
     }
