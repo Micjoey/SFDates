@@ -26,10 +26,8 @@ const changeCheckBoxes = (checkedBoxes, newCheckedBoxes, setCheckedBoxes) => {
 
 const setValues = (dateType) => {
     let values = {}
-    let count = 0;
     dateType.forEach(type => {
         const checkbox = document.querySelectorAll(`input[name=${type}]:checked`)
-        count += checkbox.length
         if (checkbox.length > 0) {
             values[type] = []
             checkbox.forEach((checkbox) => {
