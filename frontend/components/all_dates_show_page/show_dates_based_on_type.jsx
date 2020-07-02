@@ -3,13 +3,16 @@ import IterateOverDates from './iterate_over_dates'
 import dateFilter from './date_filter'
 import LoadingScreen from '../misc/loading_screen';
 import { openModal, closeModal } from '../../actions/model_actions';
-import filterModal from '../modal/filters_modal'
+import renderModal from '../modal/modal_render';
+
 
 
 export const RenderDates = ({match}) => {
     const [currentDateList, setCurrentDateList] = useState({}) // Current list of dates
     const [originalDateList, setOriginalDateList] = useState({}) // Main list of dates
     const [loaded, setLoaded] = useState({isLoaded: false}) // loading screen for information
+    const [isShowing, toggleModal] = useState(false);
+
     useEffect(() => {
         const fetchDates = async () => {
             const result = await fetch(`/api/datesuggestions/`)
@@ -48,13 +51,13 @@ export const RenderDates = ({match}) => {
                         <div className="specific-filter">
                             <p>Location: </p>
                             <div className="location-filter">
-                                {dropDownMenu(grabUniqAspectOfDate(originalDateList, "location"),"location-date-drop-down", "location")}
+                                {dropDownMenu(grabUniqAspectOfDate(originalDateList, "location"),"location-date-drop-down", "location", isShowing, toggleModal)}
                             </div>
                         </div>
                         <div className="specific-filter">
                             <p>Type: </p>
                             <div>
-                                {dropDownMenu(grabUniqAspectOfDate(originalDateList, "date_type"),"location-date-drop-down", "date_type")}
+                                {dropDownMenu(grabUniqAspectOfDate(originalDateList, "date_type"),"location-date-drop-down", "date_type", isShowing, toggleModal)}
                             </div>
                         </div>
                         <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Reset Search:</button>
@@ -117,18 +120,17 @@ const grabUniqAspectOfDate = (allDates, uniqAspect) => {
 }
 
 
-const dropDown = (className) => {
-    const currentDiv = document.getElementById(`${className}`)
-    if (currentDiv.style.display === "none" || currentDiv.style.display === "") {
-        currentDiv.style.display = "block"
-    } else {
-        currentDiv.style.display = "none"
-    }
-}
+// const dropDown = (className) => {
+//     const currentDiv = document.getElementById(`${className}`)
+//     if (currentDiv.style.display === "none" || currentDiv.style.display === "") {
+//         currentDiv.style.display = "block"
+//     } else {
+//         currentDiv.style.display = "none"
+//     }
+// }
 
-const dropDownMenu = (menu, id, type = "default") => {
+const dropDownMenu = (menu, id, type = "default", isShowing, toggleModal) => {
     // creates the dropdown of all the filters
-    // debugger
     let firstFourItems = []
     let original = menu.slice('')
     if (type === "cost") {
@@ -149,37 +151,35 @@ const dropDownMenu = (menu, id, type = "default") => {
             firstFourItems.push(original[x])
         }
     }
-
+    const ulList = 
+    <ul>
+        {firstFourItems.map((item, idx) => (
+            <li key={`${item} - ${idx}`}>
+                <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${menu[idx]}`} />
+                <label for={`${type}${idx + 1}`}>{item}</label>
+            </li>
+        ))}
+    </ul>
     if (menu.length < 5) {
         // if menu length is less than four then wont have an additional button to make it bigger
         return (
             <div id={id} className="date-drop-down">
-                <ul>
-                    {firstFourItems.map((item, idx) => (
-                        <li key={`${item} - ${idx}`}>
-                            <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${menu[idx]}`} />
-                            <label for={`${type}${idx + 1}`}>{item}</label>
-                        </li>
-                    ))}
-                </ul>
+                {ulList}
             </div>
         )
     } else {
         // has a button that pulls up a modal which filters additionally
         return (
+            <>
             <div id={id} className="date-drop-down">
-                <ul>
-                    {firstFourItems.map((item, idx) => (
-                        <li key={`${item} - ${idx}`}>
-                            <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${menu[idx]}`} />
-                            <label for={`${type}${idx + 1}`}>{item}</label>
-                        </li>
-                    ))}
-                </ul>
-                <button onClick={() => filterModal(type, id, menu)}>See more</button>
+                {ulList}
+                <button onClick={() => toggleModal(!isShowing)}>See more</button>
             </div>
+            {renderModal(type, id, menu, undefined, undefined, isShowing, toggleModal )}
+            </>
         )
     }
 }
+
 
 // openModal('date number', 'date-number-filter', allDates)

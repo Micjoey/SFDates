@@ -30,11 +30,11 @@ function Modal({ modal, closeModal } ) {
     
     switch(modal) {
         case 'date_type':
-            console.log("hit")
+
             component = <TypeModal/>;
             break;
         case 'location':
-            console.log("hit")
+
             component = <TypeModal/>;
             break;
         case 'login':
