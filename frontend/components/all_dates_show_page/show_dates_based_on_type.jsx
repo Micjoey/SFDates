@@ -151,15 +151,17 @@ const dropDownMenu = (menu, id, type = "default", isShowing, toggleModal) => {
             firstFourItems.push(original[x])
         }
     }
+    // for clean module code
     const ulList = 
     <ul>
         {firstFourItems.map((item, idx) => (
             <li key={`${item} - ${idx}`}>
                 <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${menu[idx]}`} />
-                <label for={`${type}${idx + 1}`}>{item}</label>
+                <label htmlFor={`${type}${idx + 1}`}>{item}</label>
             </li>
         ))}
     </ul>
+    //
     if (menu.length < 5) {
         // if menu length is less than four then wont have an additional button to make it bigger
         return (
