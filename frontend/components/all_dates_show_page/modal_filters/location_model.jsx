@@ -1,10 +1,9 @@
 import React from 'react'
-import { closeModal } from '../../../actions/model_actions';
 
-const locationModal = () => {
+const LocationModal = () => {
 
 }
 
-export default locationModal
+export default LocationModal
 
 // <button onClick={() => this.props.openModal('date number', 'date-number-filter', allDates)}>Date Number</button>

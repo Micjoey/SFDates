@@ -1,7 +1,7 @@
 import React from 'react'
 import { closeModal } from '../../actions/model_actions';
 import TypeModal from '../all_dates_show_page/modal_filters/type_modal';
-
+import LocationModal from '../all_dates_show_page/modal_filters/location_model'
 
 
 const renderModal = (type, id, menu, outerIdName = "dropdown-menu", innerIdName = "dropdown-menu-child", isShowing, toggleModal) => {
@@ -12,7 +12,7 @@ const renderModal = (type, id, menu, outerIdName = "dropdown-menu", innerIdName 
             component = <TypeModal />;
             break;
         case 'location':
-            component = <TypeModal />;
+            component = <LocationModal />;
             break;
         default:
             return null;

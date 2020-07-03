@@ -3,7 +3,8 @@ import IterateOverDates from './iterate_over_dates'
 import dateFilter from './date_filter'
 import LoadingScreen from '../misc/loading_screen';
 import { openModal, closeModal } from '../../actions/model_actions';
-import renderModal from '../modal/modal_render';
+import grabUniqAspectOfDate from './grab_uniq_aspects_of_dates';
+import dropDownMenu from './filter_drop_down_menu';
 
 
 
@@ -31,6 +32,10 @@ export const RenderDates = ({match}) => {
         date_type: false
     })
     if (loaded.isLoaded) {
+        const costUniqList = grabUniqAspectOfDate(originalDateList, "cost")
+        const dateNumberUniqList = grabUniqAspectOfDate(originalDateList, "date_number")
+        const locationUniqList = grabUniqAspectOfDate(originalDateList, "location")
+        const dateTypeUniqList = grabUniqAspectOfDate(originalDateList, "date_type")
         return (
             <div className='background-color'>
                 <div className="date-specific-parent-container">
@@ -39,25 +44,25 @@ export const RenderDates = ({match}) => {
                         <div className="specific-filter">
                             <p>Cost: </p>
                             <div>
-                                {dropDownMenu(grabUniqAspectOfDate(originalDateList, "cost"), "cost-date-drop-down", "cost")}
+                                {dropDownMenu(costUniqList, "cost-date-drop-down", "cost")}
                             </div>
                         </div>
                         <div className="specific-filter">
                             <p>Date Number: </p>
                             <div>
-                                {dropDownMenu(grabUniqAspectOfDate(originalDateList, "date_number"),"datenumber-date-drop-down", "date_number")}
+                                {dropDownMenu(dateNumberUniqList,"datenumber-date-drop-down", "date_number")}
                             </div>
                         </div>
                         <div className="specific-filter">
                             <p>Location: </p>
                             <div className="location-filter">
-                                {dropDownMenu(grabUniqAspectOfDate(originalDateList, "location"),"location-date-drop-down", "location", isShowing, toggleModal)}
+                                {dropDownMenu(locationUniqList,"location-date-drop-down", "location", isShowing, toggleModal)}
                             </div>
                         </div>
                         <div className="specific-filter">
                             <p>Type: </p>
                             <div>
-                                {dropDownMenu(grabUniqAspectOfDate(originalDateList, "date_type"),"location-date-drop-down", "date_type", isShowing, toggleModal)}
+                                {dropDownMenu(dateTypeUniqList,"location-date-drop-down", "date_type", isShowing, toggleModal)}
                             </div>
                         </div>
                         <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Reset Search:</button>
@@ -100,24 +105,7 @@ const resetFilter = (originalDateList, setCurrentDateList) => {
     })
 }
 
-const grabUniqAspectOfDate = (allDates, uniqAspect) => {
-    // Grabs all date information and then grabs unique data
-    const dates = Object.values(allDates)
-    const dateType = [...new Set(dates.map(date => date[uniqAspect]))]
-    // Sorts the data based off of what type of data it is
-    switch (uniqAspect) {
-        case "date_type":
-            return dateType.sort()
-        case "location":
-            return dateType.sort()
-        case "cost":
-            return dateType.sort((a, b) => a.length - b.length);
-        case "date_number":
-            return dateType.sort()
-        default:
-            return dateType;
-    }
-}
+
 
 
 // const dropDown = (className) => {
@@ -129,59 +117,7 @@ const grabUniqAspectOfDate = (allDates, uniqAspect) => {
 //     }
 // }
 
-const dropDownMenu = (menu, id, type = "default", isShowing, toggleModal) => {
-    // creates the dropdown of all the filters
-    let firstFourItems = []
-    let original = menu.slice('')
-    if (type === "cost") {
-        firstFourItems = original.map(word => {
-            switch (word) {
-                case "Low":
-                    return "$"
-                case "Medium":
-                    return "$$"
-                case "Expensive":
-                    return "$$$"
-                case "Very Expensive":
-                    return "$$$$"
-            }
-        })
-    } else {
-        for (let x=0; x < menu.length && x < 4; x++) {
-            firstFourItems.push(original[x])
-        }
-    }
-    // for clean module code
-    const ulList = 
-    <ul>
-        {firstFourItems.map((item, idx) => (
-            <li key={`${item} - ${idx}`}>
-                <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${menu[idx]}`} />
-                <label htmlFor={`${type}${idx + 1}`}>{item}</label>
-            </li>
-        ))}
-    </ul>
-    //
-    if (menu.length < 5) {
-        // if menu length is less than four then wont have an additional button to make it bigger
-        return (
-            <div id={id} className="date-drop-down">
-                {ulList}
-            </div>
-        )
-    } else {
-        // has a button that pulls up a modal which filters additionally
-        return (
-            <>
-            <div id={id} className="date-drop-down">
-                {ulList}
-                <button onClick={() => toggleModal(!isShowing)}>See more</button>
-            </div>
-            {renderModal(type, id, menu, undefined, undefined, isShowing, toggleModal )}
-            </>
-        )
-    }
-}
+
 
 
 // openModal('date number', 'date-number-filter', allDates)
