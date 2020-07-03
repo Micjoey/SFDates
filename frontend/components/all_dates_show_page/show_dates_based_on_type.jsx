@@ -12,7 +12,12 @@ export const RenderDates = ({match}) => {
     const [currentDateList, setCurrentDateList] = useState({}) // Current list of dates
     const [originalDateList, setOriginalDateList] = useState({}) // Main list of dates
     const [loaded, setLoaded] = useState({isLoaded: false}) // loading screen for information
-    const [isShowing, toggleModal] = useState(false);
+    const [isShowing, toggleModal] = useState({
+        cost: false,
+        date_number: false,
+        location: false,
+        date_type: false
+    });
 
     useEffect(() => {
         const fetchDates = async () => {

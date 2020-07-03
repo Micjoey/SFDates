@@ -1,10 +1,13 @@
 import React from 'react'
-import { closeModal, openModal } from '../../../actions/model_actions';
 
-const TypeModal = () => {
-
+const TypeModal = ({ menu, id, type = "default", ulList}) => {
+    // debugger
+    // const display = ulList(menu)
     return (
-        <h1 className="test">Tester</h1>
+        <div id={id} className="date-drop-down">
+            {/* {display} */}
+            <p>testing</p>
+        </div>
     )
 }
 

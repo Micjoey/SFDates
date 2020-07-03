@@ -53,7 +53,6 @@ const setValues = (dateType) => {
 //                     Object.assign(newDateListArray, temp)
 //                 }
 //             }
-//             console.log(newDateListArray)
 //         })
 //     }
 //     return [...new Set(newDateListArray)]

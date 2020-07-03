@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const IterateOverDates = ({ dates }) => {
-    console.log(dates)
+
     return(
         <>
             <div className="inner-date-specific-container">

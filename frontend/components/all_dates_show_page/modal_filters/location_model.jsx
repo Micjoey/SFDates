@@ -2,6 +2,12 @@ import React from 'react'
 
 const LocationModal = () => {
 
+    return (
+        <div className="test">
+            test
+        </div>
+    )
+
 }
 
 export default LocationModal

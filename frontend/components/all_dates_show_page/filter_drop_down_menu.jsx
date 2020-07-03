@@ -1,5 +1,5 @@
 import React from 'react'
-import renderModal from '../modal/modal_render';
+import { renderModal, correctToggle } from '../modal/modal_render';
 
 
 const dropDownMenu = (menu, id, type = "default", isShowing, toggleModal) => {
@@ -25,35 +25,38 @@ const dropDownMenu = (menu, id, type = "default", isShowing, toggleModal) => {
         }
     }
     // for clean module code
-    const ulList =
+    const ulList = (filters) => (
         <ul>
-            {firstFourItems.map((item, idx) => (
+            {filters.map((item, idx) => (
                 <li key={`${item} - ${idx}`}>
                     <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${menu[idx]}`} />
                     <label htmlFor={`${type}${idx + 1}`}>{item}</label>
                 </li>
             ))}
         </ul>
+    )
     //
     if (menu.length < 5) {
         // if menu length is less than four then wont have an additional button to make it bigger
         return (
             <div id={id} className="date-drop-down">
-                {ulList}
+                {ulList(firstFourItems)}
             </div>
         )
     } else {
         // has a button that pulls up a modal which filters additionally
+
         return (
             <>
-                <div id={id} className="date-drop-down">
-                    {ulList}
-                    <button onClick={() => toggleModal(!isShowing)}>See more</button>
+                <div id={id} className="date-drop-down" onClick={e => e.stopPropagation()}>
+                    {ulList(firstFourItems)}
+                    {renderModal(type, id, menu, undefined, undefined, isShowing, toggleModal, ulList)}
                 </div>
-                {renderModal(type, id, menu, undefined, undefined, isShowing, toggleModal)}
+                <button onClick={() => correctToggle(type, isShowing, toggleModal)}>See more</button>
             </>
         )
     }
 }
+
 
 export default dropDownMenu
