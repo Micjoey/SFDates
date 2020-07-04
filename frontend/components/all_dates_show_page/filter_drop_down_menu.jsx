@@ -1,8 +1,9 @@
 import React from 'react'
 import { renderModal, correctToggle } from '../modal/modal_render';
+import dateFilter from './date_filter';
 
 
-const dropDownMenu = (menu, id, type = "default", isShowing, toggleModal) => {
+const dropDownMenu = (menu, id, type = "default", currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList) => {
     // creates the dropdown of all the filters
     let firstFourItems = []
     let original = menu.slice('')
@@ -26,7 +27,7 @@ const dropDownMenu = (menu, id, type = "default", isShowing, toggleModal) => {
     }
     // for clean module code
     const ulList = (filters) => (
-        <ul>
+        <ul className="ul-list">
             {filters.map((item, idx) => (
                 <li key={`${item} - ${idx}`}>
                     <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${menu[idx]}`} />
@@ -49,9 +50,18 @@ const dropDownMenu = (menu, id, type = "default", isShowing, toggleModal) => {
             <>
                 <div className="date-drop-down" onClick={e => e.stopPropagation()}>
                     {ulList(firstFourItems)}
-                    <div className="modal-background-dropdown" id={`${id}`} onClick={() => closeDiv(id)}>
+                    <div className="modal-background-dropdown" id={`${id}`} onClick={() => closeDiv(id)} >
+                        {/* <div className="modal-child-dropdown"> */}
                         <div className="modal-child-dropdown" onClick={e => e.stopPropagation()}>
-                            {ulList(menu)}
+                            <p className="close-modal-container" onClick={() => closeDiv(id)}>
+                                Close x placeholder
+                            </p>
+                            <div>
+                                <button onClick={() => dateFilter(currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}> Filter By:</button>
+                            </div>
+                            <div className="modal-list">
+                                {ulList(menu)}
+                            </div>
                         </div>
                     </div>
                 </div>

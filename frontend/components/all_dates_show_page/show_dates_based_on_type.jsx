@@ -61,15 +61,15 @@ export const RenderDates = ({match}) => {
                         <div className="specific-filter">
                             <p>Location: </p>
                             <div className="location-filter">
-                                {dropDownMenu(locationUniqList,"location-date-drop-down", "location", isShowing, toggleModal)}
+                                {dropDownMenu(locationUniqList, "location-date-drop-down", "location", currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}
                                 <button onClick={() => dropDown("location-date-drop-down")}>See more</button>
                             </div>
                         </div>
                         <div className="specific-filter">
                             <p>Type: </p>
-                            <div>
-                                {dropDownMenu(dateTypeUniqList,"location-date-drop-down", "date_type", isShowing, toggleModal)}
-                                {/* <button onClick={() => }>See more</button> */}
+                            <div className="date-type-filter">
+                                {dropDownMenu(dateTypeUniqList, "date-type-drop-down", "date_type", currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}
+                                <button onClick={() => dropDown("date-type-drop-down")}>See more</button>
                             </div>
                         </div>
                         <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Reset Search:</button>
@@ -115,7 +115,7 @@ const resetFilter = (originalDateList, setCurrentDateList) => {
 
 
 const dropDown = (idName) => {
-    debugger
+
     const currentDiv = document.getElementById(`${idName}`)
     if (currentDiv.style.display === "none" || currentDiv.style.display === "") {
         currentDiv.style.display = "block"
