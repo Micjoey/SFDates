@@ -74,7 +74,8 @@ button:focus {outline:0;}
     z-index: 200;
     margin: auto;
     top: 50%;
-    left: 50%
+    left: 50%;
+    height: fit-content;
 }
 
 

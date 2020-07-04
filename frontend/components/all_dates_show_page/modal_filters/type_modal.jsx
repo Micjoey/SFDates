@@ -1,12 +1,9 @@
 import React from 'react'
 
 const TypeModal = ({ menu, id, type = "default", ulList}) => {
-    // debugger
-    // const display = ulList(menu)
     return (
-        <div id={id} className="date-drop-down">
-            {/* {display} */}
-            <p>testing</p>
+        <div id={id} className="test-modal">
+            {ulList(menu)}
         </div>
     )
 }

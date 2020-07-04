@@ -14,7 +14,7 @@ const grabUniqAspectOfDate = (allDates, uniqAspect) => {
         case "cost":
             return dateType.sort((a, b) => a.length - b.length);
         case "date_number":
-            return dateType.sort()
+            return dateType.sort((a, b) => a.length - b.length);
         default:
             return dateType;
     }

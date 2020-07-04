@@ -5,6 +5,7 @@ import LoadingScreen from '../misc/loading_screen';
 import { openModal, closeModal } from '../../actions/model_actions';
 import grabUniqAspectOfDate from './grab_uniq_aspects_of_dates';
 import dropDownMenu from './filter_drop_down_menu';
+import modal from '../modal/modal';
 
 
 
@@ -18,7 +19,6 @@ export const RenderDates = ({match}) => {
         location: false,
         date_type: false
     });
-
     useEffect(() => {
         const fetchDates = async () => {
             const result = await fetch(`/api/datesuggestions/`)
@@ -62,12 +62,14 @@ export const RenderDates = ({match}) => {
                             <p>Location: </p>
                             <div className="location-filter">
                                 {dropDownMenu(locationUniqList,"location-date-drop-down", "location", isShowing, toggleModal)}
+                                <button onClick={() => dropDown("location-date-drop-down")}>See more</button>
                             </div>
                         </div>
                         <div className="specific-filter">
                             <p>Type: </p>
                             <div>
                                 {dropDownMenu(dateTypeUniqList,"location-date-drop-down", "date_type", isShowing, toggleModal)}
+                                {/* <button onClick={() => }>See more</button> */}
                             </div>
                         </div>
                         <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Reset Search:</button>
@@ -95,7 +97,6 @@ export const RenderDates = ({match}) => {
 
 
 
-
 const resetFilter = (originalDateList, setCurrentDateList) => {
     // resets the current search filter to the original list.
     setCurrentDateList(originalDateList)
@@ -113,14 +114,15 @@ const resetFilter = (originalDateList, setCurrentDateList) => {
 
 
 
-// const dropDown = (className) => {
-//     const currentDiv = document.getElementById(`${className}`)
-//     if (currentDiv.style.display === "none" || currentDiv.style.display === "") {
-//         currentDiv.style.display = "block"
-//     } else {
-//         currentDiv.style.display = "none"
-//     }
-// }
+const dropDown = (idName) => {
+    debugger
+    const currentDiv = document.getElementById(`${idName}`)
+    if (currentDiv.style.display === "none" || currentDiv.style.display === "") {
+        currentDiv.style.display = "block"
+    } else {
+        currentDiv.style.display = "none"
+    }
+}
 
 
 

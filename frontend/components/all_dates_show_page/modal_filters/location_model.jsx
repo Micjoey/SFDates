@@ -1,13 +1,11 @@
 import React from 'react'
 
-const LocationModal = () => {
-
+const LocationModal = ({ menu, id, type = "default", ulList }) => {
     return (
-        <div className="test">
-            test
+        <div id={id} className="test-modal">
+            {ulList(menu)}
         </div>
     )
-
 }
 
 export default LocationModal

@@ -15,12 +15,14 @@ import NavBarContainer from './navbar/navbar_container';
 import Footer from './footer/footer';
 import { RenderDates } from './all_dates_show_page/show_dates_based_on_type';
 
+
 // import DateNumberContainer from './filterbar/date_number_filter';
 
 
 const App = () => (
   <div className="app">
       <Modal/>
+
     <div className="header">
       <NavBarContainer />
     </div>

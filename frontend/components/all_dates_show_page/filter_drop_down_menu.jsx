@@ -39,24 +39,30 @@ const dropDownMenu = (menu, id, type = "default", isShowing, toggleModal) => {
     if (menu.length < 5) {
         // if menu length is less than four then wont have an additional button to make it bigger
         return (
-            <div id={id} className="date-drop-down">
+            <div className="date-drop-down">
                 {ulList(firstFourItems)}
             </div>
         )
     } else {
         // has a button that pulls up a modal which filters additionally
-
         return (
             <>
-                <div id={id} className="date-drop-down" onClick={e => e.stopPropagation()}>
+                <div className="date-drop-down" onClick={e => e.stopPropagation()}>
                     {ulList(firstFourItems)}
-                    {renderModal(type, id, menu, undefined, undefined, isShowing, toggleModal, ulList)}
+                    <div className="modal-background-dropdown" id={`${id}`} onClick={() => closeDiv(id)}>
+                        <div className="modal-child-dropdown" onClick={e => e.stopPropagation()}>
+                            {ulList(menu)}
+                        </div>
+                    </div>
                 </div>
-                <button onClick={() => correctToggle(type, isShowing, toggleModal)}>See more</button>
             </>
         )
     }
 }
 
+const closeDiv = (idName) => {
+    const currentDiv = document.getElementById(`${idName}`)
+    currentDiv.style.display = "none"
+}
 
 export default dropDownMenu
