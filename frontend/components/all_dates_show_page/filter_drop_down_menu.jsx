@@ -27,6 +27,16 @@ const dropDownMenu = (menu, id, type = "default", currentDateList, originalDateL
     }
     // for clean module code
     const ulList = (filters) => (
+        <ul>
+            {filters.map((item, idx) => (
+                <li key={`${item} - ${idx}`}>
+                    <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${menu[idx]}`} />
+                    <label htmlFor={`${type}${idx + 1}`}>{item}</label>
+                </li>
+            ))}
+        </ul>
+    )
+    const modalUlList = (filters) => (
         <ul className="ul-list">
             {filters.map((item, idx) => (
                 <li key={`${item} - ${idx}`}>
@@ -54,13 +64,14 @@ const dropDownMenu = (menu, id, type = "default", currentDateList, originalDateL
                         {/* <div className="modal-child-dropdown"> */}
                         <div className="modal-child-dropdown" onClick={e => e.stopPropagation()}>
                             <p className="close-modal-container" onClick={() => closeDiv(id)}>
-                                Close x placeholder
+                                Close
                             </p>
-                            <div>
-                                <button onClick={() => dateFilter(currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}> Filter By:</button>
-                            </div>
+                            <h1 className="SfDates-title-logged-in">Filter</h1>
                             <div className="modal-list">
-                                {ulList(menu)}
+                                {modalUlList(menu)}
+                            </div>
+                            <div>
+                                <button onClick={() => filterThenClose(currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList, id)}> Filter By:</button>
                             </div>
                         </div>
                     </div>
@@ -68,6 +79,11 @@ const dropDownMenu = (menu, id, type = "default", currentDateList, originalDateL
             </>
         )
     }
+}
+
+const filterThenClose = (currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList, id) => {
+    dateFilter(currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)
+    closeDiv(id)
 }
 
 const closeDiv = (idName) => {

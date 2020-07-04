@@ -79,10 +79,11 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  // background: rgba(0, 0, 0, 0.7);
   z-index: 11;
   height: 100vh;
   width: 100%;
+  // background: transparent;
   
     .modal-child-dropdown {
       position: absolute;
@@ -100,24 +101,29 @@
       height: 80vh;
       width: 80%;
       color: white;
+      overflow: auto;
     }
 }
 
 
 .ul-list {
-  max-height: 80vh;
-  overflow-y: scroll;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
   
 }
 
 .modal-list {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  // grid-gap: 10px;
-  // padding: 10px;
-  // overflow: auto;
-  // padding-bottom: 100px;
-  // margin: 0px 50px;
-  // text-align: center;
+  overflow: auto;
+
 }
 
+.close-modal-container {
+  margin-left: auto;
+  padding: 1em;
+}
+
+.close-modal-container:hover {
+  cursor: pointer;
+}
