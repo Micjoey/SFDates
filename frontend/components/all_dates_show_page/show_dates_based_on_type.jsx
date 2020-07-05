@@ -47,10 +47,16 @@ export const RenderDates = ({match}) => {
                                 <p>Type: </p>
                                 <div className="date-type-filter">
                                     {dropDownMenu(dateTypeUniqList, "date-type-drop-down", "date_type", currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}
+                                    
                                     <div
                                         onClick={() => dropDown("date-type-drop-down")}
                                         className="see-more-button"
-                                    >See more</div>
+                                    >
+                                        <i className="fa fa-angle-double-down down-arrow"></i>
+                                            See more
+                                        <i className="fa fa-angle-double-down down-arrow"></i>
+                                    </div>
+                                    
                                 </div>
                             </div>
                             <div className="specific-filter">
@@ -72,7 +78,11 @@ export const RenderDates = ({match}) => {
                                     <div
                                         onClick={() => dropDown("location-date-drop-down")}
                                         className="see-more-button"
-                                    >See more</div>
+                                    >
+                                        <i className="fa fa-angle-double-down down-arrow"></i>
+                                            See more
+                                        <i className="fa fa-angle-double-down down-arrow"></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>
