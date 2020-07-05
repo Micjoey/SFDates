@@ -4,7 +4,7 @@ import dateFilter from './show_date_functions/date_filter'
 import LoadingScreen from '../misc/loading_screen';
 import { openModal, closeModal } from '../../actions/model_actions';
 import grabUniqAspectOfDate from './show_date_functions/grab_uniq_aspects_of_dates';
-import dropDownMenu from './show_date_functions/filter_drop_down_menu';
+import dropDownMenu from './show_date_functions/drop_down_menu';
 import resetFilter from './show_date_functions/reset_filter';
 
 
@@ -14,12 +14,7 @@ export const RenderDates = ({match}) => {
     const [currentDateList, setCurrentDateList] = useState({}) // Current list of dates
     const [originalDateList, setOriginalDateList] = useState({}) // Main list of dates
     const [loaded, setLoaded] = useState({isLoaded: false}) // loading screen for information
-    const [isShowing, toggleModal] = useState({
-        cost: false,
-        date_number: false,
-        location: false,
-        date_type: false
-    });
+
     useEffect(() => {
         const fetchDates = async () => {
             const result = await fetch(`/api/datesuggestions/`)

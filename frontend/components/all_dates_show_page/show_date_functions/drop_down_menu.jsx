@@ -29,16 +29,16 @@ const dropDownMenu = (menu, id, type = "default", currentDateList, originalDateL
     if (menu.length < 5) {
         // if menu length is less than four then wont have an additional button to make it bigger
         return (
-            <div className="date-drop-down">
-                {ulList(firstFourItems, type)}
-            </div>
+            // <div className="date-drop-down">
+                ulList(firstFourItems, type, original)
+            // </div>
         )
     } else {
         // has a button that pulls up a modal which filters additionally
         return (
             <>
                 <div className="date-drop-down" onClick={e => e.stopPropagation()}>
-                    {ulList(firstFourItems)}
+                    {ulList(firstFourItems, type, original)}
                     <div className="modal-background-dropdown" id={`${id}`} onClick={() => closeDiv(id)} >
                         {/* <div className="modal-child-dropdown"> */}
                         <div className="modal-child-dropdown" onClick={e => e.stopPropagation()}>
@@ -46,9 +46,9 @@ const dropDownMenu = (menu, id, type = "default", currentDateList, originalDateL
                                 X
                             </p>
                             <h1 className="modal-title">{type.split("_").join(" ").toUpperCase()} FILTER</h1>
-                            <div>
-                                
-                            </div>
+                            {/* <div>
+                                reset placeholder
+                            </div> */}
                             <div className="modal-list">
                                 {modalUlList(menu, type)}
                             </div>
@@ -76,11 +76,11 @@ const closeDiv = (idName) => {
     currentDiv.style.display = "none"
 }
 
-const ulList = (filters, type) => (
+const ulList = (filters, type, menu) => (
     <ul>
         {filters.map((item, idx) => (
             <li key={`${item} - ${idx}`}>
-                <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${filters[idx]}`} />
+                <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${menu[idx]}`} />
                 <label htmlFor={`${type}${idx + 1}`}>{item}</label>
             </li>
         ))}

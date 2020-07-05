@@ -59,5 +59,10 @@ const setFilteredDates = (values = {}, dateList) => {
     return [...new Set(newDateListArray)]
 }
 
+const revertCost = (object) => {
+    
+
+}
+
 export default dateFilter
 
