@@ -25,33 +25,12 @@ const dropDownMenu = (menu, id, type = "default", currentDateList, originalDateL
             firstFourItems.push(original[x])
         }
     }
-    // for clean module code
-    const ulList = (filters) => (
-        <ul>
-            {filters.map((item, idx) => (
-                <li key={`${item} - ${idx}`}>
-                    <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${menu[idx]}`} />
-                    <label htmlFor={`${type}${idx + 1}`}>{item}</label>
-                </li>
-            ))}
-        </ul>
-    )
-    const modalUlList = (filters) => (
-        <ul className="ul-list">
-            {filters.map((item, idx) => (
-                <li key={`${item} - ${idx}`}>
-                    <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${menu[idx]}`} />
-                    <label htmlFor={`${type}${idx + 1}`}>{item}</label>
-                </li>
-            ))}
-        </ul>
-    )
-    //
+
     if (menu.length < 5) {
         // if menu length is less than four then wont have an additional button to make it bigger
         return (
             <div className="date-drop-down">
-                {ulList(firstFourItems)}
+                {ulList(firstFourItems, type)}
             </div>
         )
     } else {
@@ -71,9 +50,9 @@ const dropDownMenu = (menu, id, type = "default", currentDateList, originalDateL
                                 
                             </div>
                             <div className="modal-list">
-                                {modalUlList(menu)}
+                                {modalUlList(menu, type)}
                             </div>
-                            <div>
+                            <div className="modal-filter-button">
                                 <button onClick={() => filterThenClose(currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList, id)}> Filter By:</button>
                             </div>
                         </div>
@@ -93,5 +72,26 @@ const closeDiv = (idName) => {
     const currentDiv = document.getElementById(`${idName}`)
     currentDiv.style.display = "none"
 }
+
+const ulList = (filters, type) => (
+    <ul>
+        {filters.map((item, idx) => (
+            <li key={`${item} - ${idx}`}>
+                <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${filters[idx]}`} />
+                <label htmlFor={`${type}${idx + 1}`}>{item}</label>
+            </li>
+        ))}
+    </ul>
+)
+const modalUlList = (filters, type) => (
+    <ul className="ul-list">
+        {filters.map((item, idx) => (
+            <li key={`${item} - ${idx}`}>
+                <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${filters[idx]}`} />
+                <label htmlFor={`${type}${idx + 1}`}>{item}</label>
+            </li>
+        ))}
+    </ul>
+)
 
 export default dropDownMenu

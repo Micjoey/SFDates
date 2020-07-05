@@ -100,7 +100,7 @@
       border-radius: 10px;
       max-height: 80vh;
       height: 60vh;
-      width: 60%;
+      width: 80%;
       color: white;
       overflow: auto;
     }
@@ -117,6 +117,8 @@
 
 .modal-list {
   overflow: auto;
+  height: 30vh;
+  border: 2px solid white;
 
 }
 
@@ -144,4 +146,8 @@
   color: white;
   text-align: center;
 
+}
+
+.modal-filter-button {
+  margin: 20px;
 }
