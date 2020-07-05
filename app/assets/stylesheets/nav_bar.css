@@ -20,16 +20,17 @@
 }
 
     .SfDates-title-logged-in {
-    text-decoration: none;
-    font-size: 40px;
-    color: black;
-    vertical-align: middle;
-    padding-left: 30px;
-    padding-right: 50px;
-    height: 50px;
-    vertical-align: center;
-    padding-top: 5px;
-    color: white;
+        text-decoration: none;
+        font-size: 40px;
+        color: black;
+        vertical-align: middle;
+        padding-left: 30px;
+        padding-right: 50px;
+        height: 50px;
+        vertical-align: center;
+        padding-top: 5px;
+        color: white;
+        text-align: center;
     }
 
     .SfDates-title-logged-in:hover {

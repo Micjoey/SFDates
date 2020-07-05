@@ -1,5 +1,5 @@
 import React from 'react'
-import { renderModal, correctToggle } from '../modal/modal_render';
+import { renderModal, correctToggle } from '../../modal/modal_render';
 import dateFilter from './date_filter';
 
 
@@ -64,14 +64,17 @@ const dropDownMenu = (menu, id, type = "default", currentDateList, originalDateL
                         {/* <div className="modal-child-dropdown"> */}
                         <div className="modal-child-dropdown" onClick={e => e.stopPropagation()}>
                             <p className="close-modal-container" onClick={() => closeDiv(id)}>
-                                Close
+                                X
                             </p>
-                            <h1 className="SfDates-title-logged-in">Filter</h1>
+                            <h1 className="modal-title">{type.split("_").join(" ").toUpperCase()} FILTER</h1>
                             <div>
-                                <button onClick={() => filterThenClose(currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList, id)}> Filter By:</button>
+                                
                             </div>
                             <div className="modal-list">
                                 {modalUlList(menu)}
+                            </div>
+                            <div>
+                                <button onClick={() => filterThenClose(currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList, id)}> Filter By:</button>
                             </div>
                         </div>
                     </div>

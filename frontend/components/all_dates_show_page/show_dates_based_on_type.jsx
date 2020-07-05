@@ -1,11 +1,12 @@
 import React, {useState, useEffect, useReducer} from 'react';
-import IterateOverDates from './iterate_over_dates'
-import dateFilter from './date_filter'
+import IterateOverDates from './show_date_functions/iterate_over_dates'
+import dateFilter from './show_date_functions/date_filter'
 import LoadingScreen from '../misc/loading_screen';
 import { openModal, closeModal } from '../../actions/model_actions';
-import grabUniqAspectOfDate from './grab_uniq_aspects_of_dates';
-import dropDownMenu from './filter_drop_down_menu';
-import modal from '../modal/modal';
+import grabUniqAspectOfDate from './show_date_functions/grab_uniq_aspects_of_dates';
+import dropDownMenu from './show_date_functions/filter_drop_down_menu';
+import resetFilter from './show_date_functions/reset_filter';
+
 
 
 
@@ -103,19 +104,7 @@ export const RenderDates = ({match}) => {
 
 
 
-const resetFilter = (originalDateList, setCurrentDateList) => {
-    // resets the current search filter to the original list.
-    setCurrentDateList(originalDateList)
-    let dateType = ["cost", "date_type", "date_number", "location"]
-    dateType.forEach(type => {
-        const checkbox = document.querySelectorAll(`input[name=${type}]:checked`)
-        if (checkbox.length > 0) {
-            checkbox.forEach((checkbox) => {
-                checkbox.checked = false
-            })
-        }
-    })
-}
+
 
 
 
@@ -132,5 +121,3 @@ const dropDown = (idName) => {
 
 
 
-
-// openModal('date number', 'date-number-filter', allDates)
