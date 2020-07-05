@@ -38,26 +38,6 @@ const setValues = (dateType) => {
     return values
 }
 
-// const setFilteredDates = (values = {}, dateList) => {
-//     let newDateListArray = Object.values(dateList)
-//     let keys = Object.keys(values)
-//     if (keys.length) {
-//         newDateListArray = [];
-//         keys.forEach(key => {
-//             let toFilterParts = values[key]
-//             // dateList = newDateListArray
-//             for (let x = 0; x < toFilterParts.length; x++) {
-//                 let filterPiece = toFilterParts[x]
-//                 let temp = dateList.filter(date => date[key] === filterPiece)
-//                 if (temp.length < dateList.length) {
-//                     Object.assign(newDateListArray, temp)
-//                 }
-//             }
-//         })
-//     }
-//     return [...new Set(newDateListArray)]
-// }
-
 const setFilteredDates = (values = {}, dateList) => {
     let newDateListArray = Object.values(dateList)
     let keys = Object.keys(values)

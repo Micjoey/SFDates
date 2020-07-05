@@ -33,9 +33,11 @@
  button {
     /* border-radius: 28px; */
     border-radius: 4px;
-    background-color: #600054;
-    color: rgb(171, 165, 0);
+    background-color: rgb(99, 4, 23);
+    color: white;
     font-weight: 600;
+    min-width: 50px;
+    margin: auto;
 }
 button:focus {outline:0;}
 

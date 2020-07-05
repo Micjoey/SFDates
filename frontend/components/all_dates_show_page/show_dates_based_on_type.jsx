@@ -62,14 +62,20 @@ export const RenderDates = ({match}) => {
                             <p>Location: </p>
                             <div className="location-filter">
                                 {dropDownMenu(locationUniqList, "location-date-drop-down", "location", currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}
-                                <button onClick={() => dropDown("location-date-drop-down")}>See more</button>
+                                <div 
+                                    onClick={() => dropDown("location-date-drop-down")}
+                                    className="see-more-button"
+                                >See more</div>
                             </div>
                         </div>
                         <div className="specific-filter">
                             <p>Type: </p>
                             <div className="date-type-filter">
                                 {dropDownMenu(dateTypeUniqList, "date-type-drop-down", "date_type", currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}
-                                <button onClick={() => dropDown("date-type-drop-down")}>See more</button>
+                                <div 
+                                    onClick={() => dropDown("date-type-drop-down")}
+                                    className="see-more-button"
+                                >See more</div>
                             </div>
                         </div>
                         <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Reset Search:</button>

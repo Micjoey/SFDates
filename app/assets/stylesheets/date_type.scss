@@ -111,3 +111,16 @@
     margin: 10px;
     width: 50%;
 }
+
+.see-more-button {
+    color: white;
+    font-weight: bold;
+    margin: 5px 0px;
+    background-color: rgb(99, 4, 23);
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+.see-more-button:hover {
+    cursor: pointer;
+}

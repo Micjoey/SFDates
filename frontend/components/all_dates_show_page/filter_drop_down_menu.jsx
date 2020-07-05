@@ -67,11 +67,11 @@ const dropDownMenu = (menu, id, type = "default", currentDateList, originalDateL
                                 Close
                             </p>
                             <h1 className="SfDates-title-logged-in">Filter</h1>
-                            <div className="modal-list">
-                                {modalUlList(menu)}
-                            </div>
                             <div>
                                 <button onClick={() => filterThenClose(currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList, id)}> Filter By:</button>
+                            </div>
+                            <div className="modal-list">
+                                {modalUlList(menu)}
                             </div>
                         </div>
                     </div>
