@@ -44,25 +44,31 @@ const setFilteredDates = (values = {}, dateList) => {
     if (keys.length) {
         newDateListArray = [];
         keys.forEach(key => {
-            let toFilterParts = values[key]
-            for (let x = 0; x < toFilterParts.length; x++) {
-                let filterPiece = toFilterParts[x]
+            let toFilterParts = values[key] // array of all filter values
+            let listOfSameFilter = [] 
+            for (let x = 0; x < toFilterParts.length; x++) { 
+                console.log(listOfSameFilter, newDateListArray.length)
+                let filterPiece = toFilterParts[x] 
+                let temp;
                 if (newDateListArray.length) {
-                    newDateListArray = newDateListArray.filter(date => date[key] === filterPiece)
+                    Object.assign(listOfSameFilter,
+                        newDateListArray.filter(date => date[key] === filterPiece)
+                    )
                 } else {
-                    newDateListArray = dateList.filter(date => date[key] === filterPiece)
+                    temp = dateList.filter(date => date[key] === filterPiece)
+                    console.log(temp)
+                    Object.assign(listOfSameFilter, temp)
+                    // listOfSameFilter.concat(temp)
                 }
+
             }
+            newDateListArray = listOfSameFilter
         })
     }
-
     return [...new Set(newDateListArray)]
 }
 
-const revertCost = (object) => {
-    
 
-}
 
 export default dateFilter
 
