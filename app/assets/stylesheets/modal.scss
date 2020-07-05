@@ -99,10 +99,11 @@
       background-color: #1A0004;
       border-radius: 10px;
       max-height: 80vh;
-      height: 80vh;
+      // height: 80vh;
       width: 60%;
       color: white;
       padding: 20px;
+      max-height: 80vh;
     }
 }
 
@@ -153,7 +154,11 @@
 
 }
 
-.modal-filter-button {
+.modal-filter-button-container {
   margin: 20px;
   text-align: center;
+  .modal-filter-button {
+    width: 2em;
+  }
 }
+
