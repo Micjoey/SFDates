@@ -42,36 +42,38 @@ export const RenderDates = ({match}) => {
                 <div className="date-specific-parent-container">
                     <div className="date-specific-filter">
                         <button onClick={() => dateFilter(currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}> Filter By:</button>
-                        <div className="specific-filter">
-                            <p>Cost: </p>
-                            <div>
-                                {dropDownMenu(costUniqList, "cost-date-drop-down", "cost")}
+                        <div className="date-specific-filter-container">
+                            <div className="specific-filter">
+                                <p>Type: </p>
+                                <div className="date-type-filter">
+                                    {dropDownMenu(dateTypeUniqList, "date-type-drop-down", "date_type", currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}
+                                    <div
+                                        onClick={() => dropDown("date-type-drop-down")}
+                                        className="see-more-button"
+                                    >See more</div>
+                                </div>
                             </div>
-                        </div>
-                        <div className="specific-filter">
-                            <p>Date Number: </p>
-                            <div>
-                                {dropDownMenu(dateNumberUniqList,"datenumber-date-drop-down", "date_number")}
+                            <div className="specific-filter">
+                                <p>Date Number: </p>
+                                <div>
+                                    {dropDownMenu(dateNumberUniqList, "datenumber-date-drop-down", "date_number")}
+                                </div>
                             </div>
-                        </div>
-                        <div className="specific-filter">
-                            <p>Location: </p>
-                            <div className="location-filter">
-                                {dropDownMenu(locationUniqList, "location-date-drop-down", "location", currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}
-                                <div 
-                                    onClick={() => dropDown("location-date-drop-down")}
-                                    className="see-more-button"
-                                >See more</div>
+                            <div className="specific-filter">
+                                <p>Cost: </p>
+                                <div>
+                                    {dropDownMenu(costUniqList, "cost-date-drop-down", "cost")}
+                                </div>
                             </div>
-                        </div>
-                        <div className="specific-filter">
-                            <p>Type: </p>
-                            <div className="date-type-filter">
-                                {dropDownMenu(dateTypeUniqList, "date-type-drop-down", "date_type", currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}
-                                <div 
-                                    onClick={() => dropDown("date-type-drop-down")}
-                                    className="see-more-button"
-                                >See more</div>
+                            <div className="specific-filter">
+                                <p>Location: </p>
+                                <div className="location-filter">
+                                    {dropDownMenu(locationUniqList, "location-date-drop-down", "location", currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}
+                                    <div
+                                        onClick={() => dropDown("location-date-drop-down")}
+                                        className="see-more-button"
+                                    >See more</div>
+                                </div>
                             </div>
                         </div>
                         <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Reset Search:</button>

@@ -70,6 +70,7 @@
                 margin: 10px 0px;
                 border: solid 1px black;
                 padding: 3px;
+                background-color: rgb(233, 230, 230);
                 .title-for-date {
                     display: flex;
                     width: 164px;
@@ -105,7 +106,9 @@
     }
 }
 
-
+.date-specific-filter-container {
+    margin: 5px 0px;
+}
 
 .map-container {
     margin: 10px;
