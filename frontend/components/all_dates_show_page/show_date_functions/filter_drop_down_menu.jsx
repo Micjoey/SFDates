@@ -53,7 +53,7 @@ const dropDownMenu = (menu, id, type = "default", currentDateList, originalDateL
                                 {modalUlList(menu, type)}
                             </div>
                             <div className="modal-filter-button">
-                                <button onClick={() => filterThenClose(currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList, id)}> Filter By:</button>
+                                <button onClick={() => filterThenClose(currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList, id)}> Filter</button>
                             </div>
                         </div>
                     </div>

@@ -99,17 +99,18 @@
       background-color: #1A0004;
       border-radius: 10px;
       max-height: 80vh;
-      height: 60vh;
-      width: 80%;
+      height: 80vh;
+      width: 60%;
       color: white;
-      overflow: auto;
+      padding: 20px;
     }
 }
 
 
 .ul-list {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
+  // grid-template-columns: auto auto auto;
   grid-gap: 10px;
   padding: 10px;
   margin: auto;
@@ -117,8 +118,12 @@
 
 .modal-list {
   overflow: auto;
-  height: 30vh;
+  // height: 30vh;
   border: 2px solid white;
+  min-height: fit-content;
+  max-height: 60vh;
+  width: fit-content;
+  margin: auto;
 
 }
 
@@ -139,7 +144,7 @@
   vertical-align: middle;
   // padding-left: 30px;
   // padding-right: 50px;
-  margin: 20px;
+  margin: 10px;
   height: 50px;
   vertical-align: center;
   padding-top: 5px;
@@ -150,4 +155,5 @@
 
 .modal-filter-button {
   margin: 20px;
+  text-align: center;
 }

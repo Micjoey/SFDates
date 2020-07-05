@@ -40,7 +40,13 @@
     margin: auto;
 }
 button:focus {outline:0;}
+button:hover {
+    cursor: pointer;
+}
 
+input:hover {
+    cursor: pointer;
+}
 .background-color {
     /* background-color: #FBC7CA; */
     background-color:rgb(255, 255, 255);
