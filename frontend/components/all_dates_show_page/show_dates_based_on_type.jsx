@@ -14,6 +14,13 @@ export const RenderDates = ({match}) => {
     const [currentDateList, setCurrentDateList] = useState({}) // Current list of dates
     const [originalDateList, setOriginalDateList] = useState({}) // Main list of dates
     const [loaded, setLoaded] = useState({isLoaded: false}) // loading screen for information
+    const [filterForDate, setFiltered] = useState({
+        cost: {},
+        date_number: {},
+        location: {},
+        date_type: {}
+    })
+    console.log(filterForDate)
 
     useEffect(() => {
         const fetchDates = async () => {
@@ -41,12 +48,31 @@ export const RenderDates = ({match}) => {
             <div className='background-color'>
                 <div className="date-specific-parent-container">
                     <div className="date-specific-filter">
-                        <button onClick={() => dateFilter(currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}> Filter By:</button>
+                        <button onClick={() => dateFilter(
+                            currentDateList, 
+                            originalDateList, 
+                            checkedBox, 
+                            setCheckedBox, 
+                            setCurrentDateList,
+                            )}
+                        > 
+                            Filter By:
+                        </button>
                         <div className="date-specific-filter-container">
                             <div className="specific-filter">
                                 <p>Type: </p>
                                 <div className="date-type-filter">
-                                    {dropDownMenu(dateTypeUniqList, "date-type-drop-down", "date_type", currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}
+                                    {dropDownMenu(
+                                        dateTypeUniqList,
+                                         "date-type-drop-down",
+                                        "date_type",
+                                        currentDateList, 
+                                        originalDateList, 
+                                        checkedBox, 
+                                        setCheckedBox, 
+                                        setCurrentDateList,
+                                        filterForDate,
+                                        setFiltered)}
                                     
                                     <div
                                         onClick={() => dropDown("date-type-drop-down")}
@@ -62,19 +88,40 @@ export const RenderDates = ({match}) => {
                             <div className="specific-filter">
                                 <p>Date Number: </p>
                                 <div>
-                                    {dropDownMenu(dateNumberUniqList, "datenumber-date-drop-down", "date_number")}
+                                    {dropDownMenu(dateNumberUniqList, "datenumber-date-drop-down", "date_number", 
+                                        currentDateList,
+                                        originalDateList,
+                                        checkedBox,
+                                        setCheckedBox,
+                                        setCurrentDateList,
+                                        filterForDate,
+                                        setFiltered)}
                                 </div>
                             </div>
                             <div className="specific-filter">
                                 <p>Cost: </p>
                                 <div>
-                                    {dropDownMenu(costUniqList, "cost-date-drop-down", "cost")}
+                                    {dropDownMenu(costUniqList, "cost-date-drop-down", "cost", 
+                                        currentDateList,
+                                        originalDateList,
+                                        checkedBox,
+                                        setCheckedBox,
+                                        setCurrentDateList,
+                                        filterForDate,
+                                        setFiltered)}
                                 </div>
                             </div>
                             <div className="specific-filter">
                                 <p>Location: </p>
                                 <div className="location-filter">
-                                    {dropDownMenu(locationUniqList, "location-date-drop-down", "location", currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}
+                                    {dropDownMenu(locationUniqList, "location-date-drop-down", "location", 
+                                        currentDateList,
+                                        originalDateList,
+                                        checkedBox,
+                                        setCheckedBox,
+                                        setCurrentDateList,
+                                        filterForDate,
+                                        setFiltered)}
                                     <div
                                         onClick={() => dropDown("location-date-drop-down")}
                                         className="see-more-button"
@@ -117,7 +164,6 @@ export const RenderDates = ({match}) => {
 
 
 const dropDown = (idName) => {
-
     const currentDiv = document.getElementById(`${idName}`)
     if (currentDiv.style.display === "none" || currentDiv.style.display === "") {
         currentDiv.style.display = "block"
