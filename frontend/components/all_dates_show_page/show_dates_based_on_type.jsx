@@ -139,10 +139,10 @@ export const RenderDates = ({match}) => {
                         <div className="date-specific-info-container">
                             <IterateOverDates dates={currentDateList} />
                         </div>
-                        <div className="map-container">
-                            <h1>
-                                <p>Map Placeholder</p>
-                            </h1>
+                        <div className="one-date-container" id={"one-date-container"}>
+                            <div className="one-specific-info-container">
+                              
+                            </div>
                         </div>
                     </div>
                 </div>
