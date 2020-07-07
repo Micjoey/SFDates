@@ -11,7 +11,7 @@ const IterateOverDates = ({ dates }) => {
                 {Object.values(dates).map((date, key) => (
                     <div className="title-info-container" key={key} 
                         onMouseEnter={() => displayOneDatesInformation(date)} 
-                        // onMouseLeave={}
+                        // onMouseLeave={() => ($('.one-specific-info-container').empty())}
                     >
                             <h4 className="title-for-date">{date.title}</h4>
                             <p className="info-for-date">Date Number: {date.date_number}</p>

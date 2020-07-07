@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import thirdParty from './is_third_party'
 
 const displayOneDatesInformation = (date) => {
-
+    $('.one-specific-info-container').empty()
     // debugger
     $(`<div className="inner-date-specific-container">
                     <div className="title-info-container">
