@@ -141,7 +141,7 @@ export const RenderDates = ({match}) => {
                         </div>
                         <div className="map-container">
                             <h1>
-                                <p>Map Placeholder</p>
+                                {/* <p>Map Placeholder</p> */}
                             </h1>
                         </div>
                     </div>
