@@ -47,7 +47,7 @@ const setFilteredDates = (values = {}, dateList) => {
             let toFilterParts = values[key] // array of all filter values
             let listOfSameFilter = [] 
             for (let x = 0; x < toFilterParts.length; x++) { 
-                console.log(listOfSameFilter, newDateListArray.length)
+                // console.log(listOfSameFilter, newDateListArray.length)
                 let filterPiece = toFilterParts[x] 
                 let temp;
                 if (newDateListArray.length) {
@@ -56,7 +56,7 @@ const setFilteredDates = (values = {}, dateList) => {
                     )
                 } else {
                     temp = dateList.filter(date => date[key] === filterPiece)
-                    console.log(temp)
+                    // console.log(temp)
                     Object.assign(listOfSameFilter, temp)
                     // listOfSameFilter.concat(temp)
                 }

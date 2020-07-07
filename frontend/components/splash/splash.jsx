@@ -82,7 +82,9 @@ class Splash extends React.Component {
             toggleDiv = document.getElementsByClassName("random-date-information")
             return (
                 <div className='splash-page'>
-                    <div className='background-img' alt="SFBridge Picture"></div>
+                    <div className='background-img' alt="SFBridge Picture">
+                        {/* <img src="<%= image_url('sf_pano.jpg') %>" /> */}
+                    </div>
                     <div className="website-info">
                         <div className="website-info-text">
                             <p className="website-info-greeting">

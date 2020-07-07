@@ -20,7 +20,7 @@ export const RenderDates = ({match}) => {
         location: {},
         date_type: {}
     })
-    console.log(filterForDate)
+
 
     useEffect(() => {
         const fetchDates = async () => {
