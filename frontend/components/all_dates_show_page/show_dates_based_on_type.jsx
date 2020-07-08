@@ -20,7 +20,7 @@ export const RenderDates = ({match}) => {
         location: {},
         date_type: {}
     })
-    console.log(filterForDate)
+    // console.log(filterForDate)
 
     useEffect(() => {
         const fetchDates = async () => {
@@ -39,11 +39,13 @@ export const RenderDates = ({match}) => {
         location: false,
         date_type: false
     })
+
     if (loaded.isLoaded) {
         const costUniqList = grabUniqAspectOfDate(originalDateList, "cost")
         const dateNumberUniqList = grabUniqAspectOfDate(originalDateList, "date_number")
         const locationUniqList = grabUniqAspectOfDate(originalDateList, "location")
         const dateTypeUniqList = grabUniqAspectOfDate(originalDateList, "date_type")
+        
         return (
             <div className='background-color'>
                 <div className="date-specific-parent-container">
@@ -78,9 +80,9 @@ export const RenderDates = ({match}) => {
                                         onClick={() => dropDown("date-type-drop-down")}
                                         className="see-more-button"
                                     >
-                                        <i className="fa fa-angle-double-down down-arrow"></i>
+                                        <i className="fa fa-angle-double-down down-arrow"> </i>
                                             See more
-                                        <i className="fa fa-angle-double-down down-arrow"></i>
+                                        <i className="fa fa-angle-double-down down-arrow"> </i>
                                     </div>
                                     
                                 </div>
@@ -126,9 +128,9 @@ export const RenderDates = ({match}) => {
                                         onClick={() => dropDown("location-date-drop-down")}
                                         className="see-more-button"
                                     >
-                                        <i className="fa fa-angle-double-down down-arrow"></i>
+                                        <i className="fa fa-angle-double-down down-arrow"> </i>
                                             See more
-                                        <i className="fa fa-angle-double-down down-arrow"></i>
+                                        <i className="fa fa-angle-double-down down-arrow"> </i>
                                     </div>
                                 </div>
                             </div>
@@ -139,18 +141,15 @@ export const RenderDates = ({match}) => {
                         <div className="date-specific-info-container">
                             <IterateOverDates dates={currentDateList} />
                         </div>
-                        <div className="date-specific-info" id={"one-date-container"}>
+                        <div className="date-specific-info" id="one-date-container">
                             <div className="one-specific-info-container">
-                                {/* {console.log(originalDateList[1])} */}
-                                <div className="title-info-container">
-                                    <h4 className="title-for-date">{originalDateList[1].title}</h4>
-                                    <p className="info-for-date">Date Number: {originalDateList[1].date_number}</p>
-                                    <p className="info-for-date">Type: {originalDateList[1].date_type}</p>
-                                    <p className="info-for-date">Cost: {originalDateList[1].cost}</p>
-                                    <p className="info-for-date">Location: {originalDateList[1].location}</p>
-                                    {thirdParty(originalDateList[1])}
-                                    <p className="info-for-date">Description: {originalDateList[1].description}</p>   
-                                </div>
+                                <h4 className="title-for-date">{originalDateList[1].title}</h4>
+                                <p className="info-for-date">Date Number: {originalDateList[1].date_number}</p>
+                                <p className="info-for-date">Type: {originalDateList[1].date_type}</p>
+                                <p className="info-for-date">Cost: {originalDateList[1].cost}</p>
+                                <p className="info-for-date">Location: {originalDateList[1].location}</p>
+                                {thirdParty(originalDateList[1])}
+                                <p className="info-for-date">Description: {originalDateList[1].description}</p>   
                             </div>
                         </div>
                     </div>

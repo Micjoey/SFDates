@@ -18,7 +18,7 @@ const IterateOverDates = ({ dates }) => {
                             <p className="info-for-date">Type: {date.date_type}</p>
                             <p className="info-for-date">Cost: {date.cost}</p>
                             <p className="info-for-date">Location: {date.location}</p>
-                            {thirdParty(date)}
+                            {/* {thirdParty(date)} */}
                             {/* <p className="info-for-date">Description: {date.description}</p> */}
                     </div>
                 ))}
