@@ -141,12 +141,6 @@ export const RenderDates = ({match}) => {
                         <div className="date-specific-info-container">
                             <IterateOverDates dates={currentDateList} />
                         </div>
-<<<<<<< HEAD
-                        <div className="map-container">
-                            <h1>
-                                {/* <p>Map Placeholder</p> */}
-                            </h1>
-=======
                         <div className="date-specific-info" id="one-date-container">
                             <div className="one-specific-info-container title-info-container" id="one-date-info-container">
                                 {/* <div class="title-info-container"> */}
@@ -160,7 +154,6 @@ export const RenderDates = ({match}) => {
                                 {/* </div> */}
                                 {/* <h4 className="title-for-date">{originalDateList[1].title}</h4> */}
                             </div>
->>>>>>> filter
                         </div>
                     </div>
                 </div>
