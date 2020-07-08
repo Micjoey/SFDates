@@ -51,8 +51,8 @@
     }
     .date-specific-info-container {
         display: block;
-        width: 43vh;
-        min-width: 35%;
+        width: 90vh;
+        // min-width: 35%;
         overflow-y: scroll;
         border: lightslategray 1px solid;
         padding: 12px;
@@ -60,51 +60,36 @@
         margin-bottom: 53px;
         overflow-x: hidden;
         max-width: 50%;
+    }
+}
 
-        .inner-date-specific-container:last-of-type {
-            margin-bottom: 50px;
+.inner-date-specific-container:last-of-type {
+    margin-bottom: 50px;
+}
+.inner-date-specific-container {
+    .title-info-container {
+        .info-for-date, .date-website-link {
+            display: flex;
+            height: fit-content;
+            width: 100%;
+            padding: 5px 0px;
+            word-wrap: break-word;
         }
-        .inner-date-specific-container {
-            .title-info-container {
-                // display: flex;
-                // margin: 5px;
-                margin: 10px 0px;
-                border: solid 1px black;
-                padding: 5px;
-                background-color: rgb(233, 230, 230);
-                // max-width: 90%;
-                overflow-x: auto;
-                .title-for-date {
-                    display: flex;
-                    width: 164px;
-                    min-width: max-content;
-                    padding-right: 1em;
-                    text-align: right;
-                }
-                .info-for-date, .date-website-link {
-                    display: flex;
-                    height: fit-content;
-                    width: 100%;
-                    padding: 5px 0px;
-                    word-wrap: break-word;
-                }
-                
-                .info-for-date:last-child {
-                    padding: 5px 0px;
-                }
-                p {
-                    margin: 5px 0px;
-                    font-size: 18px;
-                }
-                h4 {
-                    font-size: 22px;
-                    text-decoration: underline;
-                } 
-                a {
-                    color: black;
-                    padding-left: 5px;
-                }
-            }
+        
+        .info-for-date:last-child {
+            padding: 5px 0px;
+        }
+        p {
+            margin: 5px 0px;
+            font-size: 18px;
+        }
+        h4 {
+            font-size: 22px;
+            text-decoration: underline;
+        } 
+        a {
+            color: black;
+            padding-left: 5px;
         }
     }
 }
@@ -131,14 +116,58 @@
     cursor: pointer;
 }
 
+
+
+.title-info-container {
+    // display: flex;
+    // margin: 5px;
+    margin: 10px 0px;
+    border: solid 1px black;
+    padding: 5px;
+    background-color: rgb(233, 230, 230);
+    // max-width: 90%;
+    overflow-x: auto;
+}
+.title-for-date {
+    display: flex;
+    width: 164px;
+    min-width: max-content;
+    padding-right: 1em;
+    text-align: right;
+    font-weight: bold;
+}
+
+.title-for-single-date {
+    display: flex;
+    width: 164px;
+    min-width: max-content;
+    padding-right: 1em;
+    text-align: right;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: underline;
+    
+}
+
+.title-for-single-date, .info-for-single-date {
+    margin: 5px 0px;
+    display: flex;
+}
 #one-date-container {
     display: block;
     min-width: 35%;
-    overflow-y: scroll;
+    // overflow-y: scroll;
     border: lightslategray 1px solid;
     padding: 12px;
     margin: 5px;
     margin-bottom: 53px;
     overflow-x: hidden;
     max-width: 50%;
+    background-color: rgba(119, 136, 153, 0.815);
+    font-size: 18.5px;
+    height: 90vh;
 }
+#one-date-info-container{
+    height: auto;
+}
+

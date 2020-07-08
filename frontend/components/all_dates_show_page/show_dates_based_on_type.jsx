@@ -142,14 +142,17 @@ export const RenderDates = ({match}) => {
                             <IterateOverDates dates={currentDateList} />
                         </div>
                         <div className="date-specific-info" id="one-date-container">
-                            <div className="one-specific-info-container">
-                                <h4 className="title-for-date">{originalDateList[1].title}</h4>
-                                <p className="info-for-date">Date Number: {originalDateList[1].date_number}</p>
-                                <p className="info-for-date">Type: {originalDateList[1].date_type}</p>
-                                <p className="info-for-date">Cost: {originalDateList[1].cost}</p>
-                                <p className="info-for-date">Location: {originalDateList[1].location}</p>
-                                {thirdParty(originalDateList[1])}
-                                <p className="info-for-date">Description: {originalDateList[1].description}</p>   
+                            <div className="one-specific-info-container title-info-container" id="one-date-info-container">
+                                {/* <div class="title-info-container"> */}
+                                    <h4 className="title-for-single-date">{originalDateList[1].title}</h4>
+                                    <p className="info-for-single-date">Date Number: {originalDateList[1].date_number}</p>
+                                    <p className="info-for-single-date">Type: {originalDateList[1].date_type}</p>
+                                    <p className="info-for-single-date">Cost: {originalDateList[1].cost}</p>
+                                    <p className="info-for-single-date">Location: {originalDateList[1].location}</p>
+                                    {thirdParty(originalDateList[1])}
+                                    <p className="info-for-single-date">Description: {originalDateList[1].description}</p>  
+                                {/* </div> */}
+                                {/* <h4 className="title-for-date">{originalDateList[1].title}</h4> */}
                             </div>
                         </div>
                     </div>
