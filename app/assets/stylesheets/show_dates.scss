@@ -125,7 +125,7 @@
     margin: 10px 0px;
     // border: solid 1px black;
     padding: 5px;
-    background-color: rgb(233, 230, 230);
+    background-color: rgb(249, 216, 216);
     // max-width: 90%;
     overflow-x: auto;
 }
@@ -162,11 +162,12 @@
     padding: 12px;
     margin: 5px;
     margin-bottom: 53px;
+    margin-top: 26px;
     overflow-x: hidden;
     max-width: 50%;
     background-color: rgba(119, 136, 153, 0.815);
     font-size: 18.5px;
-    height: 90vh;
+    height: inherit;
 }
 #one-date-info-container{
     height: auto;
