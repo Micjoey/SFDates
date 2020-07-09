@@ -52,16 +52,20 @@ export const RenderDates = ({match}) => {
             <div className='background-color'>
                 <div className="date-specific-parent-container">
                     <div className="date-specific-filter">
-                        <button onClick={() => dateFilter(
-                            currentDateList, 
-                            originalDateList, 
-                            checkedBox, 
-                            setCheckedBox, 
-                            setCurrentDateList,
+                        <div className="filter-and-random-button">
+                            <button onClick={() => displayOneDatesInformation(randomDate(originalDateList))}>Generate Random Date</button>
+                            <button onClick={() => dateFilter(
+                                currentDateList,
+                                originalDateList,
+                                checkedBox,
+                                setCheckedBox,
+                                setCurrentDateList,
                             )}
-                        > 
-                            Filter By:
-                        </button>
+                            >
+                                Filter By:
+                            </button>
+                        </div>
+                        
                         <div className="date-specific-filter-container">
                             {filterBar("Type: ", "date-type-drop-down","date_type", dateTypeUniqList,
                                         currentDateList, originalDateList, checkedBox,
@@ -77,7 +81,6 @@ export const RenderDates = ({match}) => {
                                         setCheckedBox, setCurrentDateList, filterForDate, setFiltered)}
                         </div> 
                         <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Reset Search:</button>
-                        <button onClick={() => displayOneDatesInformation(randomDate(originalDateList))}>Generate Random Date</button>
                     </div>
                     <div className="date-specific-info">
                         <div className="date-specific-info-container">
