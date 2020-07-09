@@ -4,7 +4,6 @@ import thirdParty from './is_third_party'
 import displayOneDatesInformation from './display_one_dates_information'
 
 const IterateOverDates = ({ dates }) => {
-
     return(
         <>
             <div className="inner-date-specific-container">
