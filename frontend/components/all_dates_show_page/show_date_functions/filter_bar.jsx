@@ -6,7 +6,6 @@ const filterBar = (filter, typeOfDropDown, filterTypeDropDown, uniqList,
                     setCheckedBox, setCurrentDateList, filterForDate,setFiltered) => {
             
                     if (filter === "Type: " || filter === "Location: ") {
-                        debugger
                         return (
                             <div className="specific-filter">
                                 <p>{filter}</p>

@@ -2,12 +2,13 @@ import React, {useState, useEffect, useReducer} from 'react';
 import IterateOverDates from './show_date_functions/iterate_over_dates'
 import dateFilter from './show_date_functions/date_filter'
 import LoadingScreen from '../misc/loading_screen';
-import { openModal, closeModal } from '../../actions/model_actions';
 import grabUniqAspectOfDate from './show_date_functions/grab_uniq_aspects_of_dates';
-import dropDownMenu from './show_date_functions/drop_down_menu';
 import resetFilter from './show_date_functions/reset_filter';
 import thirdParty from './show_date_functions/is_third_party';
 import filterBar from './show_date_functions/filter_bar';
+import randomDate from '../misc/random_date';
+import displayOneDatesInformation from './show_date_functions/display_one_dates_information';
+
 
 
 
@@ -76,6 +77,7 @@ export const RenderDates = ({match}) => {
                                         setCheckedBox, setCurrentDateList, filterForDate, setFiltered)}
                         </div> 
                         <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Reset Search:</button>
+                        <button onClick={() => displayOneDatesInformation(randomDate(originalDateList))}>Generate Random Date</button>
                     </div>
                     <div className="date-specific-info">
                         <div className="date-specific-info-container">
