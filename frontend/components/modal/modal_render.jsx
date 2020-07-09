@@ -1,6 +1,6 @@
 import React from 'react'
-import TypeModal from '../all_dates_show_page/modal_filters/type_modal';
-import LocationModal from '../all_dates_show_page/modal_filters/location_model'
+import TypeModal from './modal_filters/type_modal';
+import LocationModal from './modal_filters/type_modal'
 import { closeModal } from '../../actions/model_actions';
 
 

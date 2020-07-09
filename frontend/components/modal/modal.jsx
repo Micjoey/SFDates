@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import TypeModal from '../all_dates_show_page/modal_filters/type_modal';
+import TypeModal from './modal_filters/type_modal';
 import { closeModal } from '../../actions/model_actions';
 import LoginFormContainer from '../../old_code/login_form_container' 
 import {renderModal} from './modal_render';
