@@ -10,7 +10,7 @@ import thirdParty from './show_date_functions/is_third_party';
 
 
 
-export const RenderDates = ({match}) => {
+export const RenderDates = () => {
     const [currentDateList, setCurrentDateList] = useState({}) // Current list of dates
     const [originalDateList, setOriginalDateList] = useState({}) // Main list of dates
     const [loaded, setLoaded] = useState({isLoaded: false}) // loading screen for information
