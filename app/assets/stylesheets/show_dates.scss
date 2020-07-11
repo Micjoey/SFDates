@@ -48,11 +48,11 @@
         display: flex;
         height: 100%;
         max-height: 100vh;
-        
+        width: 80%;
     }
     .date-specific-info-container {
         display: block;
-        width: 90vh;
+        width: 50%;
         // min-width: 35%;
         overflow-y: scroll;
         // border: lightslategray 1px solid;
@@ -63,37 +63,13 @@
         max-width: 50%;
     }
 }
+.inner-date-specific-container {
 
+}
 .inner-date-specific-container:last-of-type {
     margin-bottom: 50px;
 }
-.inner-date-specific-container {
-    .title-info-container {
-        .info-for-date, .date-website-link {
-            display: flex;
-            height: fit-content;
-            width: 100%;
-            padding: 5px 0px;
-            word-wrap: break-word;
-        }
-        
-        .info-for-date:last-child {
-            padding: 5px 0px;
-        }
-        p {
-            margin: 5px 0px;
-            font-size: 18px;
-        }
-        h4 {
-            font-size: 22px;
-            text-decoration: underline;
-        } 
-        a {
-            color: black;
-            padding-left: 5px;
-        }
-    }
-}
+
 
 .date-specific-filter-container {
     margin: 5px 0px;
@@ -125,9 +101,10 @@
     margin: 10px 0px;
     // border: solid 1px black;
     padding: 5px;
-    background-color: rgb(233, 230, 230);
     // max-width: 90%;
     overflow-x: auto;
+    border: 1px solid grey;
+
 }
 .title-for-date {
     display: flex;
@@ -136,6 +113,9 @@
     padding-right: 1em;
     text-align: right;
     font-weight: bold;
+    text-decoration: underline;
+    font-size: 20px;
+    margin-bottom: 5px;
 }
 
 .title-for-single-date {
@@ -144,10 +124,10 @@
     min-width: max-content;
     padding-right: 1em;
     text-align: right;
-    font-weight: bold;
+    font-weight: 200;
     font-size: 22px;
     text-decoration: underline;
-    
+    font-family: Georgia, serif;
 }
 
 .title-for-single-date, .info-for-single-date {
@@ -162,19 +142,46 @@
     padding: 12px;
     margin: 5px;
     margin-bottom: 53px;
+    margin-top: 26px;
     overflow-x: hidden;
     max-width: 50%;
-    background-color: rgba(119, 136, 153, 0.815);
+    background-color: rgb(186, 186, 186);
     font-size: 18.5px;
-    height: 90vh;
+    height: 50vh;
+    width: max-content;
 }
 #one-date-info-container{
-    height: auto;
+    border: none;
 }
 
+.date-information-container {
+    display: flex;
+    p {
+        margin: 5px 0px;
+        margin-right: 2px;
+        font-size: 18px;
+    }
+    
+}
+
+
+.info-for-date-title {
+    width: fit-content;
+    font-weight: 600;
+}
 
 .filter-and-random-button button {
     display: block;
     text-align: left;
     margin: 5px;
+}
+
+.back-button {
+    padding-top: 5px;
+    padding-left: 30px;
+    height: 20px;
+}
+
+.back-button:hover {
+    background-color: transparent;
 }

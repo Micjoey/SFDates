@@ -13,10 +13,18 @@ const IterateOverDates = ({ dates }) => {
                         // onMouseLeave={() => ($('.one-specific-info-container').empty())}
                     >
                             <h4 className="title-for-date">{date.title}</h4>
-                            <p className="info-for-date">Date Number: {date.date_number}</p>
-                            <p className="info-for-date">Type: {date.date_type}</p>
-                            <p className="info-for-date">Cost: {date.cost}</p>
-                            <p className="info-for-date">Location: {date.location}</p>
+                            <div className="date-information-container">
+                                <p className="info-for-date-title">Date Number: </p><p className="info-for-date">{date.date_number}</p>
+                            </div>
+                            <div className="date-information-container">
+                                <p className="info-for-date-title">Type: </p> <p className="info-for-date"> {date.date_type}</p>
+                            </div>
+                            <div className="date-information-container">
+                                <p className="info-for-date-title">Cost: </p><p className="info-for-date">{date.cost}</p>
+                            </div>
+                            <div className="date-information-container">
+                                <p className="info-for-date-title">Location: </p><p className="info-for-date">{date.location}</p>
+                            </div>
                             {/* {thirdParty(date)} */}
                             {/* <p className="info-for-date">Description: {date.description}</p> */}
                     </div>
