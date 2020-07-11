@@ -101,7 +101,6 @@
     margin: 10px 0px;
     // border: solid 1px black;
     padding: 5px;
-    // background-color: rgb(250, 244, 238);
     // max-width: 90%;
     overflow-x: auto;
     border: 1px solid grey;
@@ -152,7 +151,7 @@
     width: max-content;
 }
 #one-date-info-container{
-
+    border: none;
 }
 
 .date-information-container {
@@ -175,4 +174,14 @@
     display: block;
     text-align: left;
     margin: 5px;
+}
+
+.back-button {
+    padding-top: 5px;
+    padding-left: 30px;
+    height: 20px;
+}
+
+.back-button:hover {
+    background-color: transparent;
 }

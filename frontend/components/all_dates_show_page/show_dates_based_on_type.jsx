@@ -51,6 +51,7 @@ export const RenderDates = () => {
         return (
             <div className='background-color'>
                 <div className="date-specific-parent-container">
+                    <a className="back-button" href="#/home">Back</a>
                     <div className="date-specific-filter">
                         <div className="filter-and-random-button">
                             <button onClick={() => displayOneDatesInformation(randomDate(originalDateList))}>Generate Random Date</button>
@@ -67,10 +68,10 @@ export const RenderDates = () => {
                         </div>
                         
                         <div className="date-specific-filter-container">
-                            {filterBar("Type: ", "date-type-drop-down","date_type", dateTypeUniqList,
+                            {filterBar("Date Number: ", "datenumber-date-drop-down", "date_number", dateNumberUniqList,
                                         currentDateList, originalDateList, checkedBox,
                                         setCheckedBox, setCurrentDateList, filterForDate, setFiltered)}
-                            {filterBar("Date Number: ", "datenumber-date-drop-down", "date_number", dateNumberUniqList,
+                            {filterBar("Type: ", "date-type-drop-down","date_type", dateTypeUniqList,
                                         currentDateList, originalDateList, checkedBox,
                                         setCheckedBox, setCurrentDateList, filterForDate, setFiltered)}
                             {filterBar("Cost: ", "cost-date-drop-down", "cost", costUniqList,
