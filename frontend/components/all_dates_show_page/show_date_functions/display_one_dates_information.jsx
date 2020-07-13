@@ -12,7 +12,7 @@ const displayOneDatesInformation = (date) => {
         
     if (thirdParty) {
         $(`<div class="inner-date-specific-container">
-                <h4 class="title-for-single-date">${date.title}</h4>
+                <h1 class="title-for-date">${date.title}</h1>
                 <div class="date-information-container">
                     <p class="info-for-date-title">Date Number: </p><p class="info-for-date">${date.date_number}</p>
                 </div>
@@ -40,7 +40,7 @@ const displayOneDatesInformation = (date) => {
         `).appendTo(".one-specific-info-container")
     } else {
         $(`<div class="inner-date-specific-container">
-                <h4 class="title-for-single-date">${date.title}</h4>
+                <h1 class="title-for-date">${date.title}</h1>
                 <div class="date-information-container">
                     <p class="info-for-date-title">Date Number: </p><p class="info-for-date">${date.date_number}</p>
                 </div>
@@ -64,5 +64,5 @@ const displayOneDatesInformation = (date) => {
 export default displayOneDatesInformation
 
 
-    // < h4 className = "title-for-date" > { date.title }</h4 >
+
         

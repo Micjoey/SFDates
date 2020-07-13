@@ -90,7 +90,7 @@ export const RenderDates = () => {
                         <div className="date-specific-info" id="one-date-container">
                             <div className="one-specific-info-container title-info-container" id="one-date-info-container">
                                 {/* <div class="title-info-container"> */}
-                                    <h4 className="title-for-single-date">{originalDateList[1].title}</h4>
+                                    <h1 className="title-for-date">{originalDateList[1].title}</h1>
                                     <div className="date-information-container">
                                         <p className="info-for-date-title">Date Number: </p><p className="info-for-date">{originalDateList[1].date_number}</p>
                                     </div>
