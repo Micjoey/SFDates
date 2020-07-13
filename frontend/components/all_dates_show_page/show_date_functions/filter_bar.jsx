@@ -4,7 +4,6 @@ import dropDown from './drop_down'
 const filterBar = (filter, typeOfDropDown, filterTypeDropDown, uniqList, 
                     currentDateList, originalDateList,checkedBox,
                     setCheckedBox, setCurrentDateList, filterForDate,setFiltered) => {
-            
                     if (filter === "Type: " || filter === "Location: ") {
                         return (
                             <div className="specific-filter">

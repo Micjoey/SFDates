@@ -85,7 +85,7 @@ export const RenderDates = () => {
                     </div>
                     <div className="date-specific-info">
                         <div className="date-specific-info-container">
-                            <IterateOverDates dates={currentDateList} />
+                            <IterateOverDates dates={currentDateList}/>
                         </div>
                         <div className="date-specific-info" id="one-date-container">
                             <div className="one-specific-info-container title-info-container" id="one-date-info-container">

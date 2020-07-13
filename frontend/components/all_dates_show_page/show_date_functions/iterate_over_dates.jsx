@@ -1,17 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import thirdParty from './is_third_party'
 import displayOneDatesInformation from './display_one_dates_information'
+import noDates from './no_dates'
 
 const IterateOverDates = ({ dates }) => {
-    return(
-        <>
-            <div className="inner-date-specific-container">
-                {Object.values(dates).map((date, key) => (
-                    <div className="title-info-container" key={key} 
-                        onMouseEnter={() => displayOneDatesInformation(date)} 
+    let dateArray = Object.values(dates)
+    if (dateArray.length) {
+        return (
+            <>
+                <div className="inner-date-specific-container">
+                    {dateArray.map((date, key) => (
+                        <div className="title-info-container" key={key}
+                            onMouseEnter={() => displayOneDatesInformation(date)}
                         // onMouseLeave={() => ($('.one-specific-info-container').empty())}
-                    >
+                        >
                             <h4 className="title-for-date">{date.title}</h4>
                             <div className="date-information-container">
                                 <p className="info-for-date-title">Date Number: </p><p className="info-for-date">{date.date_number}</p>
@@ -27,11 +28,17 @@ const IterateOverDates = ({ dates }) => {
                             </div>
                             {/* {thirdParty(date)} */}
                             {/* <p className="info-for-date">Description: {date.description}</p> */}
-                    </div>
-                ))}
-            </div>
-        </>
-    )
+                        </div>
+                    ))}
+                </div>
+            </>
+        )
+    } else {
+        return (
+            noDates()
+        )
+    }
+    
 }
 
 export default IterateOverDates
