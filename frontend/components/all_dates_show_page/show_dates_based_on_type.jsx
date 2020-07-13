@@ -47,7 +47,7 @@ export const RenderDates = () => {
         const dateNumberUniqList = grabUniqAspectOfDate(originalDateList, "date_number")
         const locationUniqList = grabUniqAspectOfDate(originalDateList, "location")
         const dateTypeUniqList = grabUniqAspectOfDate(originalDateList, "date_type")
-        
+
         return (
             <div className='background-color'>
                 <div className="date-specific-parent-container">
@@ -91,12 +91,22 @@ export const RenderDates = () => {
                             <div className="one-specific-info-container title-info-container" id="one-date-info-container">
                                 {/* <div class="title-info-container"> */}
                                     <h4 className="title-for-single-date">{originalDateList[1].title}</h4>
-                                    <p className="info-for-single-date">Date Number: {originalDateList[1].date_number}</p>
-                                    <p className="info-for-single-date">Type: {originalDateList[1].date_type}</p>
-                                    <p className="info-for-single-date">Cost: {originalDateList[1].cost}</p>
-                                    <p className="info-for-single-date">Location: {originalDateList[1].location}</p>
+                                    <div className="date-information-container">
+                                        <p className="info-for-date-title">Date Number: </p><p className="info-for-date">{originalDateList[1].date_number}</p>
+                                    </div>
+                                    <div className="date-information-container">
+                                        <p className="info-for-date-title">Type: </p> <p className="info-for-date"> {originalDateList[1].date_type}</p>
+                                    </div>
+                                    <div className="date-information-container">
+                                        <p className="info-for-date-title">Cost: </p><p className="info-for-date">{originalDateList[1].cost}</p>
+                                    </div>
+                                    <div className="date-information-container">
+                                        <p className="info-for-date-title">Location: </p><p className="info-for-date">{originalDateList[1].location}</p>
+                                    </div>
                                     {thirdParty(originalDateList[1])}
-                                    <p className="info-for-single-date">Description: {originalDateList[1].description}</p>  
+                                    <div className="date-information-container">
+                                        <p className="info-for-date-title">Description: </p><p className="info-for-date">{originalDateList[1].description}</p>
+                                    </div>
                                 {/* </div> */}
                                 {/* <h4 className="title-for-date">{originalDateList[1].title}</h4> */}
                             </div>

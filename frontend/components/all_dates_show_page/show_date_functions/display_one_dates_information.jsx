@@ -13,27 +13,49 @@ const displayOneDatesInformation = (date) => {
     if (thirdParty) {
         $(`<div class="inner-date-specific-container">
                 <h4 class="title-for-single-date">${date.title}</h4>
-                <p class="info-for-single-date"> Date Number: ${date.date_number}</p>
-                <p class="info-for-single-date">Type: ${date.date_type}</p>
-                <p class="info-for-single-date">Cost: ${date.cost}</p>
-                <p class="info-for-single-date">Location: ${date.location}</p>
-                <p class="info-for-single-date">Description: ${date.description}</p>
-                <p class="date-website-link">Creator: ${date.creator}</p>
-                <p class="date-website-link">Website Location:
-                    <a href=${date.creator_contact} target="_blank">
+                <div class="date-information-container">
+                    <p class="info-for-date-title">Date Number: </p><p class="info-for-date">${date.date_number}</p>
+                </div>
+                <div class="date-information-container">
+                    <p class="info-for-date-title">Type: </p> <p class="info-for-date"> ${date.date_type}</p>
+                </div>
+                <div class="date-information-container">
+                    <p class="info-for-date-title">Cost: </p><p class="info-for-date">${date.cost}</p>
+                </div>
+                <div class="date-information-container">
+                    <p class="info-for-date-title">Location: </p><p class="info-for-date">${date.location}</p>
+                </div>
+                <div class="date-information-container">
+                    <p class="info-for-date-title">Description: </p><p class="info-for-date">${date.description}</p>
+                </div>
+                <div class="date-information-container">
+                    <p class="info-for-date-title">Creator: </p><p class="info-for-date">${date.creator}</p>
+                </div>
+                <div class="date-information-container">
+                    <p class="info-for-date-title">Website: </p><p class="info-for-date"><a href=${date.creator_contact} target="_blank">
                         ${date.creator_contact}
-                    </a>
-                </p>
+                    </a></p>
+                </div>
             </div>
         `).appendTo(".one-specific-info-container")
     } else {
         $(`<div class="inner-date-specific-container">
                 <h4 class="title-for-single-date">${date.title}</h4>
-                <p class="info-for-single-date">Date Number: ${date.date_number}</p>
-                <p class="info-for-single-date">Type: ${date.date_type}</p>
-                <p class="info-for-single-date">Cost: ${date.cost}</p>
-                <p class="info-for-single-date">Location: ${date.location}</p>
-                <p class="info-for-single-date">Description: ${date.description}</p>
+                <div class="date-information-container">
+                    <p class="info-for-date-title">Date Number: </p><p class="info-for-date">${date.date_number}</p>
+                </div>
+                <div class="date-information-container">
+                    <p class="info-for-date-title">Type: </p> <p class="info-for-date"> ${date.date_type}</p>
+                </div>
+                <div class="date-information-container">
+                    <p class="info-for-date-title">Cost: </p><p class="info-for-date">${date.cost}</p>
+                </div>
+                <div class="date-information-container">
+                    <p class="info-for-date-title">Location: </p><p class="info-for-date">${date.location}</p>
+                </div>
+                <div class="date-information-container">
+                    <p class="info-for-date-title">Description: </p><p class="info-for-date">${date.description}</p>
+                </div>
             </div>
         `).appendTo(".one-specific-info-container")
     }    
@@ -42,3 +64,5 @@ const displayOneDatesInformation = (date) => {
 export default displayOneDatesInformation
 
 
+    // < h4 className = "title-for-date" > { date.title }</h4 >
+        
