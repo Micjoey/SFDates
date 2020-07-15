@@ -8,6 +8,7 @@ import thirdParty from './show_date_functions/is_third_party';
 import filterBar from './show_date_functions/filter_bar';
 import randomDate from '../misc/random_date';
 import displayOneDatesInformation from './show_date_functions/display_one_dates_information';
+import switchSearchButton from './show_date_functions/change_search_bar_button';
 
 
 
@@ -53,20 +54,7 @@ export const RenderDates = () => {
                 <div className="date-specific-parent-container">
                     <a className="back-button" href="#/home">Back</a>
                     <div className="date-specific-filter">
-                        <div className="filter-and-random-button">
-                            <button onClick={() => displayOneDatesInformation(randomDate(originalDateList))}>Generate Random Date</button>
-                            <button onClick={() => dateFilter(
-                                currentDateList,
-                                originalDateList,
-                                checkedBox,
-                                setCheckedBox,
-                                setCurrentDateList,
-                            )}
-                            >
-                                Filter By:
-                            </button>
-                        </div>
-                        
+                        <h3 className="filter-by">Filter By:</h3>
                         <div className="date-specific-filter-container">
                             {filterBar("Date Number: ", "datenumber-date-drop-down", "date_number", dateNumberUniqList,
                                         currentDateList, originalDateList, checkedBox,
@@ -81,7 +69,14 @@ export const RenderDates = () => {
                                         currentDateList, originalDateList, checkedBox,
                                         setCheckedBox, setCurrentDateList, filterForDate, setFiltered)}
                         </div> 
-                        <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Reset Search:</button>
+                        <div className="filter-and-random-button">
+                            {switchSearchButton(currentDateList,
+                                originalDateList,
+                                checkedBox,
+                                setCheckedBox,
+                                setCurrentDateList)}
+                            <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Clear Filter:</button>
+                        </div>
                          
                     </div>
                     <div className="date-specific-info">
@@ -89,7 +84,7 @@ export const RenderDates = () => {
                             <IterateOverDates dates={currentDateList}/>
                         </div>
                         <div className="date-specific-info" id="one-date-container">
-                            <a href="https://forms.gle/9tKZJHPn5bCeEutV9" target="_blank"><button>Submit Date Idea</button> </a>
+                            <button onClick={() => displayOneDatesInformation(randomDate(originalDateList))}>Generate Random Date</button>
                             <div className="one-specific-info-container title-info-container" id="one-date-info-container">
                                 {/* <div class="title-info-container"> */}
                                     <h1 className="title-for-date">{currentDateList[1].title}</h1>

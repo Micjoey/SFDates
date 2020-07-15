@@ -33,9 +33,9 @@
             width: 100%;
             min-width: fit-content;
             border-top: 1px solid lightslategray;
-            p {
-                width: 6em;
-            }
+            // p {
+            //     width: 6em;
+            // }
             .click-me {
                 padding-left: 5px;
             }
@@ -84,10 +84,12 @@
     color: white;
     font-weight: bold;
     margin: 5px 0px;
-    background-color: rgb(99, 4, 23);
+    background-color: rgba(121, 110, 112, 0.473);
     width: 100%;
     margin: auto;
     text-align: center;
+    font-size: 14px;
+    color: black;
 }
 .see-more-button:hover {
     cursor: pointer;
@@ -148,7 +150,7 @@
     background-color: rgb(186, 186, 186);
     font-size: 18.5px;
     height: 50vh;
-    width: max-content;
+    width: 100vh;
 }
 #one-date-info-container{
     border: none;
@@ -190,4 +192,17 @@
     button {
         margin: 5px 0px;
     }
+}
+
+.show-all {
+    font-size: 14;
+    text-align: center;
+
+}
+
+.filter-by {
+    padding-top: .4em;
+    font-size: 20px;
+    font-weight: bold;
+    // text-decoration: underline;
 }

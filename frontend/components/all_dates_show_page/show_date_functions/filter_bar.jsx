@@ -7,7 +7,7 @@ const filterBar = (filter, typeOfDropDown, filterTypeDropDown, uniqList,
                     if (filter === "Type: " || filter === "Location: ") {
                         return (
                             <div className="specific-filter">
-                                <p>{filter}</p>
+                                <p className="info-for-date-title">{filter}</p>
                                 <div className="date-type-filter">
                                     {dropDownMenu(
                                         uniqList,
@@ -25,9 +25,9 @@ const filterBar = (filter, typeOfDropDown, filterTypeDropDown, uniqList,
                                         onClick={() => dropDown(typeOfDropDown)}
                                         className="see-more-button"
                                     >
-                                        <i className="fa fa-angle-double-down down-arrow"> </i>
-                                                    See more
-                                        <i className="fa fa-angle-double-down down-arrow"> </i>
+                                        {/* <i className="fa fa-angle-double-down down-arrow"> </i> */}
+                                       Show All
+                                        {/* <i className="fa fa-angle-double-down down-arrow"> </i> */}
                                     </div>
 
                                 </div>
@@ -36,7 +36,7 @@ const filterBar = (filter, typeOfDropDown, filterTypeDropDown, uniqList,
                     } else {
                         return (
                             <div className="specific-filter">
-                                <p>{filter}</p>
+                                <p className="info-for-date-title">{filter}</p>
                                 <div>
                                     {dropDownMenu(uniqList, typeOfDropDown, filterTypeDropDown,
                                                 currentDateList, originalDateList, checkedBox,
