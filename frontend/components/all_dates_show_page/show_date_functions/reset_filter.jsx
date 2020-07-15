@@ -1,4 +1,5 @@
 import React from 'react'  
+import switchSearchButton from './switch_search_button'
 
 const resetFilter = (originalDateList, setCurrentDateList) => {
     // resets the current search filter to the original list.
@@ -12,6 +13,7 @@ const resetFilter = (originalDateList, setCurrentDateList) => {
             })
         }
     })
+    document.getElementsByClassName("search-by-filter-button")[0].innerHTML = "Search By:"
 }
 
 export default resetFilter
