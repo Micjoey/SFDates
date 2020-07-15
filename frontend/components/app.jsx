@@ -38,8 +38,11 @@ const App = () => (
         <Redirect to="/home" />
       </Switch>
       {/* <footer className="footer"> */}
-        <Route path='/' component={Footer}/>
+        {/* <Route path='/' component={Footer}/> */}
       {/* </footer> */}
+    </div>
+    <div className="footer">
+      <Footer/>
     </div>
   </div>
 );

@@ -81,10 +81,7 @@ export const RenderDates = () => {
                                         currentDateList, originalDateList, checkedBox,
                                         setCheckedBox, setCurrentDateList, filterForDate, setFiltered)}
                         </div> 
-                        <div className="reset-submit-box">
-                            <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Reset Search:</button>
-                            <a href="https://forms.gle/9tKZJHPn5bCeEutV9" target="_blank"><button>Submit Date Idea</button> </a>  
-                        </div>
+                        <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Reset Search:</button>
                          
                     </div>
                     <div className="date-specific-info">
@@ -92,6 +89,7 @@ export const RenderDates = () => {
                             <IterateOverDates dates={currentDateList}/>
                         </div>
                         <div className="date-specific-info" id="one-date-container">
+                            <a href="https://forms.gle/9tKZJHPn5bCeEutV9" target="_blank"><button>Submit Date Idea</button> </a>
                             <div className="one-specific-info-container title-info-container" id="one-date-info-container">
                                 {/* <div class="title-info-container"> */}
                                     <h1 className="title-for-date">{currentDateList[1].title}</h1>
