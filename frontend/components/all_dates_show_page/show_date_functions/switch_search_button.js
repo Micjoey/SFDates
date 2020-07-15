@@ -1,7 +1,7 @@
 import React from 'react'
 import dateFilter from './date_filter'
 const switchSearchButton = (currentDateList,originalDateList,checkedBox,setCheckedBox,setCurrentDateList) => {
-    const checker = Object.values(checkedBox).every(value => value)
+    const checker = Object.values(checkedBox).some(value => value)
     if (!checker) {
         return (
             <button onClick={() => dateFilter(

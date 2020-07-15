@@ -35,7 +35,6 @@ const setValues = (dateType) => {
             })
         }
     })
-    debugger
     return values
 }
 

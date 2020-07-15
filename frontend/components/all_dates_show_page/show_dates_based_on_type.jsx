@@ -8,7 +8,7 @@ import thirdParty from './show_date_functions/is_third_party';
 import filterBar from './show_date_functions/filter_bar';
 import randomDate from '../misc/random_date';
 import displayOneDatesInformation from './show_date_functions/display_one_dates_information';
-import switchSearchButton from './show_date_functions/change_search_bar_button';
+import switchSearchButton from './show_date_functions/switch_search_button';
 
 
 
@@ -87,22 +87,22 @@ export const RenderDates = () => {
                             <button onClick={() => displayOneDatesInformation(randomDate(originalDateList))}>Generate Random Date</button>
                             <div className="one-specific-info-container title-info-container" id="one-date-info-container">
                                 {/* <div class="title-info-container"> */}
-                                    <h1 className="title-for-date">{currentDateList[1].title}</h1>
+                                    <h1 className="title-for-date">{originalDateList[1].title}</h1>
                                     <div className="date-information-container">
-                                        <p className="info-for-date-title">Date Number: </p><p className="info-for-date">{currentDateList[1].date_number}</p>
+                                        <p className="info-for-date-title">Date Number: </p><p className="info-for-date">{originalDateList[1].date_number}</p>
                                     </div>
                                     <div className="date-information-container">
-                                        <p className="info-for-date-title">Type: </p> <p className="info-for-date"> {currentDateList[1].date_type}</p>
+                                        <p className="info-for-date-title">Type: </p> <p className="info-for-date"> {originalDateList[1].date_type}</p>
                                     </div>
                                     <div className="date-information-container">
-                                        <p className="info-for-date-title">Cost: </p><p className="info-for-date">{currentDateList[1].cost}</p>
+                                        <p className="info-for-date-title">Cost: </p><p className="info-for-date">{originalDateList[1].cost}</p>
                                     </div>
                                     <div className="date-information-container">
-                                        <p className="info-for-date-title">Location: </p><p className="info-for-date">{currentDateList[1].location}</p>
+                                        <p className="info-for-date-title">Location: </p><p className="info-for-date">{originalDateList[1].location}</p>
                                     </div>
-                                    {thirdParty(currentDateList[1])}
+                                    {thirdParty(originalDateList[1])}
                                     <div className="date-information-container">
-                                        <p className="info-for-date-title">Description: </p><p className="info-for-date">{currentDateList[1].description}</p>
+                                        <p className="info-for-date-title">Description: </p><p className="info-for-date">{originalDateList[1].description}</p>
                                     </div>
                                 {/* </div> */}
                                 {/* <h4 className="title-for-date">{originalDateList[1].title}</h4> */}

@@ -38,7 +38,7 @@ const dropDownMenu = (menu, id, type = "default", currentDateList, originalDateL
         return (
             <>
                 <div className="date-drop-down" onClick={e => e.stopPropagation()}>
-                    {ulList(firstFourItems, type, original, filter, setFilter)}
+                    {ulList(firstFourItems, type, original, filter, currentDateList, originalDateList,checkedBox,setCheckedBox,setCurrentDateList)}
                     <div className="modal-background-dropdown" id={`${id}`} onClick={() => closeDiv(id)} >
                         {/* <div className="modal-child-dropdown"> */}
                         <div className="modal-child-dropdown" onClick={e => e.stopPropagation()}>
@@ -50,7 +50,7 @@ const dropDownMenu = (menu, id, type = "default", currentDateList, originalDateL
                                 reset placeholder
                             </div> */}
                             <div className="modal-list">
-                                {modalUlList(menu, type, filter, setFilter)}
+                                {modalUlList(menu, type, currentDateList, originalDateList,checkedBox,setCheckedBox,setCurrentDateList)}
                             </div>
                             <div className="modal-filter-button-container">
                                 <button 
@@ -76,7 +76,7 @@ const closeDiv = (idName) => {
     currentDiv.style.display = "none"
 }
 
-const ulList = (filters, type, menu, filterForDates, setFilter) => {
+const ulList = (filters, type, menu, filterForDates, currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList) => {
     for (let x = 0; x < filters.length; x++) {
         let currentFilter = filters[x]
         filterForDates[type][currentFilter] = false
@@ -86,20 +86,31 @@ const ulList = (filters, type, menu, filterForDates, setFilter) => {
         <ul>
             {filters.map((item, idx) => (
                 <li key={`${item} - ${idx}`}>
-                    <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${menu[idx]}`} />
+                    <input 
+                        id={`${type}${idx + 1}`} 
+                        type="checkbox" name={type} 
+                        value={`${menu[idx]}`} 
+                        // onClick={() => dateFilter(currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}
+                    />
                     <label htmlFor={`${type}${idx + 1}`}>{item}</label>
                 </li>
             ))}
         </ul>
     )
 }
-const modalUlList = (filters, type, filter, setFilter) => {
+const modalUlList = (filters, type, currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList) => {
 
     return (
         <ul className="ul-list">
             {filters.map((item, idx) => (
                 <li key={`${item} - ${idx}`}>
-                    <input id={`${type}${idx + 1}`} type="checkbox" name={type} value={`${filters[idx]}`} />
+                    <input 
+                        id={`${type}${idx + 1}`} 
+                        type="checkbox" 
+                        name={type} 
+                        value={`${filters[idx]}`} 
+                        // onClick={() => dateFilter(currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)}
+                    />
                     <label htmlFor={`${type}${idx + 1}`}>{item}</label>
                 </li>
             ))}
