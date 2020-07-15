@@ -82,7 +82,7 @@
 
 .see-more-button {
     color: white;
-    font-weight: bold;
+    
     margin: 5px 0px;
     background-color: rgba(121, 110, 112, 0.473);
     width: 100%;
@@ -93,6 +93,8 @@
 }
 .see-more-button:hover {
     cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 
