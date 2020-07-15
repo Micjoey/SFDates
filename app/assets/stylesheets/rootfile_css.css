@@ -7,7 +7,7 @@ body {
 
  .header {
      display: block;
-     margin-bottom: 1vh;
+     /* margin-bottom: 1vh; */
      position: relative;
      width: 100%;
  }

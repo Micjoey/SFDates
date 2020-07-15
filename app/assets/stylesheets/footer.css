@@ -1,7 +1,7 @@
 .footer {
     /* min-height: 100%; */
     position: absolute;
-    height: 50px;
+    /* height: 50px; */
     bottom: 0;
     clear: both;
     width: 100%;
@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-evenly;
     background-color: rgb(99, 4, 23);
-    height: 7vh;
+    /* height: 7vh; */
     align-items: center;
     bottom: 0px;
     /* position: absolute; */
