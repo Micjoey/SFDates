@@ -59,14 +59,16 @@ input:hover {
 }
 
  .content {
-     /* height: 100vh; */
-     min-height: 100vh;
+    height: 86vh;
+    max-height: 86vh;
      /* calc */
+    scroll-behavior: auto;
+    overflow: auto;
  }
  
- #root {
+ /* #root {
      min-height: 100vh;
- }
+ } */
 
  .empty-space {
     display: block;

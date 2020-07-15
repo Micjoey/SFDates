@@ -7,7 +7,7 @@ body {
 
  .header {
      display: block;
-     margin-bottom: 5px;
+     margin-bottom: 1vh;
      position: relative;
      width: 100%;
  }
@@ -41,10 +41,11 @@ body {
     justify-content: space-between;
     position: flex;
     width: 100%;
-    padding: 0px;
-    padding-bottom: 7px;
-    height: 60px;
-    border-bottom: 1px solid black;
+    height: 7vh;
+    /* padding: 0px;
+    padding-bottom: 7px; */
+    /* height: 60px; */
+    /* border-bottom: 1px solid black; */
     align-content: center;
 }
 

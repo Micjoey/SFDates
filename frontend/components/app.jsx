@@ -37,9 +37,6 @@ const App = () => (
 
         <Redirect to="/home" />
       </Switch>
-      {/* <footer className="footer"> */}
-        {/* <Route path='/' component={Footer}/> */}
-      {/* </footer> */}
     </div>
     <div className="footer">
       <Footer/>

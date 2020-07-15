@@ -17,7 +17,7 @@
 .date-specific-parent-container {
     // height: 100vh;
     color: black;
-    min-height: 100vh;
+    // min-height: 100vh;
     display: flex;
     .date-specific-filter {
         display: block;
@@ -47,7 +47,7 @@
     .date-specific-info {
         display: flex;
         height: 100%;
-        max-height: 100vh;
+        max-height: 86vh;
         width: 80%;
     }
     .date-specific-info-container {

@@ -1,16 +1,17 @@
 .footer {
     /* min-height: 100%; */
-    position: relative;
+    position: absolute;
     height: 50px;
-    bottom: 0px;
-    clear: both;;
+    bottom: 0;
+    clear: both;
+    width: 100%;
 }
 
 .footer-inner {
     display: flex;
     justify-content: space-evenly;
     background-color: rgb(99, 4, 23);
-    height: 50px;
+    height: 7vh;
     align-items: center;
     bottom: 0px;
     /* position: absolute; */
