@@ -81,7 +81,11 @@ export const RenderDates = () => {
                                         currentDateList, originalDateList, checkedBox,
                                         setCheckedBox, setCurrentDateList, filterForDate, setFiltered)}
                         </div> 
-                        <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Reset Search:</button>
+                        <div className="reset-submit-box">
+                            <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Reset Search:</button>
+                            <a href="https://forms.gle/9tKZJHPn5bCeEutV9" target="_blank"><button>Submit Date Idea</button> </a>  
+                        </div>
+                         
                     </div>
                     <div className="date-specific-info">
                         <div className="date-specific-info-container">

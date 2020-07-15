@@ -38,6 +38,7 @@
     font-weight: 600;
     min-width: 50px;
     margin: auto;
+    display: block;
 }
 button:focus {outline:0;}
 button:hover {
