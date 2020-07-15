@@ -1,6 +1,5 @@
 import React, {useState, useEffect, useReducer} from 'react';
 import IterateOverDates from './show_date_functions/iterate_over_dates'
-import dateFilter from './show_date_functions/date_filter'
 import LoadingScreen from '../misc/loading_screen';
 import grabUniqAspectOfDate from './show_date_functions/grab_uniq_aspects_of_dates';
 import resetFilter from './show_date_functions/reset_filter';
