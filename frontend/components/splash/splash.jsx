@@ -109,7 +109,7 @@ class Splash extends React.Component {
                                     Been dating awhile and want to go on a random date, we got you - click on the button below <i className="fa fa-angle-double-down down-arrow" onClick={() => this.toggleDisplay(toggleDiv, "close")}></i>.
                                     <br/>
                                     <br/>
-                                    We would love to find out what you think is the best date in the Bay Area if you would like to share it and help others out, please <a href="https://forms.gle/9tKZJHPn5bCeEutV9" target="_blank">submit a date!</a>                                    
+                                    We would love to find out what you think is the best date in the Bay Area is. If you would like to share it and help others out, please <a href="https://forms.gle/9tKZJHPn5bCeEutV9" target="_blank">submit a date!</a>                                    
                                 </p>
                                 <br/>
                             </div>
