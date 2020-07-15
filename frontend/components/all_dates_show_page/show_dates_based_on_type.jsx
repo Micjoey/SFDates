@@ -90,22 +90,22 @@ export const RenderDates = () => {
                         <div className="date-specific-info" id="one-date-container">
                             <div className="one-specific-info-container title-info-container" id="one-date-info-container">
                                 {/* <div class="title-info-container"> */}
-                                    <h1 className="title-for-date">{originalDateList[1].title}</h1>
+                                    <h1 className="title-for-date">{currentDateList[1].title}</h1>
                                     <div className="date-information-container">
-                                        <p className="info-for-date-title">Date Number: </p><p className="info-for-date">{originalDateList[1].date_number}</p>
+                                        <p className="info-for-date-title">Date Number: </p><p className="info-for-date">{currentDateList[1].date_number}</p>
                                     </div>
                                     <div className="date-information-container">
-                                        <p className="info-for-date-title">Type: </p> <p className="info-for-date"> {originalDateList[1].date_type}</p>
+                                        <p className="info-for-date-title">Type: </p> <p className="info-for-date"> {currentDateList[1].date_type}</p>
                                     </div>
                                     <div className="date-information-container">
-                                        <p className="info-for-date-title">Cost: </p><p className="info-for-date">{originalDateList[1].cost}</p>
+                                        <p className="info-for-date-title">Cost: </p><p className="info-for-date">{currentDateList[1].cost}</p>
                                     </div>
                                     <div className="date-information-container">
-                                        <p className="info-for-date-title">Location: </p><p className="info-for-date">{originalDateList[1].location}</p>
+                                        <p className="info-for-date-title">Location: </p><p className="info-for-date">{currentDateList[1].location}</p>
                                     </div>
-                                    {thirdParty(originalDateList[1])}
+                                    {thirdParty(currentDateList[1])}
                                     <div className="date-information-container">
-                                        <p className="info-for-date-title">Description: </p><p className="info-for-date">{originalDateList[1].description}</p>
+                                        <p className="info-for-date-title">Description: </p><p className="info-for-date">{currentDateList[1].description}</p>
                                     </div>
                                 {/* </div> */}
                                 {/* <h4 className="title-for-date">{originalDateList[1].title}</h4> */}
