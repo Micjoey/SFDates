@@ -6,8 +6,12 @@ const sortingOptions = () => {
     const sortingOptions = ["Alphabetic", "Date Number", "Type", "Cost", "Location"];
     const ascendingSort = true;
     return (
-      <div>
-          <h3 onClick={() => dropDown(dropdown-sort-menu)}>Sort By</h3>
+        <div className="dropdown-sort-menu">
+            <h3 onClick={() => dropDown("dropdown-sort-menu")}>
+                <i className="fa fa-angle-double-down down-arrow"></i>
+                    Sorting By
+                <i className="fa fa-angle-double-down down-arrow"></i>    
+            </h3>
           <div id="dropdown-sort-menu">
                 Test!
           </div>

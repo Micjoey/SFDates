@@ -62,8 +62,8 @@ input:hover {
     height: 90vh;
     max-height: 90vh;
      /* calc */
-    scroll-behavior: auto;
-    overflow: auto;
+    /* scroll-behavior: auto;
+    overflow: auto; */
  }
  
  /* #root {

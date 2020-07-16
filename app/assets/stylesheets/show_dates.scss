@@ -209,3 +209,28 @@
     font-weight: bold;
     // text-decoration: underline;
 }
+
+#dropdown-sort-menu {
+    display: none;
+    border: 1px solid grey;
+    width: max-content;
+}
+
+#dropdown-sort-menu:hover {
+    cursor: pointer;
+}
+
+
+.dropdown-sort-menu {
+    text-align: right;
+    width: 50%;
+}
+.dropdown-sort-menu:hover {
+    text-align: right;
+    cursor: pointer;
+}
+
+.sorting-and-date-specific-container {
+    display: inline-block;
+
+}
