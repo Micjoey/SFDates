@@ -63,7 +63,7 @@ input:hover {
     max-height: 90vh;
      /* calc */
     scroll-behavior: auto;
-    /* overflow: auto; */
+    overflow: auto;
  }
  
  /* #root {
