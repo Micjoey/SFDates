@@ -1,6 +1,6 @@
 import React from 'react'
 import dateFilter from './date_filter'
-const switchSearchButton = (currentDateList, originalDateList, checkedBox = false, setCheckedBox, setCurrentDateList, filterForDate) => {
+const switchSearchButton = (currentDateList, originalDateList, checkedBox = false, setCheckedBox, setCurrentDateList) => {
     let checker = false;
     if (checkedBox) {
         checker = Object.values(checkedBox).some(value => value)

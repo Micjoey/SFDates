@@ -74,8 +74,7 @@ export const RenderDates = () => {
                                 originalDateList,
                                 checkedBox,
                                 setCheckedBox,
-                                setCurrentDateList, 
-                                filterForDate)}
+                                setCurrentDateList)}
                             <button onClick={() => resetFilter(originalDateList, setCurrentDateList)}> Clear Filter:</button>
                         </div>
                          
