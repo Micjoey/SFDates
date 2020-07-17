@@ -8,7 +8,7 @@ import filterBar from './show_date_functions/filter_bar';
 import randomDate from '../misc/random_date';
 import displayOneDatesInformation from './show_date_functions/display_one_dates_information';
 import switchSearchButton from './show_date_functions/switch_search_button';
-import sortingOptions from './show_date_functions/sort_function';
+import SortingOptions from './show_date_functions/sort_function';
 
 
 
@@ -82,7 +82,7 @@ export const RenderDates = () => {
                     <div className="date-specific-info">
                         <div className="date-specific-info-container">
                             <div className="sorting-and-date-specific-container">
-                                {sortingOptions()}
+                                {/* <SortingOptions currentDateList={currentDateList}/> */}
                                 <IterateOverDates dates={currentDateList} />
                             </div>
                             

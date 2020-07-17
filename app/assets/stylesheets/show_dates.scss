@@ -61,7 +61,7 @@
         margin: 5px;
         margin-bottom: 53px;
         overflow-x: hidden;
-        max-width: 50%;
+        max-width: calc(max-content + 2vh);
     }
 }
 .inner-date-specific-container {
@@ -109,6 +109,7 @@
     // max-width: 90%;
     overflow-x: auto;
     border: 1px solid grey;
+    width: 58vh;
 
 }
 .title-for-date {
@@ -213,7 +214,9 @@
 #dropdown-sort-menu {
     display: none;
     border: 1px solid grey;
-    width: max-content;
+    width: 13vh;
+    float: right;
+    text-align: left;
 }
 
 #dropdown-sort-menu:hover {
@@ -223,7 +226,6 @@
 
 .dropdown-sort-menu {
     text-align: right;
-    width: 50%;
 }
 .dropdown-sort-menu:hover {
     text-align: right;
@@ -233,4 +235,9 @@
 .sorting-and-date-specific-container {
     display: inline-block;
 
+}
+
+.sort-list-item:hover {
+    font-weight: bold;
+    background-color: grey;
 }
