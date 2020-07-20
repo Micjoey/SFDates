@@ -34,8 +34,31 @@ const SortingOptions = ({currentDateList}) => {
 
 const sortDropDown = (currentDateList, ascendingSort, sort, sortingOptions) => {
     if (!currentDateList.length && !sort) return null;
+    let testerHash = {}
+    for (let x = 1; x < 10; x++) {
+        testerHash[x] = currentDateList[x]
+    }
+    let resultHash = {};
+    let values = Object.values(testerHash)
+    values = values.sort((a,b) => {
+        return a.title - b.title
+    })
+    // .forEach(k => {
+    //     resultHash[k] = testerHash[k]
+    // })
+    debugger
+
+    // 
+    // keys.forEach(key => {
+        //     const currentTitle = testerHash[key].title
+    //     debugger
+    //     resultHash[currentTitle] = key
+    // })
+    // debugger
+    // 
     switch (sort) {
         case "Alphabetic":
+
         case "Date Number": 
 
         case "Type":
@@ -49,3 +72,16 @@ const sortDropDown = (currentDateList, ascendingSort, sort, sortingOptions) => {
 }
 
 export default SortingOptions
+
+
+function getSortedHash(inputHash) {
+    var resultHash = {};
+
+    var keys = Object.keys(inputHash);
+    keys.sort(function (a, b) {
+        return inputHash[a] - inputHash[b]
+    }).forEach(function (k) {
+        resultHash[k] = inputHash[k];
+    });
+    return resultHash;
+}

@@ -82,7 +82,7 @@ export const RenderDates = () => {
                     <div className="date-specific-info">
                         <div className="date-specific-info-container">
                             <div className="sorting-and-date-specific-container">
-                                <SortingOptions currentDateList={currentDateList}/>
+                                {/* <SortingOptions currentDateList={currentDateList}/> */}
                                 <IterateOverDates dates={currentDateList} />
                             </div>
                             
