@@ -55,15 +55,14 @@ input:hover {
     /* background-color: red; */
     /*  */
     width: 100%;
-    height: 105%;
+    height: 100%;
 }
 
  .content {
     height: 90vh;
     max-height: 90vh;
-     /* calc */
-    /* scroll-behavior: auto;
-    overflow: auto; */
+    overflow-y: auto;
+
  }
 
 
