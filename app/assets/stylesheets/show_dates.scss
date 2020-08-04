@@ -18,8 +18,10 @@
     // height: 100vh;
     color: black;
     // min-height: 100vh;
+    min-width: 50%;
     display: flex;
     overflow: hidden;
+    overflow-x: auto;
     .date-specific-filter {
         display: block;
         margin: 5px;
@@ -155,6 +157,7 @@
     background-color: rgb(186, 186, 186);
     font-size: 18.5px;
     height: 70vh;
+    min-height: 70vh;
     width: 100vh;
 }
 #one-date-info-container{
