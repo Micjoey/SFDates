@@ -48,7 +48,6 @@ ActiveRecord::Base.transaction do
 
 #date suggestions
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'Date_Ideas.csv'))
-if csv_text
     csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
     csv.each do |row|
         t = DateSuggestion.new
@@ -64,22 +63,6 @@ if csv_text
         t.creator_contact = row["Email (If you want to share)"]
         t.save
     end
-else
-    20.times do 
-        t = DateSuggestion.new
-        t.title = `#{faker.name.first} #{faker.name.last}` # string
-        t.location = `#{faker.address.city}` # string
-        t.address_location = `#{faker.address.streetAddress} #{faker.address.city}` # string
-        t.date_type = `#{faker.name.first} #{faker.name.last}` # string
-        t.cost = `#{faker.random.number}` # integer
-        t.date_number = `#{faker.random.number}` #integer
-        t.description = `#{faker.lorem.sentence}` #text
-        t.approximate_date_length = `#{faker.lorem.sentence}` # string
-        t.creator = `#{faker.lorem.sentence}`
-        t.creator_contact = `#{faker.lorem.sentence}`
-        t.save
-    end
-end
 
 
 
