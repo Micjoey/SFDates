@@ -1,24 +1,27 @@
-# README
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Below you will find information on how to start the app, or different aspects of the code.
 
-Things you may want to cover:
+## Table of Contents
+- [Updating to New Releases] (#updating-to-new-releases)
+- [How to fork/start the app]
 
-* Ruby version
+## Updating to New Releases
 
-* System dependencies
+## Updating to New Releases
 
-* Configuration
+Create React App is divided into two packages:
 
-* Database creation
+* `create-react-app` is a global command-line utility that you use to create new projects.
+* `react-scripts` is a development dependency in the generated projects (including this one).
 
-* Database initialization
+You almost never need to update `create-react-app` itself: it delegates all the setup to `react-scripts`.
 
-* How to run the test suite
+When you run `create-react-app`, it always creates the project with the latest version of `react-scripts` so you’ll get all the new features and improvements in newly created apps automatically.
 
-* Services (job queues, cache servers, search engines, etc.)
+To update an existing project to a new version of `react-scripts`, [open the changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md), find the version you’re currently on (check `package.json` in this folder if you’re not sure), and apply the migration instructions for the newer versions.
 
-* Deployment instructions
+In most cases bumping the `react-scripts` version in `package.json` and running `npm install` in this folder should be enough, but it’s good to consult the [changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md) for potential breaking changes.
 
-* ...
+We commit to keeping the breaking changes minimal so you can upgrade `react-scripts` painlessly.
+
