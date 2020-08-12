@@ -48,21 +48,39 @@ ActiveRecord::Base.transaction do
 
 #date suggestions
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'Date_Ideas.csv'))
-csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
-csv.each do |row|
-    t = DateSuggestion.new
-    t.title = row['Date Title (I.e Terra Linda Sleepy Hollow Hike)'] # string
-    t.location = row['Location (I.e San Rafael or Marina District)'] # string
-    t.address_location = row['Address (if you know it)'] # string
-    t.date_type = row['Type of Date'] # string
-    t.cost = row['How expensive?'] # integer
-    t.date_number = row['Which date do you think this would be good for? (Would you take someone to this date on Date #X?)'] #integer
-    t.description = row['Add a short or long description as to why this is a good date!'] #text
-    t.approximate_date_length = row['Approximate Time Length of Date'] # string
-    t.creator = row["Your Name (If you want to share)"]
-    t.creator_contact = row["Email (If you want to share)"]
-    t.save
+if csv_text
+    csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+    csv.each do |row|
+        t = DateSuggestion.new
+        t.title = row['Date Title (I.e Terra Linda Sleepy Hollow Hike)'] # string
+        t.location = row['Location (I.e San Rafael or Marina District)'] # string
+        t.address_location = row['Address (if you know it)'] # string
+        t.date_type = row['Type of Date'] # string
+        t.cost = row['How expensive?'] # integer
+        t.date_number = row['Which date do you think this would be good for? (Would you take someone to this date on Date #X?)'] #integer
+        t.description = row['Add a short or long description as to why this is a good date!'] #text
+        t.approximate_date_length = row['Approximate Time Length of Date'] # string
+        t.creator = row["Your Name (If you want to share)"]
+        t.creator_contact = row["Email (If you want to share)"]
+        t.save
+    end
+else
+    20.times do 
+        t = DateSuggestion.new
+        t.title = `#{faker.name.first} #{faker.name.last}` # string
+        t.location = `#{faker.address.city}` # string
+        t.address_location = `#{faker.address.streetAddress} #{faker.address.city}` # string
+        t.date_type = `#{faker.name.first} #{faker.name.last}` # string
+        t.cost = `#{faker.random.number}` # integer
+        t.date_number = `#{faker.random.number}` #integer
+        t.description = `#{faker.lorem.sentence}` #text
+        t.approximate_date_length = `#{faker.lorem.sentence}` # string
+        t.creator = `#{faker.lorem.sentence}`
+        t.creator_contact = `#{faker.lorem.sentence}`
+        t.save
+    end
 end
+
 
 
 
