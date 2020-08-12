@@ -8,7 +8,7 @@ import filterBar from './show_date_functions/filter_bar';
 import randomDate from '../misc/random_date';
 import displayOneDatesInformation from './show_date_functions/display_one_dates_information';
 import switchSearchButton from './show_date_functions/switch_search_button';
-import SortingOptions from './show_date_functions/sort_function';
+// import SortingOptions from './show_date_functions/sort_function';
 
 
 
@@ -81,11 +81,9 @@ export const RenderDates = () => {
                     </div>
                     <div className="date-specific-info">
                         <div className="date-specific-info-container">
-                            <div className="sorting-and-date-specific-container">
-                                {/* <SortingOptions currentDateList={currentDateList}/> */}
+                            {/* <div className="sorting-and-date-specific-container"> */}
                                 <IterateOverDates dates={currentDateList} />
-                            </div>
-                            
+                            {/* </div> */}
                         </div>
                         <div className="date-specific-info" id="one-date-container">
                             <button onClick={() => displayOneDatesInformation(randomDate(originalDateList))}>Generate Random Date</button>

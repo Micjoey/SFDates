@@ -48,21 +48,22 @@ ActiveRecord::Base.transaction do
 
 #date suggestions
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'Date_Ideas.csv'))
-csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
-csv.each do |row|
-    t = DateSuggestion.new
-    t.title = row['Date Title (I.e Terra Linda Sleepy Hollow Hike)'] # string
-    t.location = row['Location (I.e San Rafael or Marina District)'] # string
-    t.address_location = row['Address (if you know it)'] # string
-    t.date_type = row['Type of Date'] # string
-    t.cost = row['How expensive?'] # integer
-    t.date_number = row['Which date do you think this would be good for? (Would you take someone to this date on Date #X?)'] #integer
-    t.description = row['Add a short or long description as to why this is a good date!'] #text
-    t.approximate_date_length = row['Approximate Time Length of Date'] # string
-    t.creator = row["Your Name (If you want to share)"]
-    t.creator_contact = row["Email (If you want to share)"]
-    t.save
-end
+    csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+    csv.each do |row|
+        t = DateSuggestion.new
+        t.title = row['Date Title (I.e Terra Linda Sleepy Hollow Hike)'] # string
+        t.location = row['Location (I.e San Rafael or Marina District)'] # string
+        t.address_location = row['Address (if you know it)'] # string
+        t.date_type = row['Type of Date'] # string
+        t.cost = row['How expensive?'] # integer
+        t.date_number = row['Which date do you think this would be good for? (Would you take someone to this date on Date #X?)'] #integer
+        t.description = row['Add a short or long description as to why this is a good date!'] #text
+        t.approximate_date_length = row['Approximate Time Length of Date'] # string
+        t.creator = row["Your Name (If you want to share)"]
+        t.creator_contact = row["Email (If you want to share)"]
+        t.save
+    end
+
 
 
 
