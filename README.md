@@ -2,11 +2,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Below you will find information on how to start the app, or different aspects of the code.
 
-## Table of Contents
-- [Updating to New Releases] (#updating-to-new-releases)
-- [How to fork/start the app]
+Below you will find some information on how to perform common tasks.<br>
+You can find the most recent version of this guide [here](https://github.com/facebook/create-react-app/blob/master/packages/cra-template/template/README.md).
 
-## Updating to New Releases
+## Table of Contents
+- [Updating to New Releases](#updating-to-new-releases)
+- [How to Fork/Start the App](#how-to-fork/start-the-app)
+
+## How to Fork/Start the App
 
 ## Updating to New Releases
 
