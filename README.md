@@ -21,6 +21,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
   
   If you having issues running `rails db seed` try running `rails db:reset`. **Be careful running `rails db:reset` for it will completely reset the database**
   For the purpose of this website that is fine because the user is not adding any of their own data yet.
+  
+  ### `rails s`
+  
+  Runs the server for the data.
+  
 ## Updating to New Releases
 
 Create React App is divided into two packages:
