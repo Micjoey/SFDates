@@ -1,6 +1,3 @@
-
-import React, { useState, useEffect } from 'react'
-
 const dateFilter = (allDates, originalDates, checkedBoxes, setCheckedBox, setCurrentDateList, dateType = ["cost", "date_type", "date_number", "location"]) =>   { 
     const originalDatesArray = Object.values(originalDates)
     let dateList = Object.values(allDates)
@@ -12,8 +9,6 @@ const dateFilter = (allDates, originalDates, checkedBoxes, setCheckedBox, setCur
         dateListHash[x] = dateList[x - 1]
     }
     setCurrentDateList(dateListHash)
-
-
 }
 
 const changeCheckBoxes = (checkedBoxes, newCheckedBoxes, setCheckedBoxes) => {

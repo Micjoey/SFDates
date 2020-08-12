@@ -1,6 +1,7 @@
 import React from 'react'
 import { renderModal, correctToggle } from '../../modal/modal_render';
 import dateFilter from './date_filter';
+import switchSearchButton from './switch_search_button';
 
 
 const dropDownMenu = (menu, id, type = "default", currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList, filter, setFilter) => {
@@ -68,6 +69,11 @@ const dropDownMenu = (menu, id, type = "default", currentDateList, originalDateL
 
 const filterThenClose = (currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList, id) => {
     dateFilter(currentDateList, originalDateList, checkedBox, setCheckedBox, setCurrentDateList)
+    switchSearchButton(currentDateList,
+        originalDateList,
+        checkedBox,
+        setCheckedBox,
+        setCurrentDateList)
     closeDiv(id)
 }
 
