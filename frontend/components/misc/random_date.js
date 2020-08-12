@@ -8,7 +8,6 @@ const randomDate = (allDates) => {
         if (randNum === 0) randNum = 1;
         randomDate = allDates[randNum];
     }
-    console.log([randNum, randomDate, allDates])
     return (
         randomDate
     )

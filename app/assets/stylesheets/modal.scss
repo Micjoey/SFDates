@@ -131,7 +131,7 @@
 .close-modal-container {
   margin-left: auto;
   padding: 1em;
-  text-align: center;
+  text-align: right;
 }
 
 .close-modal-container:hover {
@@ -158,7 +158,7 @@
   margin: 20px;
   text-align: center;
   .modal-filter-button {
-    width: 2em;
+    width: fit-content;
   }
 }
 

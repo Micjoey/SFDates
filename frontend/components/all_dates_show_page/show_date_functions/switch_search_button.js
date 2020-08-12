@@ -5,8 +5,9 @@ const switchSearchButton = (currentDateList, originalDateList, checkedBox = fals
     if (checkedBox) {
         checker = Object.values(checkedBox).some(value => value)
     }
+    let button;
     if (checker) {
-        return (
+        button =
             <button onClick={() => dateFilter(
                 currentDateList,
                 originalDateList,
@@ -18,7 +19,7 @@ const switchSearchButton = (currentDateList, originalDateList, checkedBox = fals
             >
                 Change Filter:
             </button>
-        )
+        
     } else {
         return (
             < button onClick={() => dateFilter(
@@ -34,6 +35,7 @@ const switchSearchButton = (currentDateList, originalDateList, checkedBox = fals
             </button >
         ) 
     }
+    return button
 }
 
 export default switchSearchButton

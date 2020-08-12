@@ -1,9 +1,9 @@
-const dateFilter = (allDates, originalDates, checkedBoxes, setCheckedBox, setCurrentDateList, dateType = ["cost", "date_type", "date_number", "location"]) =>   { 
+const dateFilter = (currentDateList, originalDates, checkedBoxes, setCheckedBox, setCurrentDateList, dateType = ["cost", "date_type", "date_number", "location"]) =>   { 
     const originalDatesArray = Object.values(originalDates)
-    let dateList = Object.values(allDates)
+    let dateList = Object.values(currentDateList)
     let dateListHash = {}
     let values = setValues(dateType)
-    checkedBoxes = changeCheckBoxes(checkedBoxes, values, setCheckedBox)   
+    checkedBoxes = changeCheckBoxes(checkedBoxes, values, setCheckedBox)
     dateList = setFilteredDates(values, originalDatesArray)
     for (let x = 1; x <= dateList.length; x++) {
         dateListHash[x] = dateList[x - 1]
@@ -40,10 +40,11 @@ const setFilteredDates = (values = {}, dateList) => {
         newDateListArray = [];
         keys.forEach(key => {
             let toFilterParts = values[key] // array of all filter values
-            let listOfSameFilter = [] 
+            let listOfSameFilter = []
             for (let x = 0; x < toFilterParts.length; x++) { 
                 let filterPiece = toFilterParts[x] 
                 let temp;
+                debugger
                 if (newDateListArray.length) {
                     Object.assign(listOfSameFilter,
                         newDateListArray.filter(date => date[key] === filterPiece)
@@ -52,7 +53,6 @@ const setFilteredDates = (values = {}, dateList) => {
                     temp = dateList.filter(date => date[key] === filterPiece)
                     Object.assign(listOfSameFilter, temp)
                 }
-
             }
             newDateListArray = listOfSameFilter
         })
