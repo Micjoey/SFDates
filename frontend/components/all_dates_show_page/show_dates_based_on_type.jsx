@@ -86,7 +86,10 @@ export const RenderDates = () => {
                             {/* </div> */}
                         </div>
                         <div className="date-specific-info" id="one-date-container">
-                            <button onClick={() => displayOneDatesInformation(randomDate(originalDateList))}>Generate Random Date</button>
+                            <div>
+                                <button onClick={() => displayOneDatesInformation(randomDate(originalDateList))}>Generate Random Date From All</button>
+                                <button onClick={() => displayOneDatesInformation(randomDate(currentDateList))}>Generate Random Date From Current List</button>
+                            </div>
                             <div className="one-specific-info-container title-info-container" id="one-date-info-container">
                                 {/* <div class="title-info-container"> */}
                                     <h1 className="title-for-date">{originalDateList[1].title}</h1>
