@@ -6,11 +6,21 @@ Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebook/create-react-app/blob/master/packages/cra-template/template/README.md).
 
 ## Table of Contents
-- [How to Fork/Start the App](#how-to-fork/start-the-app)
+- [How to start SFDates](#how-to-start-sfdates)
 - [Updating to New Releases](#updating-to-new-releases)
 
-## How to Fork/Start the App
-* ``
+## How to start SFDates
+  ### `npm start`
+
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+  ### `rails db seed`
+  
+  This will seed the app with the data from the website. The csv can be found at `lib/sees/Date_Ideas.csv`
+  
+  If you having issues running `rails db seed` try running `rails db:reset`. **Be careful running `rails db:reset` for it will completely reset the database**
+  For the purpose of this website that is fine because the user is not adding any of their own data yet.
 ## Updating to New Releases
 
 Create React App is divided into two packages:
