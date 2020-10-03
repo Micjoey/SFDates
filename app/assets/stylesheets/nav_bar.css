@@ -82,3 +82,14 @@
         text-align: center;
         font-size: 15px;
     }
+
+    .nav-bar-button {
+        background-color: #f2f2f2;
+        color: #630417;
+        width: 7em;
+    }
+
+    .nav-bar-button:hover {
+        background-color: rgba(96, 6, 6, 0.742);
+        color: crimson;
+    }

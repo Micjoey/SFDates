@@ -52,7 +52,7 @@ class Navbar extends React.Component {
                     <Link to="/home" className="SfDates-title-logged-in" >SFDates</Link>
                     <button
                         onClick={() => window.location.href = "#/datesuggestions/"}
-                        className=""
+                        className="nav-bar-button"
                     >
                         All Dates
                     </button>
