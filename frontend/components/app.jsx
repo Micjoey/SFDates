@@ -30,11 +30,6 @@ const App = () => (
       <Switch>
         <AuthRoute exact path="/home" component={SplashContainer} /> 
         <AuthRoute exact path="/datesuggestions/" component={RenderDates} />
-        {/* <AuthRoute exact path="/datesuggestions/date_type_:date_type" component={RenderDates} />
-        <AuthRoute exact path="/datesuggestions/date_cost_:cost" component={RenderDates} />
-        <AuthRoute exact path="/datesuggestions/date_number_:date_number" component={RenderDates} />
-        <AuthRoute exact path="/datesuggestions/location_:location" component={RenderDates} /> */}
-
         <Redirect to="/home" />
       </Switch>
     </div>
