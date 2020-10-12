@@ -27,6 +27,7 @@
 
 .footer-linkedin,
 .footer-github,
+.footer-logo,
 #footerlink {
     /* object-fit:cover; */
     height: 40px;
@@ -44,3 +45,11 @@
     background-color: rgba(62, 62, 255, 0.571);
 }
 
+.footer-logo {
+    height: 3em;
+}
+
+.logo-caption {
+    color: rgb(4, 156, 146);
+    font-size: small;
+}
