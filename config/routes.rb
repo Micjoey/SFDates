@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     resources :datesuggestions, only: [:show, :index]
     resources :users, only: [:create, :index]
     resource :session, only: [:create, :destroy, :show]
-    
   end
   # root "static_pages#root"
   root "static_pages#root"
